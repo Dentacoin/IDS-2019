@@ -1,0 +1,42 @@
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: white;
+    height: 80px;
+    @include box-shadow(0 2px 10px 0 rgba(0,0,0,.1));
+    >.container {
+        @include vertical-horizontal-align(absolute);
+        .menu {
+            ul {
+                li {
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    a {
+                        font-family: "Lato-Bold";
+                        font-size: 20px;
+                    }
+                    figure {
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        .socials {
+            text-align: right;
+            ul {
+                li {
+                    margin-left: 3px;
+                    margin-right: 3px;
+                    img {
+                        width: 30px;
+                    }
+                }
+            }
+        }
+    }
+}

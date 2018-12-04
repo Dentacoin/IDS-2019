@@ -1,0 +1,56 @@
+.white-solid-blue-btn {
+    font-size: 20px;
+    color: white;
+    background-color: $solid_blue;
+    padding: 10px 20px;
+    font-family: 'Calibri-Bold';
+    border: 2px solid $solid_blue;
+    display: inline-block;
+    @include rounded(4px);
+    @include simple_transition(.3s);
+    &:hover {
+        color: $solid_blue;
+        background-color: white;
+    }
+    &:focus {
+        color: white;
+    }
+}
+
+.solid-blue-white-btn {
+    font-size: 20px;
+    color: $solid_blue;
+    background-color: white;
+    padding: 10px 20px;
+    font-family: 'Calibri-Bold';
+    border: 2px solid white;
+    display: inline-block;
+    @include rounded(4px);
+    @include simple_transition(.3s);
+    &:hover {
+        color: white;
+        background-color: $solid_blue;
+    }
+    &:focus {
+        color: $solid_blue;
+    }
+    &.blue-border {
+        border: 2px solid $solid_blue;
+    }
+}
+
+.color-white {
+    color: white;
+}
+
+.color-black {
+    color: black;
+}
+
+.color-white-bg {
+    background-color: white;
+}
+
+.color-black-bg {
+    background-color: black;
+}
