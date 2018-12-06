@@ -18,4 +18,6 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
     //======================================= PAGES ========================================
 
     Route::get('/', 'HomeController@getView')->name('home');
+
+    Route::get('sitemap.xml', 'Controller@getSitemap')->name('sitemap');
 });

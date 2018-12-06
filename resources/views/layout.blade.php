@@ -34,7 +34,7 @@
 </head>
 <body class="@if(!empty(Route::current())) {{Route::current()->getName()}} @else class-404 @endif">
     @php($header_menu = \App\Http\Controllers\Controller::instance()->getMenu('header'))
-    @if(!empty($mobile) && $mobile && !empty($header_menu))
+    @if(isset($mobile) && $mobile && !empty($header_menu))
         <div class="mobile-nav">
             <div class="close-btn">
                 <a href="javascript:void(0)">
@@ -44,7 +44,9 @@
             <nav>
                 <ul itemscope="" itemtype="http://schema.org/SiteNavigationElement">
                     @foreach(\App\Http\Controllers\Controller::instance()->getMenu('header') as $menu_el)
-                        <li><a itemprop="url" class="{{$menu_el->class_attribute}}" @if(!empty($menu_el->id_attribute)) id="{{$menu_el->id_attribute}}" @endif @if(!empty(Route::current()) && Route::current()->getName() != 'home' && strpos($menu_el->class_attribute, 'scrolling-to-section') !== false) href="{{route('home')}}#{{$menu_el->id_attribute}}" @else @if($menu_el->new_window) target="_blank" @endif href="{{$menu_el->url}}" @endif><span itemprop="name">{{$menu_el->name}}</span></a></li>
+                        @if((isset($mobile) && $mobile && $menu_el->mobile_visible))
+                            <li><a itemprop="url" class="{{$menu_el->class_attribute}}" @if(!empty($menu_el->id_attribute)) id="{{$menu_el->id_attribute}}" @endif @if(!empty(Route::current()) && Route::current()->getName() != 'home' && strpos($menu_el->class_attribute, 'scrolling-to-section') !== false) href="{{route('home')}}#{{$menu_el->id_attribute}}" @else @if($menu_el->new_window) target="_blank" @endif href="{{$menu_el->url}}" @endif><span itemprop="name">{{$menu_el->name}}</span></a></li>
+                        @endif
                     @endforeach
                 </ul>
             </nav>
@@ -53,7 +55,7 @@
     <header>
         <div class="container">
             <div class="row fs-0">
-                <nav class="col-xs-3 @if(!empty($mobile) && $mobile) col-md-8 @else col-md-9 @endif menu inline-block">
+                <nav class="col-xs-3 @if(isset($mobile) && $mobile) col-md-8 @else col-md-9 @endif menu inline-block">
                     <ul itemscope="" itemtype="http://schema.org/SiteNavigationElement">
                         <li class="inline-block logo">
                             <figure itemscope="" itemtype="http://schema.org/Organization">
@@ -76,14 +78,14 @@
                     @if(sizeof($social_menu) > 0)
                         <ul itemscope="" itemtype="http://schema.org/SiteNavigationElement">
                             @foreach($social_menu as $menu_el)
-                                @if(($mobile && $menu_el->mobile_visible) || (!$mobile && $menu_el->desktop_visible))
+                                @if((isset($mobile) && $mobile && $menu_el->mobile_visible) || (isset($mobile) && !$mobile && $menu_el->desktop_visible))
                                     <li class="inline-block"><a @if($menu_el->new_window) target="_blank" @endif itemprop="url" href="{{$menu_el->url}}" class="{{$menu_el->class_attribute}}" @if(!empty($menu_el->id_attribute)) id="{{$menu_el->id_attribute}}" @endif>{!! $menu_el->name !!}</a></li>
                                 @endif
                             @endforeach
                         </ul>
                     @endif
                 </nav>
-                <div class="mobile-ham col-xs-3 col-md-1 text-right inline-block @if(!empty($mobile) && $mobile) show-important @endif">
+                <div class="mobile-ham col-xs-3 col-md-1 text-right inline-block @if(isset($mobile) && $mobile) show-important @endif">
                     <a href="javascript:void(0)"><i class="fa fa-bars" aria-hidden="true"></i></a>
                 </div>
             </div>
@@ -92,10 +94,10 @@
     <main class="main-container">@yield("content")</main>
     <footer>
         <div class="container padding-top-30">
-            <div class="row">
-                <div class="col-xs-12 text-center fs-18 lato-semibold">We are social. Follow us:</div>
-            </div>
             @if(!empty($socials))
+                <div class="row">
+                    <div class="col-xs-12 text-center fs-18 lato-semibold">We are social. Follow us:</div>
+                </div>
                 <div class="row socials">
                     <div class="col-xs-12" itemscope="" itemtype="http://schema.org/Organization">
                         <link itemprop="url" href="{{ route('home') }}">
@@ -116,18 +118,20 @@
             @if(!empty(Route::current()))
                 @php($footer_menu = \App\Http\Controllers\Controller::instance()->getMenu('footer'))
             @endif
-            @if(sizeof($footer_menu) > 0)
+            @if(!empty($footer_menu) && sizeof($footer_menu) > 0)
                 <div class="row menu">
                     <nav class="col-xs-12">
                         <ul itemscope="" itemtype="http://schema.org/SiteNavigationElement">
                             @php($first_el = false)
                             @foreach($footer_menu as $el)
-                                @if($first_el)
-                                    <li class="inline-block separator">|</li>
-                                @endif
-                                <li class="inline-block"><a @if($el->new_window) target="_blank" @endif itemprop="url" href="{{$el->url}}"><span itemprop="name">{{$el->name}}</span></a></li>
-                                @if(!$first_el)
-                                    @php($first_el = true)
+                                @if((isset($mobile) && $mobile && $menu_el->mobile_visible) || (isset($mobile) && !$mobile && $menu_el->desktop_visible))
+                                    @if($first_el)
+                                        <li class="inline-block separator">|</li>
+                                    @endif
+                                    <li class="inline-block"><a @if($el->new_window) target="_blank" @endif itemprop="url" href="{{$el->url}}"><span itemprop="name">{{$el->name}}</span></a></li>
+                                    @if(!$first_el)
+                                        @php($first_el = true)
+                                    @endif
                                 @endif
                             @endforeach
                         </ul>
