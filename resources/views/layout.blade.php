@@ -66,7 +66,7 @@
                         </li>
                         @if(sizeof($header_menu) > 0)
                             @foreach($header_menu as $menu_el)
-                                @if(!$mobile && $menu_el->desktop_visible)
+                                @if(isset($mobile) && !$mobile && $menu_el->desktop_visible)
                                     <li class="inline-block"><a @if($menu_el->new_window) target="_blank" @endif itemprop="url" href="{{$menu_el->url}}" class="{{$menu_el->class_attribute}} color-black" @if(!empty($menu_el->id_attribute)) id="{{$menu_el->id_attribute}}" @endif><span itemprop="name">{{$menu_el->name}}</span></a></li>
                                 @endif
                             @endforeach
