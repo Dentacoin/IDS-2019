@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Admin\TeamMembersController;
 use App\Http\Controllers\Admin\UserExpressionsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -9,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 class HomeController extends Controller
 {
     protected function getView()   {
-        return view("pages/homepage", ['testimonials' => (new UserExpressionsController())->getAllTestimonials()]);
+        return view("pages/homepage", ['testimonials' => (new UserExpressionsController())->getAllTestimonials(), 'team_members' => (new TeamMembersController())->getAllTeamMembers()]);
     }
 }
 

@@ -40,6 +40,18 @@
   src: url("/assets/fonts/Lato-Black.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/Lato-Black.woff2") format("woff2"), url("/assets/fonts/Lato-Black.woff") format("woff"), url("/assets/fonts/Lato-Black.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
+@font-face {
+  font-family: "Lato-Light";
+  src: url("/assets/fonts/Lato-Light.eot");
+  src: url("/assets/fonts/Lato-Light.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/Lato-Light.woff2") format("woff2"), url("/assets/fonts/Lato-Light.woff") format("woff"), url("/assets/fonts/Lato-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "Lato-Semibold";
+  src: url("/assets/fonts/Lato-Semibold.eot");
+  src: url("/assets/fonts/Lato-Semibold.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/Lato-Semibold.woff2") format("woff2"), url("/assets/fonts/Lato-Semibold.woff") format("woff"), url("/assets/fonts/Lato-Semibold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
 .calibri-bold {
   font-family: "Calibri-Bold"; }
 
@@ -51,6 +63,12 @@
 
 .lato-black {
   font-family: "Lato-Black"; }
+
+.lato-light {
+  font-family: "Lato-Light"; }
+
+.lato-semibold {
+  font-family: "Lato-Semibold"; }
 
 @media screen and (max-width: 400px) {
   .col-xxs-12 {
@@ -89,6 +107,20 @@
     background-color: white; }
   .white-solid-blue-btn:focus {
     color: white; }
+  @media screen and (max-width: 991px) {
+    .white-solid-blue-btn {
+      display: block;
+      max-width: 330px;
+      margin: 0 auto; } }
+  .white-solid-blue-btn.disabled {
+    display: inline-block;
+    background-color: #9f9f9f;
+    border: 2px solid #9f9f9f; }
+    .white-solid-blue-btn.disabled i {
+      margin-right: 10px; }
+    .white-solid-blue-btn.disabled:hover {
+      color: white;
+      background-color: #9f9f9f; }
 
 .solid-blue-white-btn {
   font-size: 20px;
@@ -121,11 +153,26 @@
 .color-black {
   color: black; }
 
+.color-dark-blue {
+  color: #041e42; }
+
+.color-beige {
+  color: #fafafa; }
+
+.main-color {
+  color: #333333; }
+
 .color-white-bg {
   background-color: white; }
 
 .color-black-bg {
   background-color: black; }
+
+.color-dark-blue-bg {
+  background-color: #041e42; }
+
+.color-beige-bg {
+  background-color: #fafafa; }
 
 body {
   background-color: #222d32; }

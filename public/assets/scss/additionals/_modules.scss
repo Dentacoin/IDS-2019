@@ -15,6 +15,23 @@
     &:focus {
         color: white;
     }
+    @include breakpoint($sm-down) {
+        display: block;
+        max-width: 330px;
+        margin: 0 auto;
+    }
+    &.disabled {
+        display: inline-block;
+        background-color: #9f9f9f;
+        border: 2px solid #9f9f9f;
+        i {
+            margin-right: 10px;
+        }
+        &:hover {
+            color: white;
+            background-color: #9f9f9f;
+        }
+    }
 }
 
 .solid-blue-white-btn {
@@ -47,10 +64,30 @@
     color: black;
 }
 
+.color-dark-blue {
+    color: $dark_blue;
+}
+
+.color-beige {
+    color: $beige;
+}
+
+.main-color {
+    color: $main_color;
+}
+
 .color-white-bg {
     background-color: white;
 }
 
 .color-black-bg {
     background-color: black;
+}
+
+.color-dark-blue-bg {
+    background-color: $dark_blue;
+}
+
+.color-beige-bg {
+    background-color: $beige;
 }

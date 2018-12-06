@@ -135,6 +135,20 @@ body {
     }
 }
 
+@for $i from 0 through 30 * 2 {
+    .min-width-#{$i * 10} {
+        min-width: 0px + $i * 10!important;
+    }
+}
+
+@for $i from 0 through 15 * 2 {
+    @include breakpoint($xs)    {
+        .min-width-xs-#{$i * 10} {
+            min-width: 0px + $i * 10!important;
+        }
+    }
+}
+
 @for $i from 0 through 15 * 2 {
     @include breakpoint($xs)    {
         .max-width-xs-#{$i * 10} {
@@ -205,6 +219,10 @@ body {
     @include breakpoint($xs)    {
         text-align: right !important;
     }
+}
+
+.margin-0-auto {
+    margin: 0 auto;
 }
 
 .clear-bootstrap-row {
@@ -441,5 +459,128 @@ main.main-container {
     cursor: pointer;
     @include breakpoint($md-down) {
         right: -15px;
+    }
+}
+
+.mobile-nav {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 11000;
+    background-color: white;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transform: translateY(-100%);
+    @include simple_transition(.3s);
+    .sub-menu {
+        display: none;
+    }
+    .close-btn {
+        position: absolute;
+        right: 30px;
+        top: 20px;
+        z-index: 10;
+        img {
+            width: 100%;
+            max-width: 25px;
+        }
+    }
+    nav {
+        text-align: center;
+        width: 100%;
+        @include vertical-horizontal-align(absolute);
+        ul {
+            padding: 0;
+            margin: 0;
+            li {
+                list-style: none;
+                a {
+                    display: block;
+                    padding: 10px;
+                    font-size: 50px;
+                    color: $solid_blue;
+                    text-transform: uppercase;
+                    @include breakpoint($xs) {
+                        padding: 5px 10px;
+                        font-size: 32px;
+                    }
+                }
+            }
+        }
+    }
+    &.active {
+        transform: translateY(0%);
+    }
+}
+
+.custom-popup {
+    visibility: hidden;
+    z-index: 200;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.4);
+    position: fixed;
+    top: 0;
+    overflow: auto;
+    &.video {
+        .popup-body {
+            margin-top: 0;
+            margin-bottom: 0;
+            .wrapper {
+                width: 100%;
+                iframe {
+                    border: 0;
+                    width: 100%;
+                    height: 500px;
+                    @include breakpoint($xs) {
+                        height: 300px;
+                    }
+                }
+            }
+        }
+    }
+    .popup-body {
+        max-width: 700px;
+        width: 90%;
+        font-size: 0;
+        background-color: white;
+        padding: 15px;
+        margin-top: 70px;
+        margin-bottom: 70px;
+        @include box-shadow(0 5px 15px rgba(0,0,0,.5));
+        @include vertical-horizontal-align(absolute);
+        @include rounded(6px);
+        .close-btn {
+            font-size: 28px;
+            margin-right: 5px;
+            opacity: .5;
+            float: right;
+            font-weight: 700;
+            color: #000;
+            text-shadow: 0 1px 0 #fff;
+            cursor: pointer;
+            margin-top: -15px;
+        }
+        .wrapper {
+            padding-top: 60px;
+            padding-bottom: 40px;
+            width: 500px;
+            margin: 0 auto;
+        }
+    }
+    &.visible {
+        visibility: visible;
+    }
+    @include breakpoint($xs) {
+        background-color: white;
+        .popup-body {
+            width: 100%;
+            max-width: none;
+            margin: 0;
+            position: static;
+            transform: none;
+            @include box-shadow(none);
+        }
     }
 }

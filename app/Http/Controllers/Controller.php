@@ -30,6 +30,7 @@ class Controller extends BaseController
             View::share('mobile', $this->isMobile());
             View::share('meta_data', $this->getMetaData());
             View::share('sections', $this->getDbSections());
+            View::share('socials', $this->getSocials());
         }
     }
 
@@ -52,6 +53,10 @@ class Controller extends BaseController
         }else {
             return null;
         }
+    }
+
+    protected function getSocials() {
+        return DB::connection('mysql2')->table('socials')->leftJoin('media', 'socials.media_id', '=', 'media.id')->select('socials.*', 'media.name as media_name', 'media.alt as media_alt')->orderByRaw('socials.order_id ASC')->get();
     }
 
     protected function isMobile()   {
