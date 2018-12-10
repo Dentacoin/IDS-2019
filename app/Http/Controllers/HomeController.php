@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\DB;
 class HomeController extends Controller
 {
     protected function getView()   {
-        return view("pages/homepage", ['testimonials' => (new UserExpressionsController())->getAllTestimonials(), 'team_members' => (new TeamMembersController())->getAllTeamMembers()]);
+        $testimonials = DB::connection('mysql2')->table('user_expressions')->leftJoin('media', 'user_expressions.media_id', '=', 'media.id')->select('user_expressions.*', 'media.name as media_name', 'media.alt as media_alt')->orderByRaw('user_expressions.order_id ASC')->get()->toArray();
+        return view("pages/homepage", ['testimonials' => $testimonials, 'team_members' => (new TeamMembersController())->getAllTeamMembers()]);
     }
 }
 

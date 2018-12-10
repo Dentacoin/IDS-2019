@@ -96,7 +96,7 @@
         <div class="container padding-top-30">
             @if(!empty($socials))
                 <div class="row">
-                    <div class="col-xs-12 text-center fs-18 lato-semibold">We are social. Follow us:</div>
+                    <div class="col-xs-12 text-center fs-18 lato-semibold padding-bottom-15">We are social. Follow us:</div>
                 </div>
                 <div class="row socials">
                     <div class="col-xs-12" itemscope="" itemtype="http://schema.org/Organization">
@@ -139,10 +139,7 @@
                 </div>
             @endif
             <div class="row padding-bottom-50 text-center fs-13 bottom-text">
-                <div class="col-xs-12">© 2018 Dentacoin Foundation. All rights reserved.</div>
-                <div class="col-xs-12">
-                    <a href="//dentacoin.com/privacy-policy" target="_blank">Privacy Policy</a>
-                </div>
+                <div class="col-xs-12">© 2018 Dentacoin Foundation. All rights reserved. <a href="//dentacoin.com/privacy-policy" target="_blank">Privacy Policy</a></div>
             </div>
         </div>
     </footer>
