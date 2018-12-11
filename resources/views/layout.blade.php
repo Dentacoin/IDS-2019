@@ -13,6 +13,7 @@
         <meta property="og:url" content="{{Request::url()}}"/>
         <meta property="og:title" content="{{$meta_data->social_title}}"/>
         <meta property="og:description" content="{{$meta_data->social_description}}"/>
+        <meta property="og:type" content="website"/>
         @if(!empty($meta_data->media))
             <meta property="og:image" content="{{URL::asset('assets/uploads/'.$meta_data->media->name)}}"/>
             <meta property="og:image:width" content="1200"/>
