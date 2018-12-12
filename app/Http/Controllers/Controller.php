@@ -207,7 +207,7 @@ class Controller extends BaseController
             $participant->save();
 
             //submit email for approval
-            $body = 'Hello,<br>Thank you for your meeting request! Please, follow <a href="http://ids-2019.test/meeting-confirmation/'.$random_string.'" style="text-decoration: underline;font-weight: bold;">this link</a> to confirm your booking.<br>Looking forward to seeing you at IDS!<br><br><br>Kind regards,<br>Dentacoin Team';
+            $body = 'Hello,<br>Thank you for your meeting request! Please, follow <a href="https://ids.dentacoin.com/meeting-confirmation/'.$random_string.'" style="text-decoration: underline;font-weight: bold;">this link</a> to confirm your booking.<br>Looking forward to seeing you at IDS!<br><br><br>Kind regards,<br>Dentacoin Team';
             $email = $request->input('email');
 
             //submit email
