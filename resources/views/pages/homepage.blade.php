@@ -183,9 +183,10 @@
         </div>
     </section>
 
+    {!! $sections[2]->html !!}
 
 
-    <section class="below-team-slider-section padding-top-50 padding-bottom-70 padding-top-xs-30 padding-bottom-xs-50 color-beige-bg">
+    {{--<section class="below-team-slider-section padding-top-50 padding-bottom-70 padding-top-xs-30 padding-bottom-xs-50 color-beige-bg">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 text-center"><a class="white-solid-blue-btn min-width-250" href="https://calendar.google.com/calendar/selfsched?sstoken=UUNZRFNEMGVQUlM0fGRlZmF1bHR8MTQyNjZjYWRmNzM3ZmI2ZDEzMzZhNmRlM2U2MTA0NGM" target="_blank">SCHEDULE A MEETING</a></div>
@@ -221,7 +222,7 @@
                 <div class="fs-16 padding-top-10">*More info coming soon!</div>
             </div>
         </div>
-    </section>
+    </section>--}}
 
     <section class="schedule-a-meeting-section">
         <h2 class="lato-bold fs-35 fs-xs-26 padding-top-15 padding-bottom-20 padding-left-15 padding-right-15 color-black text-center mobile">SCHEDULE A MEETING</h2>
@@ -241,7 +242,9 @@
         </div>
     </section>
 
-    <section class="dentacoin-products-section padding-top-50 padding-bottom-50 padding-top-xs-30 padding-bottom-xs-0 color-beige-bg">
+    {!! $sections[3]->html !!}
+
+    {{--<section class="dentacoin-products-section padding-top-50 padding-bottom-50 padding-top-xs-30 padding-bottom-xs-0 color-beige-bg">
         <div class="container">
             <div class="row text-center">
                 <div class="col-xs-12">
@@ -345,7 +348,7 @@
                 </form>
             </div>
         </div>
-    </section>
+    </section>--}}
 
 
 
