@@ -21,7 +21,7 @@ class CreateUserExpressionsTable extends Migration
             $table->text('text');
             $table->unsignedInteger('media_id')->nullable();
             $table->integer('order_id');
-            $table->tinyInteger('featured')->default('0');;
+            $table->tinyInteger('featured')->default('0');
             $table->tinyInteger('desktop_visible')->default('1');
             $table->tinyInteger('mobile_visible');
             $table->timestamps();

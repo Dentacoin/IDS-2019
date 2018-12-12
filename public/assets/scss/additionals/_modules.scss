@@ -41,7 +41,7 @@
     background-color: white;
     padding: 10px 20px;
     font-family: 'Calibri-Bold';
-    border: 2px solid white;
+    border: 2px solid $solid_blue;
     display: inline-block;
     @include rounded(4px);
     @include simple_transition(.3s);

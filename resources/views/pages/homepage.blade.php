@@ -182,7 +182,173 @@
             </div>
         </div>
     </section>
-    {!! $sections[2]->html !!}
+
+
+
+    <section class="below-team-slider-section padding-top-50 padding-bottom-70 padding-top-xs-30 padding-bottom-xs-50 color-beige-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 text-center"><a class="white-solid-blue-btn min-width-250" href="https://calendar.google.com/calendar/selfsched?sstoken=UUNZRFNEMGVQUlM0fGRlZmF1bHR8MTQyNjZjYWRmNzM3ZmI2ZDEzMzZhNmRlM2U2MTA0NGM" target="_blank">SCHEDULE A MEETING</a></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ids-speakers-corner-section padding-top-50 padding-top-xs-30 padding-bottom-70 padding-bottom-xs-40">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <h2 class="lato-bold fs-35 fs-xs-26 padding-bottom-20 color-black">IDS SPEAKERS CORNER</h2>
+
+                    <div class="lato-bold fs-22 fs-xs-20 padding-bottom-50 padding-bottom-xs-25 main-color">Transforming the Future of Dentistry through Blockchain Technology</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="custom-container fs-0">
+            <figure class="inline-block" itemscope="" itemtype="http://schema.org/ImageObject"><img alt="Jeremias Grenzebach talking" itemprop="contentUrl" src="/assets/uploads/jeremias-talking.png" /></figure>
+
+            <div class="content inline-block text-center-xs">
+                <div class="lato-bold fs-20 color-black padding-top-xs-25">Jeremias Grenzebach</div>
+
+                <div class="fs-18 padding-top-5 padding-bottom-20">Co-Founder &amp; Core Developer</div>
+
+                <div class="fs-18 padding-bottom-5">March 13 (Wednesday)</div>
+
+                <div class="fs-18 padding-bottom-20">March 15 (Friday)</div>
+
+                <div><a class="white-solid-blue-btn disabled" href="javascript:void(0)"><i aria-hidden="true" class="fa fa-calendar"></i> SAVE THE DATE</a></div>
+
+                <div class="fs-16 padding-top-10">*More info coming soon!</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="schedule-a-meeting-section">
+        <h2 class="lato-bold fs-35 fs-xs-26 padding-top-15 padding-bottom-20 padding-left-15 padding-right-15 color-black text-center mobile">SCHEDULE A MEETING</h2>
+        <div class="days fs-0">
+            @php($active_day = false)
+            @foreach($meeting_days as $day)
+                <a href="javascript:void(0)" class="single inline-block-top text-center @if(!$active_day) active
+                @php($active_day = true) @endif" data-slug="{{$day->id}}">
+                    <div class="month">{{$day->month}}</div>
+                    <div class="day lato-black">{{$day->day}}</div>
+                    <div class="triangle-active"></div>
+                </a>
+            @endforeach
+        </div>
+        <div class="form padding-top-40 padding-bottom-80 padding-bottom-xs-40">
+            @include('partials.schedule-a-meeting')
+        </div>
+    </section>
+
+    <section class="dentacoin-products-section padding-top-50 padding-bottom-50 padding-top-xs-30 padding-bottom-xs-0 color-beige-bg">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-xs-12">
+                    <h2 class="lato-bold fs-35 fs-xs-26 padding-bottom-20 color-black">DENTACOIN PRODUCTS</h2>
+                </div>
+
+                <div class="fs-18 fs-xs-16 padding-bottom-60 col-xs-12">Find out more about Dentacoin Ecosystem and see all our Blockchain-based applications at a glance!</div>
+            </div>
+
+            <div class="row text-center fs-0">
+                <div class="col-xs-12 col-md-10 col-md-offset-1">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-4 single padding-bottom-50 inline-block-top">
+                            <figure itemscope="" itemtype="http://schema.org/ImageObject"><a href="//coinmarketcap.com/currencies/dentacoin/" target="_blank"><img alt="Tools link icon" class="max-width-110" itemprop="contentUrl" src="/assets/uploads/tools-link-icon.svg" /> </a></figure>
+
+                            <div class="lato-bold fs-20 padding-top-15 padding-bottom-10 color-black">DCN Cryptocurrency</div>
+
+                            <div class="fs-18 fs-xs-16 max-width-300 margin-0-auto">Dentacoin is the first cryptocurrency created for the dental industry. It can be used as a means of payment or exchanged to other currencies.</div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-4 single padding-bottom-50 inline-block-top">
+                            <figure itemscope="" itemtype="http://schema.org/ImageObject"><a href="//wallet.dentacoin.com/" target="_blank"><img alt="Tools link icon" class="max-width-110" itemprop="contentUrl" src="/assets/uploads/dentacoin-wallet.svg" /> </a></figure>
+
+                            <div class="lato-bold fs-20 padding-top-15 padding-bottom-10 color-black">Dentacoin Wallet</div>
+
+                            <div class="fs-18 fs-xs-16 max-width-300 margin-0-auto">With our decentralized Wallet, you can buy, store and manage DCN safely and easily. Just create a secret key file and upload it to get started!</div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-4 single padding-bottom-50 inline-block-top">
+                            <figure itemscope="" itemtype="http://schema.org/ImageObject"><a href="//reviews.dentacoin.com/" target="_blank"><img alt="Tools link icon" class="max-width-110" itemprop="contentUrl" src="/assets/uploads/trusted-reviews.svg" /> </a></figure>
+
+                            <div class="lato-bold fs-20 padding-top-15 padding-bottom-10 color-black">Trusted Reviews</div>
+
+                            <div class="fs-18 fs-xs-16 max-width-300 margin-0-auto">The first platform for verified and incentivized dental treatment reviews to which patients are invited personally by their dentists.</div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-4 single padding-bottom-50 inline-block-top">
+                            <figure itemscope="" itemtype="http://schema.org/ImageObject"><a href="//dentavox.dentacoin.com/" target="_blank"><img alt="Tools link icon" class="max-width-110" itemprop="contentUrl" src="/assets/uploads/dentavox.svg" /> </a></figure>
+
+                            <div class="lato-bold fs-20 padding-top-15 padding-bottom-10 color-black">DentaVox</div>
+
+                            <div class="fs-18 fs-xs-16 max-width-300 margin-0-auto">A peerless market research website surveying users on various dental topics and rewarding them with Dentacoin (DCN).</div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-4 single padding-bottom-50 inline-block-top">
+                            <figure itemscope="" itemtype="http://schema.org/ImageObject"><a href="//dentavox.dentacoin.com/" target="_blank"><img alt="Tools link icon" class="max-width-110" itemprop="contentUrl" src="/assets/uploads/dentacare.svg" /> </a></figure>
+
+                            <div class="lato-bold fs-20 padding-top-15 padding-bottom-10 color-black">Dentacare</div>
+
+                            <div class="fs-18 fs-xs-16 max-width-300 margin-0-auto">A gamified mobile app teaching kids and adults to maintain good oral hygiene through a three-month, incentivized challenge.</div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-4 single padding-bottom-50 inline-block-top">
+                            <figure itemscope="" itemtype="http://schema.org/ImageObject"><img alt="Tools link icon" class="max-width-110" itemprop="contentUrl" src="/assets/uploads/dentacoin-assurance.svg" /></figure>
+
+                            <div class="lato-bold fs-20 padding-top-15 padding-bottom-10 color-black">Dentacoin Assurance</div>
+
+                            <div class="fs-18 fs-xs-16 max-width-300 margin-0-auto">A revolutionary, insurance-like dental program stimulating both dentists and patients to focus on sustainable prevention.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="padding-top-70 padding-bottom-80 padding-top-xs-30 padding-bottom-xs-30 get-the-latest-event-updates-section">
+        <div class="container">
+            <div class="email-octopus-form-wrapper">
+                <form action="https://emailoctopus.com/lists/6c1e17a2-f89a-11e8-a3c9-06b79b628af2/members/embedded/1.3s/add" class="email-octopus-form" data-sitekey="6LdYsmsUAAAAAPXVTt-ovRsPIJ_IVhvYBBhGvRV6" method="post">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2 class="lato-bold fs-35 fs-xs-26 padding-bottom-35 color-black text-center">GET THE LATEST EVENT UPDATES</h2>
+                        </div>
+                    </div>
+
+                    <div class="row fs-0">
+                        <div class="col-xs-12 col-sm-6 col-md-4 text-right inline-block iframe-wrapper"><iframe allow="encrypted-media" allowtransparency="true" frameborder="0" height="500" scrolling="no" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fdentacoin%2F&amp;tabs=events&amp;width=340&amp;height=500&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=true&amp;appId" style="border:none;overflow:hidden" width="340"></iframe></div>
+
+                        <div class="col-xs-12 col-sm-6 col-md-4 inline-block form fs-18">
+                            <h2 class="email-octopus-heading text-center">&nbsp;</h2>
+
+                            <p class="email-octopus-success-message text-center">&nbsp;</p>
+
+                            <p class="email-octopus-error-message text-center">&nbsp;</p>
+
+                            <div class="email-octopus-form-row fs-0 padding-top-15">
+                                <div class="inline-block title"><label class="fs-18" for="field_3">Title:</label> <select id="field_3" name="field_3"><option value="Dr.">Mr.</option><option value="Ms.">Ms.</option><option value="Dr.">Dr.</option><option value="Prof.">Prof.</option><option value="Prof. Dr.">Prof. Dr.</option> </select></div>
+
+                                <div class="inline-block name"><label class="fs-18" for="field_4">Name:</label> <input class="email-octopus-field" id="field_4" name="field_4" placeholder="" type="text" /></div>
+                            </div>
+
+                            <div class="email-octopus-form-row"><label class="fs-18" for="field_0">Email:</label> <input class="email-octopus-field" id="field_0" name="field_0" placeholder="" type="email" /></div>
+
+                            <div class="email-octopus-form-row-consent privacy-policy-row fs-0"><input class="email-octopus-checkbox" id="consent" name="consent" type="checkbox" /> <label class="fs-14" for="consent">By submitting the form, you agree to our <a href="//dentacoin.com/privacy-policy" rel="noopener noreferrer" target="_blank">Privacy Policy</a>.</label></div>
+
+                            <div aria-hidden="true" class="email-octopus-form-row-hp"><!-- Do not remove this field, otherwise you risk bot sign-ups --><input autocomplete="nope" name="hp6c1e17a2-f89a-11e8-a3c9-06b79b628af2" tabindex="-1" type="text" /></div>
+
+                            <div class="email-octopus-form-row-subscribe"><input name="successRedirectUrl" type="hidden" value="" /> <input class="white-solid-blue-btn min-width-250" type="submit" value="SIGN UP" /></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+
     {{--<section class="below-team-slider-section padding-top-50 padding-bottom-70 padding-top-xs-30 padding-bottom-xs-50 color-beige-bg">
         <div class="container">
             <div class="row">
@@ -334,4 +500,27 @@
             </div>
         </div>
     </section>--}}
+@endsection
+
+@section("script_block")
+    @if(count($errors) > 0)
+        <script>
+            var errors = '';
+            @foreach($errors->all() as $error)
+                errors+="{{ $error }}" + '<br>';
+            @endforeach
+            basic.showAlert(errors, '', true);
+        </script>
+    @endif
+    @if (session('error'))
+        <script>
+            basic.showAlert("{{ session('error') }}", '', true);
+        </script>
+    @endif
+
+    @if (session('success'))
+        <script>
+            basic.showAlert("{{ session('success') }}", '', true);
+        </script>
+    @endif
 @endsection

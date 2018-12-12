@@ -275,3 +275,133 @@
         }
     }
 }
+
+.schedule-a-meeting-section {
+    h2 {
+        &.mobile {
+            display: none;
+        }
+        @include breakpoint($xs) {
+            &.desktop {
+                display: none;
+            }
+            &.mobile {
+                display: block;
+            }
+        }
+    }
+    .days {
+        .single {
+            width: 25%;
+            background-color: #d9d9d6;
+            color: #707372;
+            padding: 20px 10px 30px;
+            .month {
+                text-transform: uppercase;
+                font-size: 20px;
+            }
+            .day {
+                font-size: 80px;
+                line-height: 80px;
+            }
+            &.active {
+                background-color: $solid_blue;
+                color: white;
+                position: relative;
+                .triangle-active {
+                    width: 0;
+                    height: 0;
+                    border-left: 15px solid transparent;
+                    border-right: 15px solid transparent;
+                    border-bottom: 15px solid white;
+                    bottom: 0;
+                    @include horizontal-align(absolute);
+                }
+            }
+            @include breakpoint($xs) {
+                .month {
+                    font-size: 17px;
+                }
+                .day {
+                    font-size: 40px;
+                    line-height: 35px;
+                }
+            }
+        }
+    }
+    .form {
+        .hours {
+            .solid-blue-white-btn {
+                display: block;
+                &.active {
+                    color: white;
+                    background-color: $solid_blue !important;
+                    border: 2px solid $solid_blue !important;
+                    &:hover {
+                        color: white !important;
+                        background-color: $solid_blue !important;
+                        border: 2px solid $solid_blue !important;
+                    }
+                    &:focus {
+                        color: white;
+                    }
+                }
+                &.disabled {
+                    color: $solid_gray;
+                    background-color: $input_background_gray;
+                    border: 2px solid $input_border_gray;
+                    opacity: 0.8;
+                    &:hover {
+                        color: $solid_gray;
+                        background-color: $input_background_gray;
+                        border: 2px solid $input_border_gray;
+                    }
+                }
+            }
+        }
+        .form-row {
+            @for $i from 0 through 10 * 2 {
+                .form-cell-#{$i * 5} {
+                    width: 0% + $i * 5!important;
+                }
+            }
+            .cell {
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-bottom: 10px;
+                label {
+                    display: block;
+                    font-size: 14px;
+                    font-family: 'Lato-Light';
+                }
+                textarea, input, select {
+                    font-size: 14px;
+                    display: block;
+                    width: 100%;
+                    padding: 6px;
+                    background-color: $input_background_gray;
+                    border: 1px solid $input_border_gray;
+                    @include rounded(4px);
+                }
+                @include breakpoint($xs) {
+                    padding-left: 3px;
+                    padding-right: 3px;
+                }
+                &.captcha-parent {
+                    .width-50 {
+                        width: 50%;
+                        .captcha-container {
+                            text-align: center;
+                        }
+                        @include breakpoint($xs)    {
+                            width: 100%;
+                            .captcha-container {
+                                padding-top: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

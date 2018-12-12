@@ -11,7 +11,7 @@
 |
 */
 
-//Route::get('/refresh-captcha', 'Controller@refreshCaptcha')->name('refresh-captcha');
+Route::get('/refresh-captcha', 'Controller@refreshCaptcha')->name('refresh-captcha');
 
 Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function () {
 
@@ -20,4 +20,12 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
     Route::get('/', 'HomeController@getView')->name('home');
 
     Route::get('sitemap.xml', 'Controller@getSitemap')->name('sitemap');
+
+    //======================================= AJAX ========================================
+
+    Route::post('get-meeting-day/{id}', 'Controller@getMeetingDay')->name('get-meeting-day');
+
+    Route::get('meeting-confirmation/{link}', 'Controller@meetingConfirmation')->name('meeting-confirmation');
+
+    Route::post('submit-schedule-a-meeting', 'Controller@handleSubmitScheduleAMetting')->name('submit-schedule-a-meeting');
 });

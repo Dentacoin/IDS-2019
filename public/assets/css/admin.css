@@ -129,7 +129,7 @@
   background-color: white;
   padding: 10px 20px;
   font-family: 'Calibri-Bold';
-  border: 2px solid white;
+  border: 2px solid #0177c1;
   display: inline-block;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -946,6 +946,23 @@ body.additionals .box.api-endpoints .box-header {
     font-size: 16px; }
 body.additionals .box.api-endpoints a {
   text-decoration: underline; }
+
+.all-meetings-container .box .box-header {
+  margin: 0;
+  font-weight: bold; }
+.all-meetings-container .box .box-body .hour-row {
+  border-bottom: 1px solid #f4f4f4;
+  padding-bottom: 5px;
+  margin-bottom: 5px; }
+  .all-meetings-container .box .box-body .hour-row .hour {
+    font-size: 18px;
+    font-weight: bold; }
+  .all-meetings-container .box .box-body .hour-row .pending {
+    color: #ffa500; }
+  .all-meetings-container .box .box-body .hour-row .approved {
+    color: green; }
+  .all-meetings-container .box .box-body .hour-row ul li {
+    padding-bottom: 20px; }
 
 .media-container form {
   padding-bottom: 30px; }

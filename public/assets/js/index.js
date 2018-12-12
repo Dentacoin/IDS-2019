@@ -19,6 +19,21 @@ $(window).on('scroll', function()  {
 
 });
 
+//on button click next time when you hover the button the color is bugged until you click some other element (until you move out the focus from this button)
+function fixButtonsFocus() {
+    if($('.white-solid-blue-btn').length > 0) {
+        $('.white-solid-blue-btn').click(function() {
+            $(this).blur();
+        });
+    }
+    if($('.solid-blue-white-btn').length > 0) {
+        $('.solid-blue-white-btn').click(function() {
+            $(this).blur();
+        });
+    }
+}
+fixButtonsFocus();
+
 function generateUrl(str)  {
     var str_arr = str.split("");
     var cyr = [
@@ -52,7 +67,7 @@ function checkIfCookie()    {
     }
 }
 
-function initCaptchaRefreshEvent()  {
+function bindCaptchaRefreshEvent()  {
 //refreshing captcha on trying to log in admin
     if($('.refresh-captcha').length > 0)    {
         $('.refresh-captcha').click(function()  {
@@ -70,7 +85,7 @@ function initCaptchaRefreshEvent()  {
         });
     }
 } 
-initCaptchaRefreshEvent();
+bindCaptchaRefreshEvent();
 
 // ================== PAGES ==================
 if($('body').hasClass('home')) {
@@ -150,6 +165,43 @@ if($('body').hasClass('home')) {
         }
         $('.testimonials-slider-section .slick-list').animate({height: height}, 500);
     });
+
+    if($('.schedule-a-meeting-section').length > 0) {
+        $('.schedule-a-meeting-section .single').click(function() {
+            var this_btn = $(this);
+            $('.schedule-a-meeting-section .single').removeClass('active');
+            this_btn.addClass('active');
+            $('.schedule-a-meeting-section form input[name="date-slug"]').val(this_btn.attr('data-slug'));
+
+            $.ajax({
+                type: 'POST',
+                url: '/get-meeting-day/' + this_btn.attr('data-slug'),
+                dataType: 'json',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function (response) {
+                    if(response.success) {
+                        $('.schedule-a-meeting-section .form').html(response.success);
+                        $('.selectpicker').selectpicker('refresh');
+                        bindHourButtonsEvents();
+                        bindCaptchaRefreshEvent();
+                    }
+                }
+            });
+        });
+
+        function bindHourButtonsEvents() {
+            $('.schedule-a-meeting-section .form .hours .solid-blue-white-btn').click(function() {
+                if(!$(this).hasClass('disabled')) {
+                    $('.schedule-a-meeting-section .form .hours .solid-blue-white-btn').removeClass('active');
+                    $(this).addClass('active');
+                    $('.schedule-a-meeting-section form input[name="hour"]').val($(this).attr('data-hour'));
+                }
+            });
+        }
+        bindHourButtonsEvents();
+    }
 }
 
 //scroll to sections events

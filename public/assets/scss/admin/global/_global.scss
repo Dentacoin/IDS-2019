@@ -314,3 +314,34 @@ body.additionals {
         }
     }
 }
+
+.all-meetings-container {
+    .box {
+        .box-header {
+            margin: 0;
+            font-weight: bold;
+        }
+        .box-body {
+            .hour-row {
+                border-bottom: 1px solid #f4f4f4;
+                padding-bottom: 5px;
+                margin-bottom: 5px;
+                .hour {
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+                .pending {
+                    color: #ffa500;
+                }
+                .approved {
+                    color: green;
+                }
+                ul {
+                    li {
+                        padding-bottom: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
