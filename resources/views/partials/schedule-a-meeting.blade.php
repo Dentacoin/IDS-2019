@@ -12,7 +12,6 @@
                     @endforeach
                 </div>
                 <div class="col-xs-12 col-sm-7 col-lg-4 padding-top-xs-20">
-                    <h2 class="lato-bold fs-35 fs-xs-26 padding-bottom-40 color-black desktop">SCHEDULE A MEETING</h2>
                     <div class="form-row padding-bottom-15 fs-0">
                         <div class="form-cell-20 cell inline-block-bottom">
                             <label for="title">Title*</label>
@@ -304,7 +303,7 @@
                         </div>
                         <div class="form-cell-100 cell inline-block-bottom">
                             <label for="note">Do you have any specific inquiry or any additional information you'd like to share?</label>
-                            <textarea name="note" id="note" rows="6" maxlength="3000"></textarea>
+                            <textarea name="note" id="note" rows="3" maxlength="3000"></textarea>
                         </div>
                         <div class="form-cell-100 cell captcha-parent">
                             <div class="inline-block fs-14 width-50">

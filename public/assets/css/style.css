@@ -5229,13 +5229,6 @@ footer .bottom-text a {
     padding-left: 15px;
     padding-right: 15px; } }
 
-.schedule-a-meeting-section h2.mobile {
-  display: none; }
-@media screen and (max-width: 767px) {
-  .schedule-a-meeting-section h2.desktop {
-    display: none; }
-  .schedule-a-meeting-section h2.mobile {
-    display: block; } }
 .schedule-a-meeting-section .days .single {
   width: 25%;
   background-color: #d9d9d6;
@@ -5270,26 +5263,29 @@ footer .bottom-text a {
       font-size: 40px;
       line-height: 35px; } }
 .schedule-a-meeting-section .form .hours .solid-blue-white-btn {
-  display: block; }
+  display: block;
+  border-width: 1px; }
+  .schedule-a-meeting-section .form .hours .solid-blue-white-btn:hover {
+    border-width: 1px; }
   .schedule-a-meeting-section .form .hours .solid-blue-white-btn.active {
     color: white;
     background-color: #0177c1 !important;
-    border: 2px solid #0177c1 !important; }
+    border: 1px solid #0177c1 !important; }
     .schedule-a-meeting-section .form .hours .solid-blue-white-btn.active:hover {
       color: white !important;
       background-color: #0177c1 !important;
-      border: 2px solid #0177c1 !important; }
+      border: 1px solid #0177c1 !important; }
     .schedule-a-meeting-section .form .hours .solid-blue-white-btn.active:focus {
       color: white; }
   .schedule-a-meeting-section .form .hours .solid-blue-white-btn.disabled {
     color: #aaaaaa;
     background-color: #f5f8fa;
-    border: 2px solid #cbd6e2;
+    border: 1px solid #cbd6e2;
     opacity: 0.8; }
     .schedule-a-meeting-section .form .hours .solid-blue-white-btn.disabled:hover {
       color: #aaaaaa;
       background-color: #f5f8fa;
-      border: 2px solid #cbd6e2; }
+      border: 1px solid #cbd6e2; }
 .schedule-a-meeting-section .form .form-row .form-cell-0 {
   width: 0% !important; }
 .schedule-a-meeting-section .form .form-row .form-cell-5 {
@@ -5335,7 +5331,7 @@ footer .bottom-text a {
 .schedule-a-meeting-section .form .form-row .cell {
   padding-left: 10px;
   padding-right: 10px;
-  padding-bottom: 10px; }
+  padding-bottom: 20px; }
   .schedule-a-meeting-section .form .form-row .cell label {
     display: block;
     font-size: 14px;
@@ -5364,6 +5360,26 @@ footer .bottom-text a {
         width: 100%; }
         .schedule-a-meeting-section .form .form-row .cell.captcha-parent .width-50 .captcha-container {
           padding-top: 10px; } }
+
+.dentacoin-products-section figure {
+  position: relative; }
+  .dentacoin-products-section figure .hidden-image {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    -ms-transition: 0.3s;
+    transition: 0.3s; }
+  .dentacoin-products-section figure:hover .hidden-image {
+    width: 100%;
+    height: 100%; }
 
 .container-404 {
   padding-bottom: 100px;

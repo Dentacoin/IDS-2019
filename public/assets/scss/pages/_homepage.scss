@@ -277,19 +277,6 @@
 }
 
 .schedule-a-meeting-section {
-    h2 {
-        &.mobile {
-            display: none;
-        }
-        @include breakpoint($xs) {
-            &.desktop {
-                display: none;
-            }
-            &.mobile {
-                display: block;
-            }
-        }
-    }
     .days {
         .single {
             width: 25%;
@@ -333,14 +320,18 @@
         .hours {
             .solid-blue-white-btn {
                 display: block;
+                border-width: 1px;
+                &:hover {
+                    border-width: 1px;
+                }
                 &.active {
                     color: white;
                     background-color: $solid_blue !important;
-                    border: 2px solid $solid_blue !important;
+                    border: 1px solid $solid_blue !important;
                     &:hover {
                         color: white !important;
                         background-color: $solid_blue !important;
-                        border: 2px solid $solid_blue !important;
+                        border: 1px solid $solid_blue !important;
                     }
                     &:focus {
                         color: white;
@@ -349,12 +340,12 @@
                 &.disabled {
                     color: $solid_gray;
                     background-color: $input_background_gray;
-                    border: 2px solid $input_border_gray;
+                    border: 1px solid $input_border_gray;
                     opacity: 0.8;
                     &:hover {
                         color: $solid_gray;
                         background-color: $input_background_gray;
-                        border: 2px solid $input_border_gray;
+                        border: 1px solid $input_border_gray;
                     }
                 }
             }
@@ -368,7 +359,7 @@
             .cell {
                 padding-left: 10px;
                 padding-right: 10px;
-                padding-bottom: 10px;
+                padding-bottom: 20px;
                 label {
                     display: block;
                     font-size: 14px;
@@ -401,6 +392,24 @@
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+.dentacoin-products-section {
+    figure {
+        position: relative;
+        .hidden-image {
+            width: 0;
+            height: 0;
+            @include vertical-horizontal-align(absolute);
+            @include simple_transition(.3s);
+        }
+        &:hover {
+            .hidden-image {
+                width: 100%;
+                height: 100%;
             }
         }
     }

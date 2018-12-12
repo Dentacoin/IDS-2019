@@ -260,3 +260,11 @@ if($('.coming-soon').length > 0) {
         alert('Coming soon!');
     });
 }
+
+//bind hide custom popup event on black shadow click
+$('body').click(function(event) {
+    if($(event.target).is('.custom-popup')) {  
+        $('.custom-popup').removeClass('visible');
+        $('body').removeClass('overflow-hidden');
+    }
+});
