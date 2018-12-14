@@ -171,7 +171,6 @@
             <button type="button" class="close-btn" data-dismiss="modal" aria-hidden="true">×</button>
             <div class="wrapper">
                 <div class="text-center fs-26 padding-bottom-30 lato-black">Send Your Inquiry</div>
-                <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/shell.js"></script>
                 <script>
                     hbspt.forms.create({
                         portalId: "4097841",
