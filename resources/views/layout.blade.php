@@ -147,7 +147,7 @@
                         <ul itemscope="" itemtype="http://schema.org/SiteNavigationElement">
                             @php($first_el = false)
                             @foreach($footer_menu as $el)
-                                @if((isset($mobile) && $mobile && $menu_el->mobile_visible) || (isset($mobile) && !$mobile && $menu_el->desktop_visible))
+                                @if((isset($mobile) && $mobile && $el->mobile_visible) || (isset($mobile) && !$mobile && $el->desktop_visible))
                                     @if($first_el)
                                         <li class="inline-block separator">|</li>
                                     @endif
