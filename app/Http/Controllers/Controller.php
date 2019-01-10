@@ -136,7 +136,7 @@ class Controller extends BaseController
     }
 
     //handling scheduling meetings
-    protected function handleSubmitScheduleAMetting(Request $request) {
+    protected function handleSubmitScheduleAMeеting(Request $request) {
         $this->validate($request, [
             'title' => 'required|max:100',
             'fname' => 'required|max:100',
@@ -198,7 +198,7 @@ class Controller extends BaseController
             $participant->company_or_practise = strip_tags(trim($request->input('company-or-practise')));
             $participant->job = strip_tags(trim($request->input('job')));
             $participant->website = strip_tags(trim($request->input('website')));
-            $participant->note =strip_tags(trim( $request->input('note')));
+            $participant->note = strip_tags(trim( $request->input('note')));
             $participant->type = 'pending';
             $participant->approval_link = $random_string;
             $participant->hour_id = strip_tags(trim($request->input('hour')));
@@ -206,16 +206,26 @@ class Controller extends BaseController
             //saving to DB
             $participant->save();
 
-            //submit email for approval
+            //=== submit email for approval to the user ===
             $body = 'Hello,<br>Thank you for your meeting request! Please, follow <a href="https://ids.dentacoin.com/meeting-confirmation/'.$random_string.'" style="text-decoration: underline;font-weight: bold;">this link</a> to confirm your booking.<br>Looking forward to seeing you at IDS!<br><br><br>Kind regards,<br>Dentacoin Team';
             $email = $request->input('email');
 
-            //submit email
             Mail::send(array(), array(), function($message) use ($email, $body) {
                 $message->to($email)->subject('IDS Meeting Confirmation');
                 $message->from(EMAIL_SENDER, 'Dentacoin at IDS 2019')->replyTo(EMAIL_SENDER, 'Dentacoin at IDS 2019');
                 $message->setBody($body, 'text/html');
             });
+            //=== /submit email for approval to the user ===
+
+            //=== submit notification email to ids.dentacoin.com administrator ===
+            $body = 'New <b style="color: #ffa500;">PENDING</b> meeting for IDS: <br><br>Name: '.$participant->title.' '.$participant->fname.' '.$participant->lname.'<br>Email: '.$participant->email.'<br>Country: '.$participant->country.'<br>Company or practise: '.$participant->company_or_practise.'<br>Job title: '.$participant->job.'<br>Company Website/ Social Page: '.$participant->website.'<br>Note: '.$participant->note;
+
+            Mail::send(array(), array(), function($message) use ($body) {
+                $message->to(EMAIL_RECEIVERS)->subject('New PENDING IDS Meeting');
+                $message->from(EMAIL_SENDER, 'Dentacoin at IDS 2019')->replyTo(EMAIL_SENDER, 'Dentacoin at IDS 2019');
+                $message->setBody($body, 'text/html');
+            });
+            //=== /submit notification email to ids.dentacoin.com administrator ===
 
             return redirect()->route('home')->with(['success' => 'Thank you for scheduling a meeting with our delegates to IDS! Please, check your mailbox and follow the link in the email we have sent you to complete your request.']);
         }else {
@@ -239,6 +249,16 @@ class Controller extends BaseController
 
             //saving to DB
             $desired_hour->save();
+
+            //=== submit notification email to ids.dentacoin.com administrator ===
+            $body = 'New <b style="color: green;">CONFIRMED</b> meeting for IDS: <br><br>Name: '.$pending_participant->title.' '.$pending_participant->fname.' '.$pending_participant->lname.'<br>Email: '.$pending_participant->email.'<br>Country: '.$pending_participant->country.'<br>Company or practise: '.$pending_participant->company_or_practise.'<br>Job title: '.$pending_participant->job.'<br>Company Website/ Social Page: '.$pending_participant->website.'<br>Note: '.$pending_participant->note;
+
+            Mail::send(array(), array(), function($message) use ($body) {
+                $message->to(EMAIL_RECEIVERS)->subject('New CONFIRMED IDS Meeting');
+                $message->from(EMAIL_SENDER, 'Dentacoin at IDS 2019')->replyTo(EMAIL_SENDER, 'Dentacoin at IDS 2019');
+                $message->setBody($body, 'text/html');
+            });
+            //=== /submit notification email to ids.dentacoin.com administrator ===
 
             return redirect()->route('home')->with(['success' => 'Your meeting request has been confirmed! See you in March 2019 at Koelnmesse!']);
         } else {

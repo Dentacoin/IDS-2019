@@ -27,5 +27,5 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
 
     Route::get('meeting-confirmation/{link}', 'Controller@meetingConfirmation')->name('meeting-confirmation');
 
-    Route::post('submit-schedule-a-meeting', 'Controller@handleSubmitScheduleAMetting')->name('submit-schedule-a-meeting');
+    Route::post('submit-schedule-a-meeting', 'Controller@handleSubmitScheduleAMeеting')->name('submit-schedule-a-meeting');
 });

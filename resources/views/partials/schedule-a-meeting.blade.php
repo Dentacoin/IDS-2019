@@ -299,7 +299,7 @@
                         </div>
                         <div class="form-cell-100 cell inline-block-bottom">
                             <label for="website">Company Website/ Social Page*</label>
-                            <input type="text" name="website" id="website" maxlength="255" required/>
+                            <input type="url" name="website" id="website" maxlength="255" required/>
                         </div>
                         <div class="form-cell-100 cell inline-block-bottom">
                             <label for="note">Do you have any specific inquiry or any additional information you'd like to share?</label>
