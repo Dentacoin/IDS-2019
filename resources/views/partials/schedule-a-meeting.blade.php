@@ -37,7 +37,7 @@
                         </div>
                         <div class="form-cell-50 cell inline-block-bottom">
                             <label for="country">Country*</label>
-                            <select name="country" id="country" class="selectpicker required" data-live-search="true" required>
+                            <select name="country" id="country" class="selectpicker required" title="Country" data-live-search="true" required>
                                 <option>Afghanistan</option>
                                 <option>Åland Islands</option>
                                 <option>Albania</option>

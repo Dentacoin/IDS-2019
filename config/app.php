@@ -179,7 +179,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\AgentServiceProvider::class,
         Roumen\Sitemap\SitemapServiceProvider::class,
-        Mews\Captcha\CaptchaServiceProvider::class
+        Mews\Captcha\CaptchaServiceProvider::class,
+        Maatwebsite\ExcelLight\LaravelExcelServiceProvider::class
     ],
 
     /*
