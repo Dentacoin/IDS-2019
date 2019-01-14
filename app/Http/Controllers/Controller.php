@@ -154,7 +154,7 @@ class Controller extends BaseController
             'lname.required' => 'Last name is required.',
             'email.required' => 'Email is required.',
             'country.required' => 'Country is required.',
-            'company-or-practise.required' => 'Company or practise is required.',
+            'company-or-practise.required' => 'Company or practice is required.',
             'job.required' => 'Job is required.',
             'website.required' => 'Website is required.',
             'hour.required' => 'Hour is required.',
@@ -165,7 +165,7 @@ class Controller extends BaseController
             'fname.max' => 'First name must be with maximum length of 100 symbols.',
             'lname.max' => 'Last name must be with maximum length of 100 symbols.',
             'hour.max' => 'Hour must be with maximum length of 255 symbols.',
-            'company-or-practise.max' => 'Company or practise must be with maximum length of 255 symbols.',
+            'company-or-practise.max' => 'Company or practice must be with maximum length of 255 symbols.',
             'job.max' => 'Job must be with maximum length of 255 symbols.',
             'website.max' => 'Website must be with maximum length of 255 symbols.',
         ]);
@@ -218,7 +218,7 @@ class Controller extends BaseController
             //=== /submit email for approval to the user ===
 
             //=== submit notification email to ids.dentacoin.com administrator ===
-            $body = 'New <b style="color: #ffa500;">PENDING</b> meeting for IDS: <br><br>Name: '.$participant->title.' '.$participant->fname.' '.$participant->lname.'<br>Email: '.$participant->email.'<br>Country: '.$participant->country.'<br>Company or practise: '.$participant->company_or_practise.'<br>Job title: '.$participant->job.'<br>Company Website/ Social Page: '.$participant->website.'<br>Note: '.$participant->note;
+            $body = 'New <b style="color: #ffa500;">PENDING</b> meeting for IDS: <br><br>Name: '.$participant->title.' '.$participant->fname.' '.$participant->lname.'<br>Email: '.$participant->email.'<br>Country: '.$participant->country.'<br>Company or practice: '.$participant->company_or_practise.'<br>Job title: '.$participant->job.'<br>Company Website/ Social Page: '.$participant->website.'<br>Note: '.$participant->note;
 
             Mail::send(array(), array(), function($message) use ($body) {
                 $message->to(EMAIL_RECEIVERS)->subject('New PENDING IDS Meeting');
@@ -251,10 +251,10 @@ class Controller extends BaseController
             $desired_hour->save();
 
             //=== submit notification email to ids.dentacoin.com administrator ===
-            $body = 'New <b style="color: green;">CONFIRMED</b> meeting for IDS: <br><br>Name: '.$pending_participant->title.' '.$pending_participant->fname.' '.$pending_participant->lname.'<br>Email: '.$pending_participant->email.'<br>Country: '.$pending_participant->country.'<br>Company or practise: '.$pending_participant->company_or_practise.'<br>Job title: '.$pending_participant->job.'<br>Company Website/ Social Page: '.$pending_participant->website.'<br>Note: '.$pending_participant->note;
+            $body = 'New <b style="color: green;">CONFIRMED</b> meeting for IDS: <br><br>Name: '.$pending_participant->title.' '.$pending_participant->fname.' '.$pending_participant->lname.'<br>Email: '.$pending_participant->email.'<br>Country: '.$pending_participant->country.'<br>Company or practice: '.$pending_participant->company_or_practise.'<br>Job title: '.$pending_participant->job.'<br>Company Website/ Social Page: '.$pending_participant->website.'<br>Note: '.$pending_participant->note;
 
             Mail::send(array(), array(), function($message) use ($body) {
-                $message->to(EMAIL_RECEIVERS)->subject('New CONFIRMED IDS Meeting');
+                $message->to(EMAIL_RECEIVERS)->subject('New EMAIL VERIFIED IDS Meeting');
                 $message->from(EMAIL_SENDER, 'Dentacoin at IDS 2019')->replyTo(EMAIL_SENDER, 'Dentacoin at IDS 2019');
                 $message->setBody($body, 'text/html');
             });
