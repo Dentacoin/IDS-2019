@@ -183,12 +183,12 @@
         </div>
     </section>
 
-    {{--{!! $sections[2]->html !!}--}}
+    {!! $sections[2]->html !!}
 
 
 
 
-    <section class="below-team-slider-section padding-top-50 padding-bottom-70 padding-top-xs-30 padding-bottom-xs-50 color-beige-bg">
+    {{--<section class="below-team-slider-section padding-top-50 padding-bottom-70 padding-top-xs-30 padding-bottom-xs-50 color-beige-bg">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 text-center"><a class="white-solid-blue-btn min-width-250 scrolling-to-section" href="javascript:void(0);" id="schedule-a-meeting" target="_blank">SCHEDULE A MEETING</a></div>
@@ -216,7 +216,7 @@
 
                 <div class="padding-bottom-10">
                     <div title="Add to Calendar" class="addeventatc">
-                        March 13
+                        March 13, 4pm
                         <span class="start">03/13/2019 16:00</span>
                         <span class="end">03/13/2019 16:30</span>
                         <span class="timezone">GMT+1</span>
@@ -227,7 +227,7 @@
                 </div>
                 <div>
                     <div title="Add to Calendar" class="addeventatc">
-                        March 15
+                        March 15, 4pm
                         <span class="start">03/15/2019 16:00</span>
                         <span class="end">03/15/2019 16:30</span>
                         <span class="timezone">GMT+1</span>
@@ -238,7 +238,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>--}}
 
 
 
