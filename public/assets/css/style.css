@@ -58,6 +58,9 @@
   src: url("/assets/fonts/Calibri.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/Calibri.woff2") format("woff2"), url("/assets/fonts/Calibri.woff") format("woff"), url("/assets/fonts/Calibri.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
+.calibri-regular {
+  font-family: "Calibri-Regular"; }
+
 .calibri-bold {
   font-family: "Calibri-Bold"; }
 
@@ -5234,6 +5237,25 @@ footer .bottom-text a {
     width: 100%;
     padding-left: 15px;
     padding-right: 15px; } }
+.ids-speakers-corner-section .addeventatc {
+  font-size: 20px;
+  color: #0177c1 !important;
+  background-color: white;
+  font-family: 'Calibri-Bold';
+  border: 2px solid #0177c1;
+  background: url(/assets/images/icon-calendar.svg);
+  background-size: 20px auto;
+  background-position: top 50% left 15px;
+  background-repeat: no-repeat;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s; }
+  .ids-speakers-corner-section .addeventatc .atc_node {
+    display: none; }
+  .ids-speakers-corner-section .addeventatc:hover {
+    font-size: 20px; }
 
 .schedule-a-meeting-section .days .single {
   width: 25%;

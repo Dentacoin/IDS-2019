@@ -31,6 +31,7 @@ mix.scripts([
     'node_modules/bootstrap-select/dist/js/bootstrap-select.min.js',
     'node_modules/bootbox.js/bootbox.min.js',
     'node_modules/slick-carousel/slick/slick.min.js',
+    'public/assets/libs/google-calendar/index.js',
 ], 'public/dist/js/front-libs-script.js');
 
 mix.babel([
@@ -51,6 +52,7 @@ mix.babel([
     'node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js',
     'node_modules/bootstrap-select/dist/js/bootstrap-select.min.js',
     'public/assets/libs/jquery-ui/jquery-ui.js',
+    'public/assets/libs/google-calendar/index.js',
 ], 'public/dist/js/admin-libs-script.js');
 
 mix.scripts([

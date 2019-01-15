@@ -274,6 +274,24 @@
             }
         }
     }
+    .addeventatc {
+        font-size: 20px;
+        color: #0177c1 !important;
+        background-color: white;
+        font-family: 'Calibri-Bold';
+        border: 2px solid #0177c1;
+        background: url(/assets/images/icon-calendar.svg);
+        background-size: 20px auto;
+        background-position: top 50% left 15px;
+        background-repeat: no-repeat;
+        @include simple_transition(.3s);
+        .atc_node {
+            display: none;
+        }
+        &:hover {
+            font-size: 20px;
+        }
+    }
 }
 
 .schedule-a-meeting-section {

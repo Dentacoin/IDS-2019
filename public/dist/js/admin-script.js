@@ -603,3 +603,10 @@ if($('.add-edit-menu-element select[name="type"]').length > 0) {
         });
     });
 }
+
+if($('.add-meeting').length) {
+    $('.days').on('change', function() {
+        $('.hours option').addClass('hidden');
+        $('.hours option[data-day-id="'+$(this).val()+'"]').removeClass('hidden');
+    });
+}

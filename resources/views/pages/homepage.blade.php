@@ -183,7 +183,65 @@
         </div>
     </section>
 
-    {!! $sections[2]->html !!}
+    {{--{!! $sections[2]->html !!}--}}
+
+
+
+
+    <section class="below-team-slider-section padding-top-50 padding-bottom-70 padding-top-xs-30 padding-bottom-xs-50 color-beige-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 text-center"><a class="white-solid-blue-btn min-width-250 scrolling-to-section" href="javascript:void(0);" id="schedule-a-meeting" target="_blank">SCHEDULE A MEETING</a></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ids-speakers-corner-section padding-top-50 padding-top-xs-30 padding-bottom-70 padding-bottom-xs-40">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <h2 class="lato-bold fs-35 fs-xs-26 padding-bottom-20 color-black">IDS SPEAKERS CORNER</h2>
+
+                    <div class="lato-bold fs-22 fs-xs-20 padding-bottom-50 padding-bottom-xs-25 main-color">Transforming the Future of Dentistry through Blockchain Technology</div>
+                </div>
+            </div>
+        </div>
+        <div class="custom-container fs-0">
+            <figure class="inline-block" itemscope="" itemtype="http://schema.org/ImageObject"><img alt="Jeremias Grenzebach talking" itemprop="contentUrl" src="/assets/uploads/jeremias-talking.png" /></figure>
+
+            <div class="content inline-block text-center-xs">
+                <div class="lato-bold fs-20 color-black padding-top-xs-25">Jeremias Grenzebach</div>
+
+                <div class="fs-20 fs-xs-18 padding-top-5 padding-bottom-20">Co-Founder &amp; Core Developer</div>
+
+                <div class="padding-bottom-10">
+                    <div title="Add to Calendar" class="addeventatc">
+                        March 13
+                        <span class="start">03/13/2019 16:00</span>
+                        <span class="end">03/13/2019 16:30</span>
+                        <span class="timezone">GMT+1</span>
+                        <span class="title">Transforming the Future of Dentistry through Blockchain Technology</span>
+                        <span class="description">Keynote presentation of Dentacoin, the first blockchain solution for the global dental industry. Speaker: Jeremias Grenzebach, Co-Founder and Core Developer of Dentacoin</span>
+                        <span class="location">IDS, Koelnmesse, Passage 4/4</span>
+                    </div>
+                </div>
+                <div>
+                    <div title="Add to Calendar" class="addeventatc">
+                        March 15
+                        <span class="start">03/15/2019 16:00</span>
+                        <span class="end">03/15/2019 16:30</span>
+                        <span class="timezone">GMT+1</span>
+                        <span class="title">Transforming the Future of Dentistry through Blockchain Technology</span>
+                        <span class="description">Keynote presentation of Dentacoin, the first blockchain solution for the global dental industry. Speaker: Jeremias Grenzebach, Co-Founder and Core Developer of Dentacoin</span>
+                        <span class="location">IDS, Koelnmesse, Passage 4/4</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
 
 
     {{--<section class="below-team-slider-section padding-top-50 padding-bottom-70 padding-top-xs-30 padding-bottom-xs-50 color-beige-bg">

@@ -58,6 +58,9 @@
   src: url("/assets/fonts/Calibri.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/Calibri.woff2") format("woff2"), url("/assets/fonts/Calibri.woff") format("woff"), url("/assets/fonts/Calibri.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
+.calibri-regular {
+  font-family: "Calibri-Regular"; }
+
 .calibri-bold {
   font-family: "Calibri-Bold"; }
 
