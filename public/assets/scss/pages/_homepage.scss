@@ -284,6 +284,7 @@
         background-size: 20px auto;
         background-position: top 50% left 15px;
         background-repeat: no-repeat;
+        z-index: 50;
         @include simple_transition(.3s);
         .atc_node {
             display: none;

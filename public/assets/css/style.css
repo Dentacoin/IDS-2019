@@ -5247,6 +5247,7 @@ footer .bottom-text a {
   background-size: 20px auto;
   background-position: top 50% left 15px;
   background-repeat: no-repeat;
+  z-index: 50;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
   -o-transition: 0.3s;
