@@ -175,7 +175,7 @@ if($('body').hasClass('home')) {
 
             $.ajax({
                 type: 'POST',
-                url: '/get-meeting-day/' + this_btn.attr('data-slug'),
+                url: '/'+$('html').attr('lang')+'/get-meeting-day/' + this_btn.attr('data-slug'),
                 dataType: 'json',
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
