@@ -70,6 +70,17 @@ header {
                     img {
                         width: 30px;
                     }
+                    &.en {
+                        padding-left: 10px;
+                    }
+                    &.lang-switcher {
+                        font-size: 14px;
+                        font-family: 'Lato-Light';
+                        &.active {
+                            font-family: 'Lato-Bold';
+                            text-decoration: underline;
+                        }
+                    }
                 }
             }
             @include breakpoint($sm-down) {

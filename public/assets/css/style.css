@@ -4875,6 +4875,14 @@ header {
         margin-right: 3px; }
         header > .container .socials ul li img {
           width: 30px; }
+        header > .container .socials ul li.en {
+          padding-left: 10px; }
+        header > .container .socials ul li.lang-switcher {
+          font-size: 14px;
+          font-family: 'Lato-Light'; }
+          header > .container .socials ul li.lang-switcher.active {
+            font-family: 'Lato-Bold';
+            text-decoration: underline; }
       @media screen and (max-width: 991px) {
         header > .container .socials {
           text-align: center; } }

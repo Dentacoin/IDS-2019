@@ -1,5 +1,5 @@
 @if(!empty($first_free_hour))
-    <form method="POST" action="{{ route('submit-schedule-a-meeting') }}">
+    <form method="POST" action="{{ route('submit-schedule-a-meeting', ['lang' => config('app.locale')]) }}">
         <input type="hidden" name="date-slug" value="1"/>
         <input type="hidden" name="hour" value="{{$first_free_hour->id}}"/>
         <div class="container">
@@ -24,19 +24,19 @@
                             </select>
                         </div>
                         <div class="form-cell-40 cell inline-block-bottom">
-                            <label for="fname">First name*</label>
+                            <label for="fname">{{ __('content.fname') }}*</label>
                             <input type="text" name="fname" id="fname" maxlength="100" required/>
                         </div>
                         <div class="form-cell-40 cell inline-block-bottom">
-                            <label for="lname">Last name*</label>
+                            <label for="lname">{{ __('content.fname') }}*</label>
                             <input type="text" name="lname" id="lname" maxlength="100" required/>
                         </div>
                         <div class="form-cell-50 cell inline-block-bottom">
-                            <label for="email">Business Email Address*</label>
+                            <label for="email">{{ __('content.business_email') }}*</label>
                             <input type="email" name="email" id="email" maxlength="100" required />
                         </div>
                         <div class="form-cell-50 cell inline-block-bottom">
-                            <label for="country">Country*</label>
+                            <label for="country">{{ __('content.country') }}*</label>
                             <select name="country" id="country" class="selectpicker required" title="Country" data-live-search="true" required>
                                 <option>Afghanistan</option>
                                 <option>Åland Islands</option>
@@ -290,24 +290,24 @@
                             </select>
                         </div>
                         <div class="form-cell-50 cell inline-block-bottom">
-                            <label for="company-or-practise">Company/ Practice You Represent*</label>
+                            <label for="company-or-practise">{{ __('content.company_or_practise') }}*</label>
                             <input type="text" name="company-or-practise" id="company-or-practise" maxlength="255" required/>
                         </div>
                         <div class="form-cell-50 cell inline-block-bottom">
-                            <label for="job">Your Job Title*</label>
+                            <label for="job">{{ __('content.job_title') }}*</label>
                             <input type="text" name="job" id="job" maxlength="255" required/>
                         </div>
                         <div class="form-cell-100 cell inline-block-bottom">
-                            <label for="website">Company Website/ Social Page*</label>
+                            <label for="website">{{ __('content.company_website') }}*</label>
                             <input type="url" name="website" id="website" maxlength="255" required/>
                         </div>
                         <div class="form-cell-100 cell inline-block-bottom">
-                            <label for="note">Do you have any specific inquiry or any additional information you'd like to share?</label>
+                            <label for="note">{{ __('content.any_specific_inquiry') }}</label>
                             <textarea name="note" id="note" rows="3" maxlength="3000"></textarea>
                         </div>
                         <div class="form-cell-100 cell captcha-parent">
                             <div class="inline-block fs-14 width-50">
-                                <input type="text" name="captcha" id="captcha" placeholder="Enter captcha" maxlength="5" required/>
+                                <input type="text" name="captcha" id="captcha" placeholder="{{ __('content.enter_captcha') }}" maxlength="5" required/>
                             </div>
                             <div class="inline-block width-50">
                                 <div class="captcha-container flex">
@@ -320,7 +320,7 @@
                         </div>
                         <div class="padding-top-10 padding-left-10 text-left">
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
-                            <button type="submit" class="white-solid-blue-btn min-width-200">SCHEDULE</button>
+                            <button type="submit" class="white-solid-blue-btn min-width-200">{{ __('content.schedule_btn') }}</button>
                         </div>
                     </div>
                 </div>
@@ -328,5 +328,5 @@
         </div>
     </form>
 @else
-    <div class="text-center padding-top-50 padding-bottom-50 padding-left-15 padding-right-15 fs-20 lato-black">All hours are taken for this day.</div>
+    <div class="text-center padding-top-50 padding-bottom-50 padding-left-15 padding-right-15 fs-20 lato-black">{{ __('content.all_hours_taken') }}</div>
 @endif
