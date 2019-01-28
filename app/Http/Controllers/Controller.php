@@ -129,7 +129,7 @@ class Controller extends BaseController
         return response()->json(['captcha' => captcha_img()]);
     }
 
-    protected function getMeetingDay($id) {
+    protected function getMeetingDay($lang, $id) {
         $view = view('partials/schedule-a-meeting', ['meeting_hours' => (new MeetingsController())->getMeetingHoursForDay($id), 'first_free_hour' => (new MeetingsController())->getFirstFreeMeetingForDay($id)]);
         $view = $view->render();
         return response()->json(['success' => $view]);
