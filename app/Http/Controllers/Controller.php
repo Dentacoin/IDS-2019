@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 use App\MenuElement;
 use App\Menu;
 use Illuminate\Support\Facades\Mail;
-
+use Illuminate\Support\Facades\Lang;
 
 class Controller extends BaseController
 {
@@ -172,12 +172,12 @@ class Controller extends BaseController
 
         //check email validation
         if(!filter_var($request->input('email'), FILTER_VALIDATE_EMAIL))   {
-            return redirect()->route('home')->with(['error' => 'Please provide valid email address.']);
+            return redirect()->route('home', ['lang' => Lang::locale()])->with(['error' => 'Please provide valid email address.']);
         }
 
         //check if this hour is not engaged yet
         if(MeetingParticipant::where(array('hour_id' => strip_tags(trim($request->input('hour'))), 'type' => 'approved'))->get()->first()) {
-            return redirect()->route('home')->with(['error' => 'There is already registered meeting for this hour.']);
+            return redirect()->route('home', ['lang' => Lang::locale()])->with(['error' => 'There is already registered meeting for this hour.']);
         }
 
         //check if this email is not registered already
@@ -227,9 +227,9 @@ class Controller extends BaseController
             });
             //=== /submit notification email to ids.dentacoin.com administrator ===
 
-            return redirect()->route('home')->with(['success' => 'Thank you for scheduling a meeting with our delegates to IDS! Please, check your mailbox and follow the link in the email we have sent you to complete your request.']);
+            return redirect()->route('home', ['lang' => Lang::locale()])->with(['success' => 'Thank you for scheduling a meeting with our delegates to IDS! Please, check your mailbox and follow the link in the email we have sent you to complete your request.']);
         }else {
-            return redirect()->route('home')->with(['error' => 'This email is already registered.']);
+            return redirect()->route('home', ['lang' => Lang::locale()])->with(['error' => 'This email is already registered.']);
         }
     }
 
@@ -260,7 +260,7 @@ class Controller extends BaseController
             });
             //=== /submit notification email to ids.dentacoin.com administrator ===
 
-            return redirect()->route('home')->with(['success' => 'Your meeting request has been confirmed! See you in March 2019 at Koelnmesse!']);
+            return redirect()->route('home', ['lang' => Lang::locale()])->with(['success' => 'Your meeting request has been confirmed! See you in March 2019 at Koelnmesse!']);
         } else {
             return abort(404);
         }
