@@ -82,7 +82,7 @@
     <header>
         <div class="container">
             <div class="row fs-0">
-                <nav class="col-xs-3 @if(isset($mobile) && $mobile) col-md-8 @else col-md-9 @endif menu inline-block">
+                <nav class="col-xs-3 @if(isset($mobile) && $mobile) col-md-8 @else col-md-10 @endif menu inline-block">
                     <ul itemscope="" itemtype="http://schema.org/SiteNavigationElement">
                         <li class="inline-block logo">
                             <figure itemscope="" itemtype="http://schema.org/Organization">
@@ -110,7 +110,7 @@
                         @endif
                     </ul>
                 </nav>
-                <nav class="col-md-3 col-xs-6 socials inline-block">
+                <nav class="col-md-2 col-xs-6 socials inline-block">
                     @php($social_menu = \App\Http\Controllers\Controller::instance()->getMenu('socials'))
                     @if(sizeof($social_menu) > 0)
                         <ul itemscope="" itemtype="http://schema.org/SiteNavigationElement">

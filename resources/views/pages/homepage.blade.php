@@ -242,7 +242,14 @@
             @foreach($meeting_days as $day)
                 <a href="javascript:void(0)" class="single inline-block-top text-center @if(!$active_day) active
                 @php($active_day = true) @endif" data-slug="{{$day->id}}">
-                    <div class="month">{{$day->month}}</div>
+                    <div class="month">
+                        @if(config('app.locale') == 'en')
+                            {{$day->month}}
+                        @elseif(config('app.locale') == 'de')
+                            @php($hour = str_replace('march', 'märz', $day->month))
+                            {{$hour}}
+                        @endif
+                    </div>
                     <div class="day lato-black">{{$day->day}}</div>
                     <div class="triangle-active"></div>
                 </a>
@@ -337,12 +344,19 @@
                             <p class="email-octopus-error-message text-center">&nbsp;</p>
 
                             <div class="email-octopus-form-row fs-0 padding-top-15">
-                                <div class="inline-block title"><label class="fs-18" for="field_3">Title:</label> <select id="field_3" name="field_3"><option value="Dr.">Mr.</option><option value="Ms.">Ms.</option><option value="Dr.">Dr.</option><option value="Prof.">Prof.</option><option value="Prof. Dr.">Prof. Dr.</option> </select></div>
+                                <div class="inline-block title"><label class="fs-18" for="field_3">Title:</label>
+                                    <select id="field_3" name="field_3">
+                                        <option value="{{ __('content.title_option_mr') }}">{{ __('content.title_option_mr') }}</option>
+                                        <option value="{{ __('content.title_option_mrs') }}">{{ __('content.title_option_mrs') }}</option>
+                                        <option value="{{ __('content.title_option_dr') }}">{{ __('content.title_option_dr') }}</option>
+                                        <option value="{{ __('content.title_option_prof') }}">{{ __('content.title_option_prof') }}</option>
+                                        <option value="{{ __('content.title_option_prof_dr') }}">{{ __('content.title_option_prof_dr') }}</option>
+                                    </select></div>
 
                                 <div class="inline-block name"><label class="fs-18" for="field_4">Name:</label> <input class="email-octopus-field" id="field_4" name="field_4" placeholder="" type="text" /></div>
                             </div>
 
-                            <div class="email-octopus-form-row"><label class="fs-18" for="field_0">Email:</label> <input class="email-octopus-field" id="field_0" name="field_0" placeholder="" type="email" /></div>
+                            <div class="email-octopus-form-row"><label class="fs-18" for="field_0">{{ __('content.newsletter_email') }}:</label> <input class="email-octopus-field" id="field_0" name="field_0" placeholder="" type="email" /></div>
 
                             <div class="email-octopus-form-row-consent privacy-policy-row fs-0"><input class="email-octopus-checkbox" id="consent" name="consent" type="checkbox" /> <label class="fs-14" for="consent">{!! __('content.privacy_policy_text') !!}</label></div>
 

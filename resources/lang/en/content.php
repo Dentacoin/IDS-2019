@@ -43,6 +43,7 @@ return array(
     'fname' => 'First name',
     'lname' => 'Last name',
     'business_email' => 'Business Email Address',
+    'newsletter_email' => 'E-Mail',
     'country' => 'Country',
     'company_or_practise' => 'Company/ Practice You Represent',
     'job_title' => 'Your Job Title',
@@ -54,4 +55,9 @@ return array(
     'privacy_policy_text' => 'By submitting the form, you agree to our <a href="//dentacoin.com/privacy-policy" rel="noopener noreferrer" target="_blank">Privacy Policy</a>.',
     'sign_up' => 'SIGN UP',
     'enter_captcha' => 'Enter captcha',
+    'title_option_mr' => 'Mr.',
+    'title_option_mrs' => 'Mrs.',
+    'title_option_dr' => 'Dr.',
+    'title_option_prof' => 'Prof.',
+    'title_option_prof_dr' => 'Prof. Dr.',
 );

@@ -7,7 +7,13 @@
                 <div class="col-xs-12 col-sm-3 col-sm-offset-1 col-lg-2 col-lg-offset-3 hours">
                     @foreach($meeting_hours as $hour)
                         <div class="text-center padding-bottom-10">
-                            <a href="javascript:void(0)" class="solid-blue-white-btn max-width-260 margin-0-auto @if($first_free_hour->id == $hour->id) active @endif @if($hour->engaged) disabled @endif" data-hour="{{$hour->id}}">{{$hour->hour}}</a>
+                            <a href="javascript:void(0)" class="solid-blue-white-btn max-width-260 margin-0-auto @if($first_free_hour->id == $hour->id) active @endif @if($hour->engaged) disabled @endif" data-hour="{{$hour->id}}">
+                                @if(config('app.locale') == 'en')
+                                    {{$hour->hour}}
+                                @elseif(config('app.locale') == 'de')
+                                    {{$hour->hour_de}}
+                                @endif
+                            </a>
                         </div>
                     @endforeach
                 </div>
