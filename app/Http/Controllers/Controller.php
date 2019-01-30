@@ -207,7 +207,7 @@ class Controller extends BaseController
             $participant->save();
 
             //=== submit email for approval to the user ===
-            $body = 'Hello,<br>Thank you for your meeting request! Please, follow <a href="https://ids.dentacoin.com/meeting-confirmation/'.$random_string.'" style="text-decoration: underline;font-weight: bold;">this link</a> to confirm your booking.<br>Looking forward to seeing you at IDS!<br><br><br>Kind regards,<br>Dentacoin Team';
+            $body = 'Hello,<br>Thank you for your meeting request! Please, follow <a href="https://ids.dentacoin.com/en/meeting-confirmation/'.$random_string.'" style="text-decoration: underline;font-weight: bold;">this link</a> to confirm your booking.<br>Looking forward to seeing you at IDS!<br><br><br>Kind regards,<br>Dentacoin Team';
             $email = $request->input('email');
 
             Mail::send(array(), array(), function($message) use ($email, $body) {
@@ -234,7 +234,7 @@ class Controller extends BaseController
     }
 
     //method for approving request. link is sent to user on his request to register for meeting with the team, the link points to this method
-    protected function meetingConfirmation($link) {
+    protected function meetingConfirmation($lang, $link) {
         $pending_participant = MeetingParticipant::where(array('approval_link' => $link))->get()->first();
         if($pending_participant) {
             $pending_participant->type = 'approved';
