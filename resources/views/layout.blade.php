@@ -198,7 +198,7 @@
                 </div>
             @endif
             <div class="row padding-bottom-50 text-center fs-13 bottom-text">
-                <div class="col-xs-12">© 2018 Dentacoin Foundation. All rights reserved. <a href="//dentacoin.com/privacy-policy" target="_blank">Privacy Policy</a></div>
+                <div class="col-xs-12">© 2019 Dentacoin Foundation. All rights reserved. <a href="//dentacoin.com/privacy-policy" target="_blank">Privacy Policy</a></div>
             </div>
         </div>
     </footer>

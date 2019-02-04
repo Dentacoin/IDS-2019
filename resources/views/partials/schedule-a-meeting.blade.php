@@ -20,7 +20,7 @@
                 <div class="col-xs-12 col-sm-7 col-lg-4 padding-top-xs-20">
                     <div class="form-row padding-bottom-15 fs-0">
                         <div class="form-cell-20 cell inline-block-bottom">
-                            <label for="title">Title*</label>
+                            <label for="title">{{ __('content.title_field') }}*</label>
                             <select id="title" name="title" class="selectpicker required" data-live-search="true" required>
                                 <option value="Dr.">Mr.</option>
                                 <option value="Ms.">Ms.</option>

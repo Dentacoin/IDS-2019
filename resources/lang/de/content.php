@@ -3,9 +3,9 @@
 return array(
     'page_heading' => 'Besuchen Sie DENTACOIN auf der IDS 2019',
     'below_heading' => 'Der “Bitcoin der Zahnindustrie” ist zum ersten Mal auf der Internationalen Dental-Schau und Weltleitmesse der Dentalbranche!',
-    'address' => '12. - 16. März | Köln Messe, Köln, Deutschland<br> Halle 11.3, Stand K060-L069',
+    'address' => '12. - 16. März | Koelnmesse, Deutschland<br> Halle 11.3, Stand K060-L069',
     'look_into_future' => 'BLICKEN SIE IN DIE ZUKUNFT DER ZAHNMEDIZIN',
-    'get_to_know' => 'Lernen Sie spielerisch die digitale Währung Dentacoin und derren Software Tools kennen. 
+    'get_to_know' => 'Lernen Sie spielerisch die digitale Währung Dentacoin und deren Software Tools kennen. 
 Erfahren Sie wie man Kryptowährungen aufbewahrt und erstellen Sie sich eine Wallet.',
     'every_advisor' => 'Jeder Besucher erhält Dentacoin Tokens kostenlos!',
     'schedule_a_meeting' => 'EIN TREFFEN VEREINBAREN',
@@ -28,7 +28,7 @@ Erfahren Sie wie man Kryptowährungen aufbewahrt und erstellen Sie sich eine Wal
     'transforming_the_future' => 'Transformation der Zukunft der Zahnmedizin durch die Blockchain Technologie',
     'core_founder' => 'Gründer &amp; Core Developer',
     'dcn_products' => 'DENTACOIN PRODUKTE',
-    'find_out' => 'Erfahren Sie mehr über das Dentacoin Ökosystem und allen Blockchain-basierten Apps auf einen Blick!',
+    'find_out' => 'Erfahren Sie mehr über das Dentacoin Ökosystem und alle Blockchain-basierten Apps auf einen Blick!',
     'dcn_crypto' => 'DCN Kryptowährung',
     'first_crypto' => 'Dentacoin ist die erste Kryptowährung, die für die Dentalbranche entwickelt wurde. Es kann als Zahlungsmethode genutzt werden oder in andere Währungen getauscht werden.',
     'dcn_wallet' => 'Dentacoin Wallet',
@@ -51,7 +51,7 @@ Erfahren Sie wie man Kryptowährungen aufbewahrt und erstellen Sie sich eine Wal
     'schedule_btn' => 'ZEITPLAN',
     'all_hours_taken' => 'Für diesen Tag sind alle Termine vergeben.',
     'we_are_social' => 'Besuchen Sie uns in den Sozialen Netzwerken:',
-    'privacy_policy_text' => 'Mit dem Absenden des Formulars stimmen Sie unseren <a href="//dentacoin.com/privacy-policy" rel="noopener noreferrer" target="_blank">Datenschutzbestimmungen zu</a>.',
+    'privacy_policy_text' => 'Mit dem Absenden des Formulars stimmen Sie unseren <a href="//dentacoin.com/privacy-policy" rel="noopener noreferrer" target="_blank">Datenschutzbestimmungen</a> zu.',
     'sign_up' => 'ANMELDEN',
     'enter_captcha' => 'Geben Sie das Captcha ein',
     'title_option_mr' => 'Herr',
@@ -59,4 +59,5 @@ Erfahren Sie wie man Kryptowährungen aufbewahrt und erstellen Sie sich eine Wal
     'title_option_dr' => 'Dr.',
     'title_option_prof' => 'Prof.',
     'title_option_prof_dr' => 'Prof. Dr.',
+    'title_field' => 'Andere'
 );

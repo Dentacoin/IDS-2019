@@ -344,7 +344,7 @@
                             <p class="email-octopus-error-message text-center">&nbsp;</p>
 
                             <div class="email-octopus-form-row fs-0 padding-top-15">
-                                <div class="inline-block title"><label class="fs-18" for="field_3">Title:</label>
+                                <div class="inline-block title"><label class="fs-18" for="field_3">{{ __('content.title_field') }}:</label>
                                     <select id="field_3" name="field_3">
                                         <option value="{{ __('content.title_option_mr') }}">{{ __('content.title_option_mr') }}</option>
                                         <option value="{{ __('content.title_option_mrs') }}">{{ __('content.title_option_mrs') }}</option>

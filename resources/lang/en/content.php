@@ -60,4 +60,5 @@ return array(
     'title_option_dr' => 'Dr.',
     'title_option_prof' => 'Prof.',
     'title_option_prof_dr' => 'Prof. Dr.',
+    'title_field' => 'Title'
 );
