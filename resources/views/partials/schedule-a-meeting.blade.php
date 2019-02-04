@@ -34,7 +34,7 @@
                             <input type="text" name="fname" id="fname" maxlength="100" required/>
                         </div>
                         <div class="form-cell-40 cell inline-block-bottom">
-                            <label for="lname">{{ __('content.fname') }}*</label>
+                            <label for="lname">{{ __('content.lname') }}*</label>
                             <input type="text" name="lname" id="lname" maxlength="100" required/>
                         </div>
                         <div class="form-cell-50 cell inline-block-bottom">
