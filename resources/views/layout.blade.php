@@ -6,13 +6,21 @@
     <link rel="shortcut icon" href="{{URL::asset('assets/images/favicon.png') }}" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
+    @if(config('app.locale') == 'en')
+        <title>Meet Dentacoin at IDS 2019: Look into the future of dentistry</title>
+        <meta name="description" content="Find us at Stand K060-L069, Hall 11.3 at the International Dental Show that will take place at Koelnmesse (Germany) on March 12-16, 2019" />
+        <meta name="keywords" content="IDS, IDS 2019, international dental show, koelnmesse, dental fair, dental summit, dental business summit, dentacoin, dental industry" />
+        <meta property="og:title" content="Meet Dentacoin at IDS 2019, Koelnmesse!"/>
+        <meta property="og:description" content="Come visit us at Stand K060-L069, Hall 11.3 at the 38th International Dental Show that will take place at Koelnmesse (Germany) on March 12-16, 2019"/>
+    @elseif(config('app.locale') == 'de')
+        <title>Treffen Sie Dentacoin auf der IDS 2019: Blicken Sie in die Zukunft der Zahnmedizin</title>
+        <meta name="description" content="Finden Sie uns am Stand K060-L069, Halle 11.3 auf der Internationalen Dental-Schau (IDS) organisiert von der Koelnmesse am 12-16.März 2019" />
+        <meta name="keywords" content="IDS, IDS 2019, internationale dental schau, dentalmesse, koelnmesse, dentalmedizin messe, zahnmedizin messe, weltleitmesse des dental business, dentacoin, dentalindustrie" />
+        <meta property="og:title" content="Treffen Sie Dentacoin auf der IDS 2019, Koelnmesse!"/>
+        <meta property="og:description" content="Besuchen Sie uns am Stand K060-L069, Halle 11.3 auf der 38. Internationalen Dental-Schau (IDS) veranstaltet von der Koelnmesse am 12-16.März 2019"/>
+    @endif
     @if(!empty($meta_data))
-        <title>{{$meta_data->title}}</title>
-        <meta name="description" content="{{$meta_data->description}}" />
-        <meta name="keywords" content="{{$meta_data->keywords}}" />
         <meta property="og:url" content="{{Request::url()}}"/>
-        <meta property="og:title" content="{{$meta_data->social_title}}"/>
-        <meta property="og:description" content="{{$meta_data->social_description}}"/>
         <meta property="og:type" content="website"/>
         @if(!empty($meta_data->media))
             <meta property="og:image" content="{{URL::asset('assets/uploads/'.$meta_data->media->name)}}"/>
@@ -20,8 +28,11 @@
             <meta property="og:image:height" content="630"/>
         @endif
     @endif
-    @if(!empty(Route::current()) && Route::current()->getName() == 'home')
-        <link rel="canonical" href="{{route('home', ['lang' => 'en'])}}" />
+    @if(!empty(Route::current()))
+        <link rel="canonical" href="{{route('home', ['lang' => config('app.locale')])}}" />
+        <link hreflang="en" href="{{route('home', ['lang' => 'en'])}}" rel="alternate" />
+        <link hreflang="de" href="{{route('home', ['lang' => 'de'])}}" rel="alternate" />
+        <link hreflang="x-default" href="{{route('home', ['lang' => 'en'])}}" rel="alternate"/>
     @endif
     <style>
         .email-octopus-form-wrapper h2{font-size:20px;margin:0 0 25px}.email-octopus-form-row{margin-bottom:15px}.email-octopus-form-row label{display:block}.email-octopus-form-row input{width:100%;max-width:400px;padding:8px;height:32px;border:1px solid #ccc}.email-octopus-form-row-consent{margin-top:20px}.email-octopus-form-row-consent label{vertical-align:top}.email-octopus-form-row-subscribe{margin-top:20px}.email-octopus-form-row-subscribe button{background-color:#e0e0e0;padding:6px 12px;border:0;font-weight:700}.email-octopus-form-row-hp{position:absolute;left:-5000px}.email-octopus-error-message{color:#e74c3c}.email-octopus-referral,.email-octopus-rewards{margin-top:20px}/*!

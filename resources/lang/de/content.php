@@ -2,10 +2,10 @@
 
 return array(
     'page_heading' => 'Besuchen Sie DENTACOIN auf der IDS 2019',
-    'below_heading' => 'Der “Bitcoin der Zahnindustrie” ist zum ersten mal auf der Internationale Dental-Schau und Weltleitmesse der Dentalbranche!',
+    'below_heading' => 'Der “Bitcoin der Zahnindustrie” ist zum ersten Mal auf der Internationalen Dental-Schau und Weltleitmesse der Dentalbranche!',
     'address' => '12. - 16. März | Köln Messe, Köln, Deutschland<br> Halle 11.3, Stand K060-L069',
     'look_into_future' => 'BLICKEN SIE IN DIE ZUKUNFT DER ZAHNMEDIZIN',
-    'get_to_know' => 'Lernen Sie spielerisch die digitale Währung Dentacoin und dessen Software Tools kennen.
+    'get_to_know' => 'Lernen Sie spielerisch die digitale Währung Dentacoin und derren Software Tools kennen. 
 Erfahren Sie wie man Kryptowährungen aufbewahrt und erstellen Sie sich eine Wallet.',
     'every_advisor' => 'Jeder Besucher erhält Dentacoin Tokens kostenlos!',
     'schedule_a_meeting' => 'EIN TREFFEN VEREINBAREN',
@@ -28,14 +28,14 @@ Erfahren Sie wie man Kryptowährungen aufbewahrt und erstellen Sie sich eine Wal
     'transforming_the_future' => 'Transformation der Zukunft der Zahnmedizin durch die Blockchain Technologie',
     'core_founder' => 'Gründer &amp; Core Developer',
     'dcn_products' => 'DENTACOIN PRODUKTE',
-    'find_out' => 'Erfahren Sie mehr über das Dentacoin Ökosystem und allen Blockchain-basierten Programme auf einen Blick!',
+    'find_out' => 'Erfahren Sie mehr über das Dentacoin Ökosystem und allen Blockchain-basierten Apps auf einen Blick!',
     'dcn_crypto' => 'DCN Kryptowährung',
     'first_crypto' => 'Dentacoin ist die erste Kryptowährung, die für die Dentalbranche entwickelt wurde. Es kann als Zahlungsmethode genutzt werden oder in andere Währungen getauscht werden.',
     'dcn_wallet' => 'Dentacoin Wallet',
     'decentralized_wallet' => 'Mit unserer dezentralisierten Wallet können Sie DCN kaufen, aufbewahren und sicher und einfach verwalten. Generieren Sie ein Secret Key File und starten Sie sofort!',
     'trp' => 'Trusted Reviews',
     'first_platform' => 'Die erste Plattform für verifizierte und Anreiz schaffende Bewertungen von Zahnbehandlungen, zu denen Patienten von ihren Ärzten persönlich eingeladen werden können.',
-    'peerless_market' => 'Eine Webseite Marktforschung, auf der Nutzer durch Beantwortung von zahnmedizinischen Fragen mit Dentacoin (DCN) belohnt werden.',
+    'peerless_market' => 'Eine Marktforschung-Webseite, auf der Nutzer durch Beantwortung von zahnmedizinischen Fragen mit Dentacoin (DCN) belohnt werden.',
     'gamified_mobile' => 'Eine App, die auf spielerische Art und Weise Kinder und Erwachsene bei der Mundhygiene mit einer 3-monatigen Challenge unterstützt.',
     'revolutionary' => 'Ein revolutionäres, versicherungsähnliches Modell, das sowohl Zahnärzte wie Patienten zu einer nachhaltigen und präventiven Zahnpflege anregt. ',
     'get_latest_updates' => 'AKTUELLE INFORMATIONEN',

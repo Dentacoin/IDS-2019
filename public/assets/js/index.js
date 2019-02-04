@@ -186,10 +186,22 @@ if($('body').hasClass('home')) {
                         $('.selectpicker').selectpicker('refresh');
                         bindHourButtonsEvents();
                         bindCaptchaRefreshEvent();
+                        bindFormSubmission();
                     }
                 }
             });
         });
+
+        function bindFormSubmission() {
+            $('form#submit-schedule-a-meeting').on('submit', function(event) {
+                var this_form = $(this);
+                if(this_form.find('input#website').val().trim() == '' || !basic.validateUrl(this_form.find('input#website').val().trim())) {
+                    event.preventDefault();
+                    basic.showAlert('Please enter your website URL starting with http:// or https://.');
+                }
+            });
+        }
+        bindFormSubmission();
 
         function bindHourButtonsEvents() {
             $('.schedule-a-meeting-section .form .hours .solid-blue-white-btn').click(function() {

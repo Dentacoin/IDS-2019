@@ -1,5 +1,5 @@
 @if(!empty($first_free_hour))
-    <form method="POST" action="{{ route('submit-schedule-a-meeting', ['lang' => config('app.locale')]) }}">
+    <form method="POST" id="submit-schedule-a-meeting" action="{{ route('submit-schedule-a-meeting', ['lang' => config('app.locale')]) }}">
         <input type="hidden" name="date-slug" value="1"/>
         <input type="hidden" name="hour" value="{{$first_free_hour->id}}"/>
         <div class="container">
@@ -305,7 +305,7 @@
                         </div>
                         <div class="form-cell-100 cell inline-block-bottom">
                             <label for="website">{{ __('content.company_website') }}*</label>
-                            <input type="url" name="website" id="website" maxlength="255" required/>
+                            <input type="text" name="website" id="website" maxlength="255" required/>
                         </div>
                         <div class="form-cell-100 cell inline-block-bottom">
                             <label for="note">{{ __('content.any_specific_inquiry') }}</label>
