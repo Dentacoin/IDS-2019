@@ -223,6 +223,30 @@
             </div>
         </div>
     </div>
+    <script type='application/ld+json'>
+{
+  "@context": "http://www.schema.org",
+  "@type": "Event",
+  "name": "DENTACOIN at IDS 2019",
+  "url": "https://ids.dentacoin.com",
+  "description": "The “Bitcoin of Dentistry” is making its first appearance at the World’s Leading Dental Summit!",
+  "startDate": "03/13/2019 09:00AM",
+  "endDate": "03/06/2019 06:00PM",
+  "image": "https://scontent-sof1-1.xx.fbcdn.net/v/t1.0-0/s350x350/46501377_625462404523493_7091251383793352704_n.jpg?_nc_cat=111&_nc_ht=scontent-sof1-1.xx&oh=aacb52b7a4ffe2cf7937d6b60d913cb8&oe=5CB4B772",
+  "location": {
+    "@type": "Place",
+    "name": "IDS 2019",
+    "sameAs": "http://english.ids-cologne.de",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Koelnmesse, Messepl. 1",
+      "addressLocality": "Cologne",
+      "postalCode": "50679",
+      "addressCountry": "Germany"
+    }
+  }
+ }
+ </script>
 {{--<script src="/assets/js/basic.js"></script>--}}
 <script src="/dist/js/front-libs-script.js?v=1.0.17"></script>
 <script src="/dist/js/front-script.js?v=1.0.17"></script>
