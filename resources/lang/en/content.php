@@ -60,5 +60,6 @@ return array(
     'title_option_dr' => 'Dr.',
     'title_option_prof' => 'Prof.',
     'title_option_prof_dr' => 'Prof. Dr.',
-    'title_field' => 'Title'
+    'title_field' => 'Title',
+    'agree_with_privacy_policy' => 'By submitting the form, you agree to our <a href="//dentacoin.com/privacy-policy" target="_blank">Privacy Policy</a>.',
 );

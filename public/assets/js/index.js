@@ -197,7 +197,10 @@ if($('body').hasClass('home')) {
                 var this_form = $(this);
                 if(this_form.find('input#website').val().trim() == '' || !basic.validateUrl(this_form.find('input#website').val().trim())) {
                     event.preventDefault();
-                    basic.showAlert('Please enter your website URL starting with http:// or https://.');
+                    basic.showAlert('Please enter your website URL starting with http:// or https://.', '', true);
+                }else if(!$('input#privacy-policy').is(':checked')) {
+                    event.preventDefault();
+                    basic.showAlert('Please agree with our Privacy policy.', '', true);
                 }
             });
         }

@@ -324,6 +324,10 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="form-cell-100 cell fs-14 checkbox-container">
+                            <input type="checkbox" id="privacy-policy"/>
+                            <label for="privacy-policy" class="inline-block-important">{!! __('content.agree_with_privacy_policy') !!}</label>
+                        </div>
                         <div class="padding-top-10 padding-left-10 text-left">
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <button type="submit" class="white-solid-blue-btn min-width-200">{{ __('content.schedule_btn') }}</button>

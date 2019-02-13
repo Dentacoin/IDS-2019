@@ -112,7 +112,7 @@
                     <div class="single inline-block-top">
                         <figure itemscope="" itemtype="http://schema.org/ImageObject"><img alt="" class="max-width-60 margin-bottom-10" itemprop="contentUrl" src="/assets/uploads/statistic5.svg" /></figure>
 
-                        <div class="fs-40 fs-xs-35 lato-light padding-top-10 lato-light">40K+</div>
+                        <div class="fs-40 fs-xs-35 lato-light padding-top-10 lato-light">42K+</div>
 
                         <div class="fs-18 lato-bold padding-bottom-xs-25">{{ __('content.token_holders') }}</div>
                     </div>
@@ -120,7 +120,7 @@
                     <div class="single inline-block-top">
                         <figure itemscope="" itemtype="http://schema.org/ImageObject"><img alt="" class="max-width-60 margin-bottom-10" itemprop="contentUrl" src="/assets/uploads/statistic3.svg" /></figure>
 
-                        <div class="fs-40 fs-xs-35 lato-light padding-top-10 lato-light">175K+</div>
+                        <div class="fs-40 fs-xs-35 lato-light padding-top-10 lato-light">190K+</div>
 
                         <div class="fs-18 lato-bold padding-bottom-xs-25">{{ __('content.dcn_transactions') }}</div>
                     </div>

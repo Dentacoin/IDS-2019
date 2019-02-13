@@ -5397,6 +5397,18 @@ footer .bottom-text a {
         width: 100%; }
         .schedule-a-meeting-section .form .form-row .cell.captcha-parent .width-50 .captcha-container {
           padding-top: 10px; } }
+.schedule-a-meeting-section .form .checkbox-container label {
+  font-weight: normal;
+  cursor: pointer; }
+  .schedule-a-meeting-section .form .checkbox-container label a {
+    text-decoration: underline;
+    font-weight: bold; }
+.schedule-a-meeting-section .form .checkbox-container #privacy-policy {
+  display: inline-block;
+  width: auto;
+  margin-top: 0;
+  vertical-align: middle;
+  margin-right: 5px; }
 
 .dentacoin-products-section figure {
   position: relative; }

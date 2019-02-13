@@ -59,5 +59,6 @@ Erfahren Sie wie man Kryptowährungen aufbewahrt und erstellen Sie sich eine Wal
     'title_option_dr' => 'Dr.',
     'title_option_prof' => 'Prof.',
     'title_option_prof_dr' => 'Prof. Dr.',
-    'title_field' => 'Anrede'
+    'title_field' => 'Anrede',
+    'agree_with_privacy_policy' => 'Mit dem Absenden dieses Formulars stimmen Sie unserer <a href="//dentacoin.com/privacy-policy" target="_blank">Datenschutzerklärung</a> zu.',
 );

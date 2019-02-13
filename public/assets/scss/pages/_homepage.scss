@@ -413,6 +413,23 @@
                 }
             }
         }
+        .checkbox-container {
+            label {
+                font-weight: normal;
+                cursor: pointer;
+                a {
+                    text-decoration: underline;
+                    font-weight: bold;
+                }
+            }
+            #privacy-policy {
+                display: inline-block;
+                width: auto;
+                margin-top: 0;
+                vertical-align: middle;
+                margin-right: 5px;
+            }
+        }
     }
 }
 
