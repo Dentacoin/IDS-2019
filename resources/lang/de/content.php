@@ -2,7 +2,7 @@
 
 return array(
     'page_heading' => 'Besuchen Sie DENTACOIN auf der IDS 2019',
-    'below_heading' => 'Der “Bitcoin der Zahnindustrie” ist zum ersten Mal auf der Internationalen Dental-Schau und Weltleitmesse der Dentalbranche!',
+    'below_heading' => 'Der “Bitcoin der Dentalindustrie” ist zum ersten Mal auf der Internationalen Dental-Schau und Weltleitmesse der Dentalbranche!',
     'address' => '12. - 16. März | Koelnmesse, Deutschland<br> Halle 11.3, Stand K060-L069',
     'look_into_future' => 'BLICKEN SIE IN DIE ZUKUNFT DER ZAHNMEDIZIN',
     'get_to_know' => 'Lernen Sie spielerisch die digitale Währung Dentacoin und deren Software Tools kennen. 
