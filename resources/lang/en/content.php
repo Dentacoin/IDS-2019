@@ -11,7 +11,7 @@ return array(
     'what_is_dcn' => 'WHAT IS DENTACOIN?',
     'dcn_is_the_first' => 'Dentacoin is the first Blockchain solution for the global dental industry. It stands for a cryptocurrency and an integrated platform of software tools created to favor all - dentists, patients, and dental manufacturers.<br />
                         <br />
-                        Dentacoin helps dental professionals develop successful, prevention-focused practices and mutually beneficial, future-proof relations with their patients. <a class="calibri-bold color-dark-blue" href="//dentacoin.com/" target="_blank">Learn more...</a>',
+                        Dentacoin helps dental professionals develop successful, prevention-focused practices and mutually beneficial, future-proof relations with their patients. <a class="calibri-bold color-dark-blue" href="//dentacoin.com/assets/uploads/dentacoin-fact-sheet.pdf" target="_blank">Learn more...</a>',
     'dcn_dentists' => 'Dentacoin Dentists',
     'locations_accepting_dcn' => 'Locations Accepting DCN',
     'active_users' => 'Active Users &amp; Subscribers',

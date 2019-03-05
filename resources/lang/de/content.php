@@ -10,7 +10,7 @@ Erfahren Sie wie man Kryptowährungen aufbewahrt und erstellen Sie sich eine Wal
     'every_advisor' => 'Jeder Besucher erhält Dentacoin Tokens kostenlos!',
     'schedule_a_meeting' => 'EIN TREFFEN VEREINBAREN',
     'what_is_dcn' => 'WAS IST DENTACOIN?',
-    'dcn_is_the_first' => 'Dentacoin ist die erste Blockchain Lösung für die globale Dentalbranche. Dahinter steht eine Kryptowährung und eine integrierte Plattform verschiedener Software Tools, die Zahnärzten, Patienten und Herstellern gleichermaßen Vorteile bietet.<br /> <br /> Dentacoin hilft Ärzten und Spezialisten, erfolgreiche Behandlungsmethoden mit Fokus auf Prävention zu entwickeln und eine zukunftssichere Beziehung zu deren Patienten aufzubauen. <a class="calibri-bold color-dark-blue" href="//dentacoin.com/" target="_blank">Mehr erfahren...</a>',
+    'dcn_is_the_first' => 'Dentacoin ist die erste Blockchain Lösung für die globale Dentalbranche. Dahinter steht eine Kryptowährung und eine integrierte Plattform verschiedener Software Tools, die Zahnärzten, Patienten und Herstellern gleichermaßen Vorteile bietet.<br /> <br /> Dentacoin hilft Ärzten und Spezialisten, erfolgreiche Behandlungsmethoden mit Fokus auf Prävention zu entwickeln und eine zukunftssichere Beziehung zu deren Patienten aufzubauen. <a class="calibri-bold color-dark-blue" href="//dentacoin.com/assets/uploads/was-ist-dentacoin.pdf" target="_blank">Mehr erfahren...</a>',
     'dcn_dentists' => 'Dentacoin Zahnärzte',
     'locations_accepting_dcn' => 'Orte, die DCN akzeptieren',
     'active_users' => 'Nutzer und Abonnenten',
