@@ -35,6 +35,26 @@
     }
 }
 
+.white-dark-blue-btn {
+    font-size: 20px;
+    color: white;
+    background-color: $dark_blue;
+    padding: 10px 20px;
+    font-family: 'Calibri-Bold';
+    border: 2px solid $dark_blue;
+    text-align: center;
+    display: inline-block;
+    @include rounded(4px);
+    @include simple_transition(.3s);
+    &:hover {
+        color: $dark_blue;
+        background-color: white;
+    }
+    &:focus {
+        color: white;
+    }
+}
+
 .solid-blue-white-btn {
     font-size: 20px;
     color: $solid_blue;

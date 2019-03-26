@@ -1,56 +1,223 @@
-.intro-section {
-    .intro-image {
-        position: relative;
-        background-image: url(/assets/uploads/ids-hero-image.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        .centered {
-            width: 70%;
-            margin: 0 auto;
+body.home {
+    @include breakpoint($xs)    {
+        .modal-backdrop.in {
+            background-color: white;
+            opacity: 1;
+        }
+    }
+}
+
+.top-homepage-slider-section {
+    position: relative;
+    .slider {
+        img {
+            width: 100%;
+        }
+    }
+    .ids-square {
+        z-index: 50;
+        position: absolute;
+        top: 100%;
+        left: 10%;
+        width: 150px;
+        -webkit-transform: translateY(-70%);
+        -ms-transform: translateY(-70%);
+        transform: translateY(-70%);
+        @include breakpoint($sm-down) {
+            display: none;
+        }
+    }
+    .timer {
+        z-index: 50;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 450px;
+        background-color: white;
+        -webkit-transform: translateY(-70%);
+        -ms-transform: translateY(-70%);
+        transform: translateY(-70%);
+        padding: 30px 50px 40px;
+        @include rounded(4px 0 0 4px);
+        @include box-shadow(0 5px 18px 0 rgba(0, 0, 0, 0.5));
+        @include breakpoint($md-only) {
+            padding: 30px 20px 40px;
+            width: 400px;
         }
         @include breakpoint($sm-down) {
-            background-image: url(/assets/uploads/ids-hero-image-mobile.png);
-            .centered {
-                width: 100%;
-                padding-left: 15px;
-                padding-right: 15px;
+            position: static;
+            -webkit-transform: none;
+            -ms-transform: none;
+            transform: none;
+            width: 100%;
+            margin-top: 20px;
+            @include rounded(4px);
+        }
+        @include breakpoint($xs) {
+            padding: 30px 10px 40px;
+        }
+    }
+    .clock {
+        margin: 0;
+        ul li a div div.inn {
+            font-size: 40px;
+            @include breakpoint($xs) {
+                font-size: 35px;
+            }
+        }
+        ul {
+            width: 35px;
+            height: 50px;
+            li {
+                line-height: 50px;
+            }
+            &.flip {
+                float: none;
+                display: inline-block;
+            }
+            .inn {
+                background-color: $solid_blue;
+                color: white;
+            }
+            @include breakpoint($xs) {
+                margin: 3px;
+                width: 30px;
+            }
+        }
+        .flip-clock-divider {
+            float: none;
+            height: 60px;
+            width: 10px;
+            .flip-clock-dot {
+                width: 5px;
+                height: 5px;
+                left: 2.5px;
+                &.top {
+                    top: 20px;
+                }
+                &.bottom {
+                    bottom: 20px;
+                }
+            }
+            .flip-clock-label {
+                font-size: 13px;
+                text-transform: uppercase;
+                bottom: -15px;
+                top: auto;
+            }
+            &.hours {
+                .flip-clock-label {
+                    right: -70px;
+                }
+            }
+            &.minutes {
+                .flip-clock-label {
+                    right: -75px;
+                }
             }
         }
     }
 }
 
-.address-section {
-    width: 80%;
-    padding-left: 15%;
-    transform: translateY(-50%);
-    position: relative;
-    @include box-shadow(0 5px 18px 0 rgba(0, 0, 0, 0.5));
-    @include rounded(0 4px 4px 0);
+.achievements-section {
     figure {
-        right: 30px;
-        @include vertical-align(absolute);
-    }
-    @include breakpoint($sm-down) {
-        width: 100%;
-        transform: none;
-        padding-left: 15px;
-        @include rounded(0);
-        figure {
-            right: 15px;
+        img {
+            max-width: 80px;
         }
-        .address {
-            width: calc(100% - 140px);
+        figcaption {
+            span {
+                display: block;
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
         }
     }
 }
 
-.look-into-future-section {
+.highlights-section {
+    .single-highlight {
+        padding-left: 20px;
+        padding-right: 20px;
+        > a {
+            display: block;
+            figure {
+                width: 50%;
+            }
+            .content {
+                width: 50%;
+                time {
+                    display: block;
+                    color: $light_gray;
+                    text-transform: uppercase;
+                    font-size: 14px;
+                    padding-bottom: 15px;
+                }
+            }
+            @include breakpoint($xs) {
+                figure {
+                    width: 100%;
+                }
+                .content {
+                    width: 100%;
+                    padding-top: 15px;
+                }
+            }
+        }
+    }
+}
+
+.gallery-section {
+    .single-photo {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+.ids-speakers-corner-section {
     video {
         width: 100%;
     }
 }
 
+.team-members-section {
+    .single-team-member {
+        padding-left: 15px;
+        padding-right: 15px;
+        text-align: center;
+        figure {
+            overflow: hidden;
+            @include rounded(50%);
+            img {
+                max-width: 230px;
+            }
+        }
+        .name {
+            font-size: 20px;
+            font-family: 'Lato-Bold';
+            padding-top: 15px;
+        }
+        .position {
+            font-size: 18px;
+        }
+        @include breakpoint($lgl) {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
+}
+
+.what-is-dcn-section {
+    iframe {
+        width: 100%;
+        border: 0;
+        height: 400px;
+    }
+}
+
 .testimonials-slider-section {
+    .slick-arrow.slick-disabled {
+        display: none;
+    }
     .single-testimonial {
         padding: 0 15px;
         height: auto;
@@ -91,95 +258,46 @@
     }
 }
 
-.below-testimonials-section {
+.statistics-section {
     figure {
-        text-align: center;
-    }
-    .single {
-        width: 20%;
-        padding-left: 10px;
-        padding-right: 10px;
-        @include breakpoint($sm-down) {
-            width: 100%;
-            padding-bottom: 25px;
+        figcaption {
+            span {
+                display: block;
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
         }
     }
 }
 
-.how-to-find-us-section {
-    .custom-container {
-        .mobile-address {
-            display: none;
-        }
-        .image {
-            margin-left: 10%;
-            width: 45%;
-            background-image: url(/assets/uploads/map.png);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
-            @include simple_transition(.3s);
-            img {
-                visibility: hidden;
-            }
-            &:hover {
-                background-image: url(/assets/uploads/map-hovered.png);
-            }
-        }
-        .shadow-box {
-            width: 45%;
-            padding-left: 50px;
-            @include rounded(4px 0 0 4px);
-            @include box-shadow(0 5px 18px 0 rgba(0, 0, 0, 0.5));
-        }
+.applications-section {
+    background-image: url('//dentacoin.com/assets/images/dentacoin-ecosystem-background.jpg');
+    background-position: center bottom 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    >.container {
+        max-width: 1300px;
     }
-    @include breakpoint($sm-down) {
-        .custom-container {
-            .mobile-address {
-                display: block;
+    .list {
+        button {
+            margin-bottom: 25px;
+            &:focus {
+                outline: 5px auto white;
+                outline-offset: -2px;
             }
-            .image {
-                margin-left: 15px;
-                margin-right: 15px;
-                margin-bottom: 15px;
-                width: calc(100% - 30px);
-                background-image: url(/assets/uploads/map-hovered-mobile.jpg);
-                &:hover {
-                    background-image: url(/assets/uploads/map-hovered-mobile.jpg);
+            figure {
+                text-align: center;
+                cursor: pointer;
+                figcaption {
+                    color: white;
+                    font-size: 18px;
+                    padding-top: 15px;
+                    @include breakpoint($xs) {
+                        font-size: 16px;
+                    }
                 }
             }
-            .shadow-box {
-                text-align: center;
-                width: 100%;
-                padding-left: 0;
-            }
-        }
-    }
-}
-
-.team-members-slider {
-    .single-team-member {
-        padding-left: 15px;
-        padding-right: 15px;
-        text-align: center;
-        figure {
-            overflow: hidden;
-            @include rounded(50%);
-            img {
-                max-width: 230px;
-            }
-        }
-        .name {
-            font-size: 20px;
-            font-family: 'Lato-Bold';
-            padding-top: 15px;
-        }
-        .position {
-            font-size: 18px;
-        }
-        @include breakpoint($lgl) {
-            padding-left: 30px;
-            padding-right: 30px;
         }
     }
 }
@@ -247,206 +365,6 @@
             width: 100%;
             margin-bottom: 20px;
             height: 550px;
-        }
-    }
-}
-
-.ids-speakers-corner-section {
-    .custom-container {
-        figure {
-            width: 60%;
-            overflow: hidden;
-            @include rounded(0 4px 4px 0);
-        }
-        .content {
-            padding-left: 30px;
-            width: 40%;
-        }
-        @include breakpoint($xs) {
-            figure {
-                width: 100%;
-                @include rounded(0);
-            }
-            .content {
-                width: 100%;
-                padding-left: 15px;
-                padding-right: 15px;
-            }
-        }
-    }
-    .addeventatc {
-        font-size: 20px;
-        color: #0177c1 !important;
-        background-color: white;
-        font-family: 'Calibri-Bold';
-        border: 2px solid #0177c1;
-        background: url(/assets/images/icon-calendar.svg);
-        background-size: 20px auto;
-        background-position: top 50% left 15px;
-        background-repeat: no-repeat;
-        z-index: 50;
-        @include simple_transition(.3s);
-        .atc_node {
-            display: none;
-        }
-        &:hover {
-            font-size: 20px;
-        }
-    }
-}
-
-.schedule-a-meeting-section {
-    .days {
-        .single {
-            width: 25%;
-            background-color: #d9d9d6;
-            color: #707372;
-            padding: 20px 10px 30px;
-            .month {
-                text-transform: uppercase;
-                font-size: 20px;
-            }
-            .day {
-                font-size: 80px;
-                line-height: 80px;
-            }
-            &.active {
-                background-color: $solid_blue;
-                color: white;
-                position: relative;
-                .triangle-active {
-                    width: 0;
-                    height: 0;
-                    border-left: 15px solid transparent;
-                    border-right: 15px solid transparent;
-                    border-bottom: 15px solid white;
-                    bottom: 0;
-                    @include horizontal-align(absolute);
-                }
-            }
-            @include breakpoint($xs) {
-                .month {
-                    font-size: 17px;
-                }
-                .day {
-                    font-size: 40px;
-                    line-height: 35px;
-                }
-            }
-        }
-    }
-    .form {
-        .hours {
-            .solid-blue-white-btn {
-                display: block;
-                border-width: 1px;
-                &:hover {
-                    border-width: 1px;
-                }
-                &.active {
-                    color: white;
-                    background-color: $solid_blue !important;
-                    border: 1px solid $solid_blue !important;
-                    &:hover {
-                        color: white !important;
-                        background-color: $solid_blue !important;
-                        border: 1px solid $solid_blue !important;
-                    }
-                    &:focus {
-                        color: white;
-                    }
-                }
-                &.disabled {
-                    color: $solid_gray;
-                    background-color: $input_background_gray;
-                    border: 1px solid $input_border_gray;
-                    opacity: 0.8;
-                    &:hover {
-                        color: $solid_gray;
-                        background-color: $input_background_gray;
-                        border: 1px solid $input_border_gray;
-                    }
-                }
-            }
-        }
-        .form-row {
-            @for $i from 0 through 10 * 2 {
-                .form-cell-#{$i * 5} {
-                    width: 0% + $i * 5!important;
-                }
-            }
-            .cell {
-                padding-left: 10px;
-                padding-right: 10px;
-                padding-bottom: 20px;
-                label {
-                    display: block;
-                    font-size: 14px;
-                    font-family: 'Lato-Light';
-                }
-                textarea, input, select {
-                    font-size: 14px;
-                    display: block;
-                    width: 100%;
-                    padding: 6px;
-                    background-color: $input_background_gray;
-                    border: 1px solid $input_border_gray;
-                    @include rounded(4px);
-                }
-                @include breakpoint($xs) {
-                    padding-left: 3px;
-                    padding-right: 3px;
-                }
-                &.captcha-parent {
-                    .width-50 {
-                        width: 50%;
-                        .captcha-container {
-                            text-align: center;
-                        }
-                        @include breakpoint($xs)    {
-                            width: 100%;
-                            .captcha-container {
-                                padding-top: 10px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        .checkbox-container {
-            label {
-                font-weight: normal;
-                cursor: pointer;
-                a {
-                    text-decoration: underline;
-                    font-weight: bold;
-                }
-            }
-            #privacy-policy {
-                display: inline-block;
-                width: auto;
-                margin-top: 0;
-                vertical-align: middle;
-                margin-right: 5px;
-            }
-        }
-    }
-}
-
-.dentacoin-products-section {
-    figure {
-        position: relative;
-        .hidden-image {
-            width: 0;
-            height: 0;
-            @include vertical-horizontal-align(absolute);
-            @include simple_transition(.3s);
-        }
-        &:hover {
-            .hidden-image {
-                width: 100%;
-                height: 100%;
-            }
         }
     }
 }

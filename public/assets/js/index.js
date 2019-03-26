@@ -1,10 +1,33 @@
 basic.init();
+
+//overwrite dynamic social menu from dentacoin.com
+if($('a[href="mailto:admin@dentacoin.com"]').length) {
+    $('a[href="mailto:admin@dentacoin.com"]').attr('href', 'mailto:business@dentacoin.com');
+}
+
 $(document).ready(function() {
+    if($('.clock').length) {
+        var clock;
+        var time_left = 61695868;
+        if(time_left > 0) {
+            clock = $('.clock').FlipClock(time_left, {
+                clockFace: 'DailyCounter',
+                autoStart: false,
+                showSeconds: false,
+            });
 
-});
+            clock.setCountdown(true);
+            clock.start();
 
-$(window).on('load', function() {
-
+            if($('body').hasClass('german')) {
+                $('.flip-clock-divider.days .flip-clock-label').html('TAGEN');
+                $('.flip-clock-divider.hours .flip-clock-label').html('STUNDEN');
+                $('.flip-clock-divider.minutes .flip-clock-label').html('MINUTEN');
+            }
+        }else {
+            $('.timer').hide();
+        }
+    }
 });
 
 $(window).on('load', function() {
@@ -89,84 +112,179 @@ bindCaptchaRefreshEvent();
 
 // ================== PAGES ==================
 if($('body').hasClass('home')) {
-    $('.testimonials-slider-section').slick({
-        slidesToShow: 4,
-        slidesToScroll: 4,
-        autoplay: true,
-        autoplaySpeed: 8000,
-        dots: true,
-        adaptiveHeight: true,
-        responsive: [
-            {
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3
-                }
-            },
-            {
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    dots: false
-                }
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    dots: false
-                }
-            }
-        ]
-    });
+    if($('.top-homepage-slider-section .slider').length) {
+        $('.top-homepage-slider-section .slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            arrows: false,
+            autoplaySpeed: 10000,
+            dots: true,
+            adaptiveHeight: true
+        });
+    }
 
-    $('.team-members-slider').slick({
-        slidesToShow: 4,
-        slidesToScroll: 4,
-        autoplay: true,
-        autoplaySpeed: 8000,
-        adaptiveHeight: true,
-        responsive: [
-            {
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3
+    if($('.highlights-section .slider').length) {
+        $('.highlights-section .slider').slick({
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            autoplay: true,
+            autoplaySpeed: 10000,
+            dots: false,
+            responsive: [
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
                 }
-            },
-            {
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    dots: false
-                }
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    dots: false
-                }
-            }
-        ]
-    });
+            ]
+        });
+    }
 
-    $('.testimonials-slider-section').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-        var height = 0;
-        for (var i = 0, len = 4; i < len; i += 1) {
-            if ($('.slick-slide').eq((nextSlide + 4) + i).height() > height) {
-                height = $('.slick-slide').eq((nextSlide + 4) + i).height();
+    if($('.gallery-section .slider').length) {
+        $('.gallery-section .slider').slick({
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            autoplay: true,
+            autoplaySpeed: 10000,
+            arrows: false,
+            dots: true,
+            infinite: false,
+            responsive: [
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+    }
+
+    if($('.team-members-section .slider').length) {
+        $('.team-members-section .slider').slick({
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            autoplay: true,
+            autoplaySpeed: 8000,
+            adaptiveHeight: true,
+            responsive: [
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3
+                    }
+                },
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        dots: false
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        dots: false
+                    }
+                }
+            ]
+        });
+    }
+
+    if($('.testimonials-slider-section').length) {
+        $('.testimonials-slider-section').slick({
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            autoplay: true,
+            autoplaySpeed: 10000,
+            dots: true,
+            infinite: false,
+            adaptiveHeight: true,
+            responsive: [
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3
+                    }
+                },
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        dots: false
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        dots: false
+                    }
+                }
+            ]
+        });
+    }
+
+    if(!basic.isMobile()) {
+        $('.testimonials-slider-section').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+            var height = 0;
+            for (var i = 0, len = 4; i < len; i+=1) {
+                if($('.testimonials-slider-section .slick-slide').eq(nextSlide + i).height() > height) {
+                    height = $('.testimonials-slider-section .slick-slide').eq(nextSlide + i).height();
+                }
             }
+            $('.testimonials-slider-section .slick-list').animate({height: height + 30}, 500);
+        });
+    }
+
+    //logic for open application popup
+    $('.single-application').click(function()   {
+        var this_btn = $(this).find('.wrapper');
+        var extra_html = '';
+        var media_html = '';
+        if(this_btn.attr('data-articles') != undefined)    {
+            extra_html+='<div class="extra-html"><div class="extra-title">Latest Blog articles:</div><ul>';
+            var articles_arr = $.parseJSON(this_btn.attr('data-articles'));
+            for(var i = 0, len = articles_arr.length; i < len; i+=1)    {
+                extra_html+='<li class="link"><a href="https://blog.dentacoin.com/'+articles_arr[i]['post_name']+'" target="_blank">'+articles_arr[i]['post_title']+'</a></li>';
+            }
+            extra_html+='</ul><div class="see-all"><a href="https://blog.dentacoin.com/" class="white-dark-blue-btn" target="_blank">GO TO ALL</a></div></div>';
         }
-        $('.testimonials-slider-section .slick-list').animate({height: height}, 500);
+        var description = this_btn.attr('data-description');
+        if(description != '') {
+            description = $.parseJSON(description);
+        }
+
+        if(['mp4', 'avi'].indexOf(this_btn.attr('data-image-type')) > -1) {
+            media_html+='<div itemprop="video" itemscope="" itemtype="http://schema.org/VideoObject" class="col-sm-6 video"><video autoplay loop muted controls="false"><source src="'+this_btn.attr('data-image')+'" type="video/'+this_btn.attr('data-image-type')+'"></video><meta itemprop="name" content="'+this_btn.attr('data-title')+'"><meta itemprop="uploadDate" content="'+this_btn.attr('data-upload-date')+'"></div>';
+        }else {
+            media_html+='<figure class="col-sm-6 gif"><img src="'+this_btn.attr('data-image')+'?'+new Date().getTime()+'" alt="'+this_btn.attr('data-image-alt')+'"/></figure>';
+        }
+
+        var html = '<div class="container-fluid"><div class="row">'+media_html+'<div class="col-sm-6 col-xs-12 content"><figure class="logo"><img src="'+this_btn.attr('data-popup-logo')+'" alt="'+this_btn.attr('data-popup-logo-alt')+'"/></figure><div class="title">'+this_btn.find('figcaption').html()+'</div><div class="description">'+description+'</div>'+extra_html+'</div></div></div>';
+        basic.showDialog(html, 'application-popup', this_btn.attr('data-slug'));
+        $('.application-popup video').removeAttr('controls');
     });
 
-    if($('.schedule-a-meeting-section').length > 0) {
+    /*if($('.schedule-a-meeting-section').length > 0) {
         $('.schedule-a-meeting-section .single').click(function() {
             var this_btn = $(this);
             $('.schedule-a-meeting-section .single').removeClass('active');
@@ -216,7 +334,7 @@ if($('body').hasClass('home')) {
             });
         }
         bindHourButtonsEvents();
-    }
+    }*/
 }
 
 //scroll to sections events
@@ -283,3 +401,36 @@ $('body').click(function(event) {
         $('body').removeClass('overflow-hidden');
     }
 });
+
+//header menu events
+$('header .mobile-ham').click(function()    {
+    $('nav.sidenav').addClass('active');
+});
+
+$('nav.sidenav .close-btn, nav.sidenav ul li a').click(function()    {
+    $('nav.sidenav').removeClass('active');
+});
+
+//scroll to sections events
+function initScrollingToEvents() {
+    if($('.scrolling-to-section').length > 0 && $('body').hasClass('home')) {
+        $('.scrolling-to-section').click(function() {
+            $(this).blur();
+            window.history.pushState($(this).find('span').html(), '', '/#'+$(this).attr('id'));
+            $("html, body").animate({scrollTop: $('[data-scroll-here="'+$(this).attr('id')+'"]').offset().top - $('header').outerHeight()}, 300);
+            return false;
+        });
+    }
+}
+initScrollingToEvents();
+
+//on page load if we have #parameter in the URL scroll down to section
+function scrollToSection(){
+    $('[data-scroll-here]').each(function(){
+        if(window.location.href.includes('#' + $(this).attr('data-scroll-here'))){
+            console.log($(this).attr('data-scroll-here'));
+            $("html, body").animate({scrollTop: $(this).offset().top - $('header').outerHeight()}, 300);
+            return false;
+        }
+    })
+}

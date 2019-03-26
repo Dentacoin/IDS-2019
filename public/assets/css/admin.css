@@ -132,6 +132,30 @@
       color: white;
       background-color: #9f9f9f; }
 
+.white-dark-blue-btn {
+  font-size: 20px;
+  color: white;
+  background-color: #041e42;
+  padding: 10px 20px;
+  font-family: 'Calibri-Bold';
+  border: 2px solid #041e42;
+  text-align: center;
+  display: inline-block;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s; }
+  .white-dark-blue-btn:hover {
+    color: #041e42;
+    background-color: white; }
+  .white-dark-blue-btn:focus {
+    color: white; }
+
 .solid-blue-white-btn {
   font-size: 20px;
   color: #0177c1;

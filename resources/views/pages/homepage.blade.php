@@ -1,180 +1,148 @@
 @extends("layout")
 @section("content")
-    <section class="intro-section">
-        <div class="intro-image padding-top-170 padding-top-xs-30 padding-bottom-220 padding-bottom-xs-50">
-            <div class="centered">
-                <h1 class="color-white fs-65 fs-xs-35 color-white lato-black">{{ __('content.page_heading') }}</h1>
-
-                <div class="fs-32 fs-xs-20 padding-top-30 lato-bold color-white">{!! __('content.below_heading') !!}</div>
+    <section class="top-homepage-slider-section">
+        @if(!empty($slider))
+            <div class="slider">
+                @foreach($slider as $slide)
+                    <figure itemscope="" itemtype="http://schema.org/ImageObject"><img alt="{{$slide->media->alt}}" itemprop="contentUrl" src="/assets/uploads/{{$slide->media->name}}" /></figure>
+                @endforeach
             </div>
+        @endif
+        <div class="ids-square">
+            <figure itemscope="" itemtype="http://schema.org/ImageObject"><img alt="IDS logo" itemprop="contentUrl" src="/assets/uploads/ids-logo-2019.jpg" />
+                <figcaption class="text-center lato-bold fs-20 line-height-14">12.-16.3.2019</figcaption>
+            </figure>
+        </div>
+        <div class="timer">
+            <h2 class="lato-bold fs-32 fs-xs-20 text-center padding-bottom-15">{{ __('content.ids_starts_in') }}</h2>
+            <div class="clock"></div>
         </div>
     </section>
-
-    <section class="address-section padding-top-20 padding-bottom-20 padding-top-xs-10 padding-bottom-xs-10 color-white-bg fs-0">
-        <div class="inline-block fs-18 fs-xs-16 color-black address">{!! __('content.address') !!}</div>
-        <figure class="inline-block" itemscope="Ids logo 2019" itemtype="http://schema.org/ImageObject"><img alt="" class="max-width-140 max-width-xs-120" itemprop="contentUrl" src="/assets/uploads/ids-logo-2019.jpg" /></figure>
-    </section>
-
-    <section class="look-into-future-section padding-top-70 padding-top-xs-50">
+    <section class="achievements-section text-center padding-top-100 padding-bottom-70 padding-top-xs-50 padding-bottom-xs-0">
         <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 text-center">
-                    <h2 class="lato-bold fs-35 fs-xs-26 color-black padding-bottom-20 padding-bottom-xs-0 ">{{ __('content.look_into_future') }}</h2>
-
-                    <div class="fs-20 fs-xs-16 padding-top-20 padding-bottom-20 line-height-24">{{ __('content.get_to_know') }}</div>
-
-                    <div class="fs-20 fs-xs-16 calibri-regular padding-bottom-sm-20"><strong>{{ __('content.every_advisor') }}</strong></div>
-
-                    <div class="padding-top-30 padding-bottom-100 padding-bottom-xs-30"><a class="white-solid-blue-btn min-width-250 scrolling-to-section" href="javascript:void(0);" id="schedule-a-meeting" target="_blank">{{ __('content.schedule_a_meeting') }}</a></div>
-                </div>
-
-                <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 text-center">
-                    <div itemprop="video" itemscope="" itemtype="http://schema.org/VideoObject">
-                        <video controls="" poster="/assets/images/video-thumb.png"><source src="/assets/videos/dentacoin-introduction.mp4" type="video/mp4" /> <track default="" kind="captions" label="English" src="/assets/videos/dentacoin-introduction.vtt" srclang="en" /> Your browser does not support HTML5 video.</video>
-
-                        <link href="/assets/videos/dentacoin-video-thumb.jpg" itemprop="thumbnailUrl" />
-                        <link href="/assets/videos/dentacoin-introduction.mp4" itemprop="contentURL" />
-                        <meta itemprop="name" content="Dentacoin Introduction Video">
-                        <meta itemprop="description" content="Explainer video: Dentacoin, the Blockchain Solution for the Global Dentistry">
-                        <meta itemprop="uploadDate" content="2017-03-20T08:00:00+08:00"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="padding-top-80 padding-bottom-50 padding-top-xs-30 padding-bottom-xs-20">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
-                    <h2 class="lato-bold fs-35 fs-xs-26 padding-bottom-20 text-center color-black">{{ __('content.what_is_dcn') }}</h2>
-                    <div class="fs-20 fs-xs-16">{!! __('content.dcn_is_the_first') !!}</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="padding-top-50 padding-bottom-50 padding-top-xs-30">
-        <div class="container">
-            <div class="row">
+            <div class="row fs-0">
                 <div class="col-xs-12">
-                    <div class="testimonials-slider-section">
-                        @foreach($testimonials as $testimonial)
-                            <div class="single-testimonial">
-                                <div class="img-title-job fs-0">
-                                    <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block-top">
-                                        @if(empty($testimonial->media_name))
-                                            <img src="/assets/images/avatar-icon.svg" alt="" itemprop="contentUrl"/>
-                                        @else
-                                            <img src="http://dentacoin.com/assets/uploads/{{$testimonial->media_name}}" alt="{{$testimonial->media_alt}}" itemprop="contentUrl"/>
-                                        @endif
-                                    </figure>
-                                    <div class="title-job inline-block-top">
-                                        <div class="title color-black">{{explode(',', $testimonial->name_job)[0]}}</div>
-                                        @if(!empty(explode(',', $testimonial->name_job)[1]))
-                                            <div class="job">{{explode(',', $testimonial->name_job)[1]}}</div>
-                                        @endif
-                                    </div>
+                    <h2 class="lato-bold fs-32 fs-xs-20 padding-bottom-50 color-black">{{ __('content.what_we_did_for_5_days') }}</h2>
+                </div>
+                <div class="col-xs-12 col-md-10 col-md-offset-1">
+                    <div class="row">
+                        <div class="col-sm-3 col-xs-12 inline-block padding-bottom-xs-40">
+                            <figure itemscope="" itemtype="http://schema.org/ImageObject">
+                                <img src="/assets/uploads/visitors-to-dcn-stand.svg" alt=""/>
+                                <figcaption class="fs-18 fs-xs-16 lato-bold padding-top-10"><span class="lato-light fs-38">15K</span>{{ __('content.visitors') }}</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-sm-3 col-xs-12 inline-block padding-bottom-xs-40">
+                            <figure itemscope="" itemtype="http://schema.org/ImageObject">
+                                <img src="/assets/uploads/concluded-partnerships.svg" alt=""/>
+                                <figcaption class="fs-18 fs-xs-16 lato-bold"><span class="lato-light fs-38">26</span>{{ __('content.partnerships') }}</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-sm-3 col-xs-12 inline-block padding-bottom-xs-40">
+                            <figure itemscope="" itemtype="http://schema.org/ImageObject">
+                                <img src="/assets/uploads/prospective-partnerts.svg" alt=""/>
+                                <figcaption class="fs-18 fs-xs-16 lato-bold"><span class="lato-light fs-38">700</span>{{ __('content.prospective_partners') }}</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-sm-3 col-xs-12 inline-block padding-bottom-xs-40">
+                            <figure itemscope="" itemtype="http://schema.org/ImageObject">
+                                <img src="/assets/uploads/ongoing-negotiations.svg" alt=""/>
+                                <figcaption class="fs-18 fs-xs-16 lato-bold padding-top-5"><span class="lato-light fs-38">52</span>{{ __('content.negotiations') }}</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="highlights-section padding-top-70 padding-bottom-70 padding-top-xs-30 padding-bottom-xs-30  padding-top-sm-30 padding-bottom-sm-30" data-scroll-here="highlights-section">
+        <div class="container">
+            @if(!empty($highlights))
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2 class="lato-bold fs-32 fs-xs-20 padding-bottom-50 padding-bottom-xs-20 color-black text-center">{{ __('content.highlights') }}</h2>
+                    </div>
+                    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+                        <div class="slider">
+                            @foreach($highlights as $highlight)
+                                <div class="single-highlight fs-0">
+                                    <a href="{{$highlight->url}}" target="_blank">
+                                        <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block">
+                                            <img src="/assets/uploads/{{$highlight->media->name}}" alt="{{$highlight->media->alt}}"/>
+                                        </figure>
+                                        <div class="inline-block content">
+                                            @if(config('app.locale') == 'en')
+                                                <time class="lato-bold">{{date('M d, Y', strtotime($highlight->date))}}</time>
+                                            @elseif(config('app.locale') == 'de')
+                                                <time class="lato-bold">{{strftime ("%B %d, %Y", strtotime($highlight->date))}}</time>
+                                            @endif
+                                            <div class="text lato-light color-black fs-14">{!! mb_substr($highlight['text_'.config('app.locale')], 0, 250) !!}...</div>
+                                        </div>
+                                    </a>
                                 </div>
-                                <div class="description">{!! $testimonial->text !!}</div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            @endif
+        </div>
+    </section>
+    <section class="gallery-section padding-top-70 padding-bottom-70 padding-top-xs-30 padding-bottom-xs-30  padding-top-sm-30 padding-bottom-sm-30" data-scroll-here="gallery-section">
+        <div class="container">
+            @if(!empty($gallery))
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2 class="lato-bold fs-32 fs-xs-20 padding-bottom-50 padding-bottom-xs-20 color-black text-center">{{ __('content.gallery') }}</h2>
+                    </div>
+                    <div class="col-xs-12 col-sm-10 col-sm-offset-1 slider">
+                        @foreach($gallery as $photo)
+                            <div class="single-photo fs-0">
+                                <a href="/assets/uploads/{{$photo->media->name}}" data-lightbox="homepage-gallery">
+                                    <figure itemscope="" itemtype="http://schema.org/ImageObject">
+                                        <img src="/assets/uploads/{{$photo->media->name}}" alt="{{$photo->media->alt}}"/>
+                                    </figure>
+                                </a>
                             </div>
                         @endforeach
                     </div>
                 </div>
-            </div>
+            @endif
         </div>
     </section>
-    <section class="below-testimonials-section padding-top-50 padding-bottom-50 padding-bottom-xs-30 color-dark-blue-bg">
-        <div class="container">
-            <div class="row fs-0 text-center color-white">
+    <section class="ids-speakers-corner-section padding-top-70 padding-bottom-70 padding-top-xs-30 padding-bottom-xs-30  padding-top-sm-30 padding-bottom-sm-30" data-scroll-here="speakers-corner-section">
+        <div class="container text-center">
+            <div class="row">
                 <div class="col-xs-12">
-                    <div class="single inline-block-top">
-                        <figure itemscope="" itemtype="http://schema.org/ImageObject"><img alt="" class="max-width-60 margin-bottom-5" itemprop="contentUrl" src="/assets/uploads/statistic1.svg" /></figure>
-
-                        <div class="fs-40 fs-xs-35 lato-light padding-top-10 lato-light">1.8K</div>
-
-                        <div class="fs-18 lato-bold padding-bottom-xs-25">{{ __('content.dcn_dentists') }}</div>
-                    </div>
-
-                    <div class="single inline-block-top">
-                        <figure itemscope="" itemtype="http://schema.org/ImageObject"><img alt="" class="max-width-50" itemprop="contentUrl" src="/assets/uploads/statistic4.svg" /></figure>
-
-                        <div class="fs-40 fs-xs-35 lato-light padding-top-10 lato-light">80+</div>
-
-                        <div class="fs-18 lato-bold padding-bottom-xs-25">{{ __('content.locations_accepting_dcn') }}</div>
-                    </div>
-
-                    <div class="single inline-block-top">
-                        <figure itemscope="" itemtype="http://schema.org/ImageObject"><img alt="" class="max-width-80 margin-bottom-20" itemprop="contentUrl" src="/assets/uploads/statistic2.svg" /></figure>
-
-                        <div class="fs-40 fs-xs-35 lato-light padding-top-10 lato-light">190K+</div>
-
-                        <div class="fs-18 lato-bold padding-bottom-xs-25">{{ __('content.active_users') }}</div>
-                    </div>
-
-                    <div class="single inline-block-top">
-                        <figure itemscope="" itemtype="http://schema.org/ImageObject"><img alt="" class="max-width-60 margin-bottom-10" itemprop="contentUrl" src="/assets/uploads/statistic5.svg" /></figure>
-
-                        <div class="fs-40 fs-xs-35 lato-light padding-top-10 lato-light">42K+</div>
-
-                        <div class="fs-18 lato-bold padding-bottom-xs-25">{{ __('content.token_holders') }}</div>
-                    </div>
-
-                    <div class="single inline-block-top">
-                        <figure itemscope="" itemtype="http://schema.org/ImageObject"><img alt="" class="max-width-60 margin-bottom-10" itemprop="contentUrl" src="/assets/uploads/statistic3.svg" /></figure>
-
-                        <div class="fs-40 fs-xs-35 lato-light padding-top-10 lato-light">190K+</div>
-
-                        <div class="fs-18 lato-bold padding-bottom-xs-25">{{ __('content.dcn_transactions') }}</div>
+                    <h2 class="lato-bold fs-32 fs-xs-20 padding-bottom-20 color-black">IDS SPEAKERS CORNER</h2>
+                </div>
+                <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-6 col-lg-offset-3">
+                    <div class="lato-bold fs-22 fs-xs-16 padding-bottom-10">Transforming the Future of Dentistry through Blockchain Technology</div>
+                    <div class="fs-18 fs-xs-14 color-black padding-bottom-40">{{ __('content.have_you_missed') }}</div>
+                </div>
+                <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
+                    <div itemprop="video" itemscope="" itemtype="http://schema.org/VideoObject">
+                        <video controls>
+                            <source src="//dentacoin.com/assets/videos/dentacoin-explainer-video.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                        <meta itemprop="name" content="Dentacoin Introduction Video">
+                        <meta itemprop="description" content="Explainer video: Dentacoin, the Blockchain Solution for the Global Dentistry">
+                        <meta itemprop="uploadDate" content="2019-03-19T08:00:00+08:00">
+                        <link itemprop="contentURL" href="//dentacoin.com/assets/videos/dentacoin-explainer-video.mp4">
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="how-to-find-us-section padding-top-70 padding-bottom-50 padding-top-xs-30 padding-bottom-xs-30" data-scroll-here="how-to-find-us">
+    <section class="color-beige-bg team-members-section padding-top-70 padding-bottom-70 padding-top-xs-30 padding-bottom-xs-30  padding-top-sm-30 padding-bottom-sm-30" data-scroll-here="our-team-at-ids-2019">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12">
-                    <h2 class="lato-bold fs-35 fs-xs-26 padding-bottom-50 text-center color-black">{{ __('content.how_to_find_us') }}</h2>
+                <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="lato-bold fs-32 fs-xs-20 padding-bottom-30 color-black">{{ __('content.corner_team') }}</h2>
+                    <div class="fs-18 fs-xs-14 padding-bottom-40">{{ __('content.if_you_have_visited') }}</div>
                 </div>
-            </div>
-        </div>
-
-        <div class="custom-container fs-0 padding-bottom-30"><a class="image inline-block" href="/assets/uploads/dentacoin-ids-2019-location-map.pdf" target="_blank"><picture> <source media="(max-width: 992px)" srcset="/assets/uploads/map-hovered-mobile.jpg" /> <img alt="Two dentists" itemprop="contentUrl" src="/assets/uploads/map.png" /> </picture> </a>
-
-            <div class="fs-18 fs-xs-16 lato-semibold padding-bottom-30 padding-left-15 padding-right-15 color-black mobile-address">{!! __('content.mobile_address') !!}</div>
-
-            <div class="shadow-box padding-top-30 padding-bottom-30 inline-block">
-                <div class="lato-bold fs-20 fs-xs-18 padding-bottom-10 color-black">{{ __('content.visiting_hours') }}</div>
-
-                <div class="lato-semibold fs-18 fs-xs-16">{{ __('content.march-13-16') }}</div>
-
-                <div class="lato-semibold fs-18 fs-xs-16">{{ __('content.daily-9-6') }}</div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 text-center"><a class="white-solid-blue-btn min-width-250" href="/assets/uploads/dentacoin-ids-2019-location-map.pdf" target="_blank">{{ __('content.dl_plan') }}</a></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="above-team-slider-section padding-top-70 padding-bottom-50 padding-top-xs-30 color-beige-bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 text-center">
-                    <h2 class="lato-bold fs-35 fs-xs-26 padding-bottom-20 color-black">{{ __('content.nice_to_meet_you') }}</h2>
-
-                    <div class="fs-20 fs-xs-16 padding-top-15">{!! __('content.our_friendly') !!}</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="color-beige-bg">
-        <div class="container">
-            <div class="row">
                 <div class="col-xs-12">
-                    <div class="team-members-slider">
+                    <div class="slider">
                         @foreach($team_members as $team_member)
                             <div class="single-team-member">
                                 <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block-top">
@@ -194,151 +162,134 @@
                         @endforeach
                     </div>
                 </div>
+                <div class="col-xs-12 text-center padding-top-30">
+                    <a class="white-solid-blue-btn min-width-250 show-send-an-inquiry-button" href="javascript:void(0)" target="_blank">{{ __('content.send_an_inquiry') }}</a>
+                </div>
             </div>
         </div>
     </section>
-    <section class="below-team-slider-section padding-top-50 padding-bottom-70 padding-top-xs-30 padding-bottom-xs-50 color-beige-bg">
+    <section class="what-is-dcn-section padding-top-70 padding-bottom-70 padding-top-xs-30 padding-bottom-xs-30  padding-top-sm-30 padding-bottom-sm-30 text-center" data-scroll-here="what-is-dentacoin-section">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 text-center"><a class="white-solid-blue-btn min-width-250 scrolling-to-section" href="javascript:void(0);" id="schedule-a-meeting" target="_blank">{{ __('content.schedule_a_meeting') }}</a></div>
+                <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-6 col-lg-offset-3">
+                    <h2 class="lato-bold fs-32 fs-xs-20 padding-bottom-30 color-black">{{ __('content.what_is_dcn') }}</h2>
+                    <div class="padding-bottom-40 fs-18 fs-xs-14">{!! __('content.dcn_is_the_first') !!}</div>
+                </div>
+                <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
+                    <iframe src="https://www.youtube.com/embed/AnCB5Edl_Ck"></iframe>
+                </div>
             </div>
         </div>
     </section>
-
-    <section class="ids-speakers-corner-section padding-top-50 padding-top-xs-30 padding-bottom-70 padding-bottom-xs-40">
+    <section class="padding-top-70 padding-bottom-70 padding-top-xs-30 padding-bottom-xs-30  padding-top-sm-30 padding-bottom-sm-30">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 text-center">
-                    <h2 class="lato-bold fs-35 fs-xs-26 padding-bottom-20 color-black">{{ __('content.ids_speakers_corner') }}</h2>
-
-                    <div class="lato-bold fs-22 fs-xs-20 padding-bottom-50 padding-bottom-xs-25 main-color">{{ __('content.transforming_the_future') }}</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="custom-container fs-0">
-            <figure class="inline-block" itemscope="" itemtype="http://schema.org/ImageObject"><img alt="Jeremias Grenzebach talking" itemprop="contentUrl" src="/assets/uploads/jeremias-talking.png" /></figure>
-
-            <div class="content inline-block text-center-xs">
-                <div class="lato-bold fs-20 color-black padding-top-xs-25">Jeremias Grenzebach</div>
-
-                <div class="fs-20 fs-xs-18 padding-top-5 padding-bottom-20">{{ __('content.core_founder') }}</div>
-
-                <div class="padding-bottom-10">
-                    <div class="addeventatc" title="Add to Calendar">March 13, 4 pm<span class="start">03/13/2019 16:00</span> <span class="end">03/13/2019 16:30</span> <span class="timezone">GMT+1</span> <span class="title">Transforming the Future of Dentistry through Blockchain Technology</span> <span class="description">Keynote presentation of Dentacoin, the first blockchain solution for the global dental industry. Speaker: Jeremias Grenzebach, Co-Founder and Core Developer of Dentacoin</span> <span class="location">IDS, Koelnmesse, Passage 4/4</span></div>
-                </div>
-
-                <div>
-                    <div class="addeventatc" title="Add to Calendar">March 15, 4 pm<span class="start">03/15/2019 16:00</span> <span class="end">03/15/2019 16:30</span> <span class="timezone">GMT+1</span> <span class="title">Transforming the Future of Dentistry through Blockchain Technology</span> <span class="description">Keynote presentation of Dentacoin, the first blockchain solution for the global dental industry. Speaker: Jeremias Grenzebach, Co-Founder and Core Developer of Dentacoin</span> <span class="location">IDS, Koelnmesse, Passage 4/4</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="schedule-a-meeting-section" data-scroll-here="schedule-a-meeting">
-        <h2 class="lato-bold fs-35 fs-xs-26 padding-top-15 padding-bottom-40 padding-left-15 padding-right-15 color-black text-center">{{ __('content.schedule_a_meeting') }}</h2>
-        <div class="days fs-0">
-            @php($active_day = false)
-            @foreach($meeting_days as $day)
-                <a href="javascript:void(0)" class="single inline-block-top text-center @if(!$active_day) active
-                @php($active_day = true) @endif" data-slug="{{$day->id}}">
-                    <div class="month">
-                        @if(config('app.locale') == 'en')
-                            {{$day->month}}
-                        @elseif(config('app.locale') == 'de')
-                            @php($hour = str_replace('march', 'märz', $day->month))
-                            {{$hour}}
-                        @endif
-                    </div>
-                    <div class="day lato-black">{{$day->day}}</div>
-                    <div class="triangle-active"></div>
-                </a>
-            @endforeach
-        </div>
-        <div class="form padding-top-40 padding-bottom-80 padding-bottom-xs-40">
-            @include('partials.schedule-a-meeting')
-        </div>
-    </section>
-
-    {{--{!! $sections[3]->html !!}--}}
-    <section class="dentacoin-products-section padding-top-50 padding-bottom-50 padding-top-xs-30 padding-bottom-xs-0 color-beige-bg">
-        <div class="container">
-            <div class="row text-center">
                 <div class="col-xs-12">
-                    <h2 class="lato-bold fs-35 fs-xs-26 padding-bottom-20 color-black">{{ __('content.dcn_products') }}</h2>
+                    <div class="testimonials-slider-section">
+                        @foreach($testimonials as $testimonial)
+                            <div class="single-testimonial">
+                                <div class="img-title-job fs-0">
+                                    <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block-top">
+                                        @if(empty($testimonial->media_name))
+                                            <img src="/assets/images/avatar-icon.svg" alt="" itemprop="contentUrl"/>
+                                        @else
+                                            <img src="//dentacoin.com/assets/uploads/{{$testimonial->media_name}}" alt="{{$testimonial->media_alt}}" itemprop="contentUrl"/>
+                                        @endif
+                                    </figure>
+                                    <div class="title-job inline-block-top">
+                                        <div class="title color-black">{{explode(',', $testimonial->name_job)[0]}}</div>
+                                        @if(!empty(explode(',', $testimonial->name_job)[1]))
+                                            <div class="job">{{explode(',', $testimonial->name_job)[1]}}</div>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="description">{!! $testimonial->text !!}</div>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
-                <div class="fs-20 fs-xs-16 padding-bottom-60 col-xs-12">{{ __('content.find_out') }}</div>
             </div>
-            <div class="row text-center fs-0">
+        </div>
+    </section>
+    <section class="statistics-section text-center padding-top-70 padding-bottom-70 padding-top-xs-30 padding-bottom-xs-30  padding-top-sm-30 padding-bottom-sm-30">
+        <div class="container">
+            <div class="row fs-0">
                 <div class="col-xs-12 col-md-10 col-md-offset-1">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-4 single padding-bottom-50 inline-block-top">
-                            <figure itemscope="" itemtype="http://schema.org/ImageObject"><a href="//coinmarketcap.com/currencies/dentacoin/" target="_blank"><img alt="Tools link icon" class="max-width-110" itemprop="contentUrl" src="/assets/uploads/dcn-crypto-icon.svg" /> <img alt="" class="hidden-image max-width-110" itemprop="contentUrl" src="/assets/uploads/tools-link-icon.svg" /></a></figure>
-
-                            <div class="lato-bold fs-20 padding-top-15 padding-bottom-10 color-black">{{ __('content.dcn_crypto') }}</div>
-
-                            <div class="fs-18 fs-xs-16 max-width-300 margin-0-auto">{{ __('content.first_crypto') }}</div>
+                        <div class="col-sm-3 col-xs-12 inline-block-bottom padding-bottom-xs-40">
+                            <figure itemscope="" itemtype="http://schema.org/ImageObject">
+                                <img src="/assets/uploads/locations-accepting-dcn.svg" alt="" class="max-width-40"/>
+                                <figcaption class="fs-18 fs-xs-16 lato-bold padding-top-10"><span class="lato-light fs-38">80+</span>{{ __('content.locations_accepting_dcn') }}</figcaption>
+                            </figure>
                         </div>
-
-                        <div class="col-xs-12 col-sm-4 single padding-bottom-50 inline-block-top">
-                            <figure itemscope="" itemtype="http://schema.org/ImageObject"><a href="//wallet.dentacoin.com/" target="_blank"><img alt="Tools link icon" class="max-width-110" itemprop="contentUrl" src="/assets/uploads/dentacoin-wallet.svg" /> <img alt="" class="hidden-image max-width-110" itemprop="contentUrl" src="/assets/uploads/tools-link-icon.svg" /></a></figure>
-
-                            <div class="lato-bold fs-20 padding-top-15 padding-bottom-10 color-black">{{ __('content.dcn_wallet') }}</div>
-
-                            <div class="fs-18 fs-xs-16 max-width-300 margin-0-auto">{{ __('content.decentralized_wallet') }}</div>
+                        <div class="col-sm-3 col-xs-12 inline-block-bottom padding-bottom-xs-40">
+                            <figure itemscope="" itemtype="http://schema.org/ImageObject">
+                                <img src="/assets/uploads/active-users.svg" alt="" class="max-width-80"/>
+                                <figcaption class="fs-18 fs-xs-16 lato-bold"><span class="lato-light fs-38">190K+</span>{{ __('content.active_users') }}</figcaption>
+                            </figure>
                         </div>
-
-                        <div class="col-xs-12 col-sm-4 single padding-bottom-50 inline-block-top">
-                            <figure itemscope="" itemtype="http://schema.org/ImageObject"><a href="//reviews.dentacoin.com/" target="_blank"><img alt="Tools link icon" class="max-width-110" itemprop="contentUrl" src="/assets/uploads/trusted-reviews.svg" /> <img alt="" class="hidden-image max-width-110" itemprop="contentUrl" src="/assets/uploads/tools-link-icon.svg" /></a></figure>
-
-                            <div class="lato-bold fs-20 padding-top-15 padding-bottom-10 color-black">{{ __('content.trp') }}</div>
-
-                            <div class="fs-20 fs-xs-16 max-width-300 margin-0-auto">{{ __('content.first_platform') }}</div>
+                        <div class="col-sm-3 col-xs-12 inline-block-bottom padding-bottom-xs-40">
+                            <figure itemscope="" itemtype="http://schema.org/ImageObject">
+                                <img src="/assets/uploads/transactions.svg" alt="" class="max-width-60"/>
+                                <figcaption class="fs-18 fs-xs-16 lato-bold"><span class="lato-light fs-38">190K+</span>{{ __('content.dcn_transactions') }}</figcaption>
+                            </figure>
                         </div>
-
-                        <div class="col-xs-12 col-sm-4 single padding-bottom-50 inline-block-top">
-                            <figure itemscope="" itemtype="http://schema.org/ImageObject"><a href="//dentavox.dentacoin.com/" target="_blank"><img alt="Tools link icon" class="max-width-110" itemprop="contentUrl" src="/assets/uploads/dentavox.svg" /> <img alt="" class="hidden-image max-width-110" itemprop="contentUrl" src="/assets/uploads/tools-link-icon.svg" /></a></figure>
-
-                            <div class="lato-bold fs-20 padding-top-15 padding-bottom-10 color-black">DentaVox</div>
-
-                            <div class="fs-20 fs-xs-16 max-width-300 margin-0-auto">{{ __('content.peerless_market') }}</div>
-                        </div>
-
-                        <div class="col-xs-12 col-sm-4 single padding-bottom-50 inline-block-top">
-                            <figure itemscope="" itemtype="http://schema.org/ImageObject"><a href="//dentacare.dentacoin.com/" target="_blank"><img alt="Tools link icon" class="max-width-110" itemprop="contentUrl" src="/assets/uploads/dentacare.svg" /> <img alt="" class="hidden-image max-width-110" itemprop="contentUrl" src="/assets/uploads/tools-link-icon.svg" /></a></figure>
-
-                            <div class="lato-bold fs-20 padding-top-15 padding-bottom-10 color-black">Dentacare</div>
-
-                            <div class="fs-20 fs-xs-16 max-width-300 margin-0-auto">{{ __('content.gamified_mobile') }}</div>
-                        </div>
-
-                        <div class="col-xs-12 col-sm-4 single padding-bottom-50 inline-block-top">
-                            <figure itemscope="" itemtype="http://schema.org/ImageObject"><img alt="Tools link icon" class="max-width-110" itemprop="contentUrl" src="/assets/uploads/dentacoin-assurance.svg" /><img alt="" class="hidden-image max-width-110" itemprop="contentUrl" src="/assets/uploads/coming-soon-tools.svg" /></figure>
-
-                            <div class="lato-bold fs-20 padding-top-15 padding-bottom-10 color-black">Dentacoin Assurance</div>
-
-                            <div class="fs-20 fs-xs-16 max-width-300 margin-0-auto">{{ __('content.revolutionary') }}</div>
+                        <div class="col-sm-3 col-xs-12 inline-block-bottom">
+                            <figure itemscope="" itemtype="http://schema.org/ImageObject">
+                                <img src="/assets/uploads/token-holders.svg" alt="" class="max-width-60"/>
+                                <figcaption class="fs-18 fs-xs-16 lato-bold padding-top-5"><span class="lato-light fs-38">42K+</span>{{ __('content.token_holders') }}</figcaption>
+                            </figure>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="padding-top-70 padding-bottom-80 padding-top-xs-30 padding-bottom-xs-30 get-the-latest-event-updates-section">
+    <section class="applications-titles-section padding-top-70 padding-top-xs-30 padding-bottom-30 text-center" data-scroll-here="tools-of-change-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2 class="lato-bold fs-32 fs-xs-20 padding-bottom-20 color-black">DENTACOIN TOOLS OF CHANGE</h2>
+                    <div class="fs-18 fs-xs-14">{{ __('content.free_and_simple') }}</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="applications-section padding-top-80 padding-top-xs-30 padding-bottom-80 padding-bottom-xs-30">
+        <div class="container">
+            <div class="row list">
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                    <div class="row fs-0">
+                        @foreach($applications as $application)
+                            @php($type = pathinfo($application->media_url, PATHINFO_EXTENSION))
+                            @php($date = new DateTime($application->media_created_at))
+                            <button class="col-md-3 col-xs-4 inline-block-top single-application">
+                                <figure class="wrapper" @if($application->media_url) data-image="//dentacoin.com/assets/uploads/{{$application->media_url}}" data-image-alt="" data-image-type="{{$type}}" data-upload-date="{{$date->format('c')}}" @endif @if($application->popup_logo_url) data-popup-logo="//dentacoin.com/assets/uploads/{{$application->popup_logo_url}}" data-popup-logo-alt="" @endif data-description="@if($application->dentists_text){{ json_encode($application->dentists_text) }}@endif" @if($application->slug == 'blog-intro') data-articles="{{json_encode($latest_blog_articles)}}" @endif data-title="{{$application->title}}" itemscope="" data-slug="{{$application->slug}}" itemtype="http://schema.org/ImageObject">
+                                    @if($application->logo_url)
+                                        <img src="//dentacoin.com/assets/uploads/{{$application->logo_url}}" itemprop="contentUrl" alt=""/>
+                                    @endif
+                                    <figcaption>{{$application->title}}</figcaption>
+                                </figure>
+                            </button>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="padding-top-70 padding-bottom-50 padding-top-xs-30 padding-bottom-xs-30 get-the-latest-event-updates-section" data-scroll-here="subscribe-section">
         <div class="container">
             <div class="email-octopus-form-wrapper">
                 <form action="https://emailoctopus.com/lists/6c1e17a2-f89a-11e8-a3c9-06b79b628af2/members/embedded/1.3s/add" class="email-octopus-form" data-sitekey="6LdYsmsUAAAAAPXVTt-ovRsPIJ_IVhvYBBhGvRV6" method="post">
                     <div class="row">
-                        <div class="col-xs-12">
-                            <h2 class="lato-bold fs-35 fs-xs-26 padding-bottom-35 color-black text-center">{{ __('content.get_latest_updates') }}</h2>
+                        <div class="col-xs-12 text-center">
+                            <h2 class="lato-bold fs-32 fs-xs-20 margin-bottom-0 padding-bottom-15 color-black">{{ __('content.get_latest_updates') }}</h2>
+                            <div class="fs-18 fs-xs-14">{{ __('content.subscribe') }}</div>
                         </div>
                     </div>
 
                     <div class="row fs-0">
-                        <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2 text-right inline-block iframe-wrapper"><iframe allow="encrypted-media" allowtransparency="true" frameborder="0" height="500" scrolling="no" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fdentacoin%2F&amp;tabs=events&amp;width=340&amp;height=500&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=true&amp;appId" style="border:none;overflow:hidden" width="340"></iframe></div>
-
-                        <div class="col-xs-12 col-sm-6 col-md-4 inline-block form fs-18">
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3 inline-block form fs-18">
                             <p class="email-octopus-success-message text-center">&nbsp;</p>
 
                             <p class="email-octopus-error-message text-center">&nbsp;</p>
@@ -362,7 +313,7 @@
 
                             <div aria-hidden="true" class="email-octopus-form-row-hp"><!-- Do not remove this field, otherwise you risk bot sign-ups --><input autocomplete="nope" name="hp6c1e17a2-f89a-11e8-a3c9-06b79b628af2" tabindex="-1" type="text" /></div>
 
-                            <div class="email-octopus-form-row-subscribe text-left"><input name="successRedirectUrl" type="hidden" value="" /> <input class="white-solid-blue-btn min-width-250" type="submit" value="{{ __('content.sign_up') }}" /></div>
+                            <div class="email-octopus-form-row-subscribe text-center padding-top-15"><input name="successRedirectUrl" type="hidden" value="" /> <input class="white-solid-blue-btn min-width-250" type="submit" value="{{ __('content.sign_up') }}" /></div>
                         </div>
                     </div>
                 </form>

@@ -297,3 +297,10 @@ if($('.add-meeting').length) {
         $('.hours option[data-day-id="'+$(this).val()+'"]').removeClass('hidden');
     });
 }
+
+if($('.datepicker').length) {
+    $('.datepicker').datepicker({
+        format: 'dd/mm/yyyy',
+        startDate: '-3d'
+    });
+}

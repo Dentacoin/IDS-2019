@@ -17,7 +17,9 @@ mix.styles([
     'node_modules/bootstrap/dist/css/bootstrap.min.css',
     'node_modules/bootstrap-select/dist/css/bootstrap-select.min.css',
     'public/assets/libs/font-awesome/css/font-awesome.min.css',
+    'public/assets/libs/FlipClock-master/compiled/flipclock.css',
     'node_modules/slick-carousel/slick/slick.css',
+    'public/assets/libs/lightbox2-master/dist/css/lightbox.min.css',
 ], 'public/dist/css/front-libs-style.css');
 
 mix.styles([
@@ -32,6 +34,8 @@ mix.scripts([
     'node_modules/bootbox.js/bootbox.min.js',
     'node_modules/slick-carousel/slick/slick.min.js',
     'public/assets/libs/google-calendar/index.js',
+    'public/assets/libs/FlipClock-master/compiled/flipclock.min.js',
+    'public/assets/libs/lightbox2-master/dist/js/lightbox.min.js',
 ], 'public/dist/js/front-libs-script.js');
 
 mix.babel([
