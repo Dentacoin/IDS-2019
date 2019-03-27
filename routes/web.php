@@ -15,13 +15,13 @@ Route::get('', function() { return redirect()->route('home', ['lang' => 'en']); 
 
 Route::get('/refresh-captcha', 'Controller@refreshCaptcha')->name('refresh-captcha');
 
+Route::get('/sitemap.xml', 'Controller@getSitemap')->name('sitemap');
+
 Route::group(['prefix' => '{lang}', 'middleware' => 'frontEndMiddleware'], function () {
 
     //======================================= PAGES ========================================
 
     Route::get('/', 'HomeController@getView')->name('home');
-
-    Route::get('sitemap.xml', 'Controller@getSitemap')->name('sitemap');
 
     //======================================= AJAX ========================================
 
