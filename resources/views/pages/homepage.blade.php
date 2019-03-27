@@ -279,8 +279,24 @@
     </section>
     <section class="padding-top-70 padding-bottom-50 padding-top-xs-30 padding-bottom-xs-30 get-the-latest-event-updates-section" data-scroll-here="subscribe-section">
         <div class="container">
-            <div class="email-octopus-form-wrapper">
-                <form action="https://emailoctopus.com/lists/6c1e17a2-f89a-11e8-a3c9-06b79b628af2/members/embedded/1.3s/add" class="email-octopus-form" data-sitekey="6LdYsmsUAAAAAPXVTt-ovRsPIJ_IVhvYBBhGvRV6" method="post">
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <h2 class="lato-bold fs-32 fs-xs-20 margin-bottom-0 padding-bottom-15 color-black">{{ __('content.get_latest_updates') }}</h2>
+                    <div class="fs-18 fs-xs-14">{{ __('content.subscribe') }}</div>
+                </div>
+                <div class="col-xs-12 text-center padding-top-50">
+                    <div id="mc_embed_signup">
+                        <form action="https://dentacoin.us16.list-manage.com/subscribe/post?u=61ace7d2b009198ca373cb213&amp;id=993df5967d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                            <div id="mc_embed_signup_scroll">
+                                <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                                <input type="hidden" name="b_61ace7d2b009198ca373cb213_993df5967d" tabindex="-1" value="">
+                                <div class="clear btn-container"><input type="submit" value="Sign Up" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+                {{--<form action="https://emailoctopus.com/lists/6c1e17a2-f89a-11e8-a3c9-06b79b628af2/members/embedded/1.3s/add" class="email-octopus-form" data-sitekey="6LdYsmsUAAAAAPXVTt-ovRsPIJ_IVhvYBBhGvRV6" method="post">
                     <div class="row">
                         <div class="col-xs-12 text-center">
                             <h2 class="lato-bold fs-32 fs-xs-20 margin-bottom-0 padding-bottom-15 color-black">{{ __('content.get_latest_updates') }}</h2>
@@ -316,8 +332,8 @@
                             <div class="email-octopus-form-row-subscribe text-center padding-top-15"><input name="successRedirectUrl" type="hidden" value="" /> <input class="white-solid-blue-btn min-width-250" type="submit" value="{{ __('content.sign_up') }}" /></div>
                         </div>
                     </div>
-                </form>
-            </div>
+                </form>--}}
+            {{--</div>--}}
         </div>
     </section>
 @endsection
