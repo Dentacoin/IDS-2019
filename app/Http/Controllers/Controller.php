@@ -77,7 +77,8 @@ class Controller extends BaseController
         //if(!$sitemap->isCached())  {
         // add item to the sitemap (url, date, priority, freq)
 
-        $sitemap->add(URL::to('/'), '2018-08-25T20:10:00+02:00', '1.0', 'daily');
+        $sitemap->add(URL::to('/en'), '2019-03-25T20:10:00+02:00', '0.8', 'daily');
+        $sitemap->add(URL::to('/de'), '2018-03-25T20:10:00+02:00', '0.8', 'daily');
 
         // get all posts from db
         //$posts = DB::table('posts')->orderBy('created_at', 'desc')->get();
