@@ -5411,6 +5411,21 @@ footer .bottom-text a {
         -moz-border-radius: 0 4px 4px 0;
         -ms-border-radius: 0 4px 4px 0;
         border-radius: 0 4px 4px 0; }
+  .get-the-latest-event-updates-section .checkbox-row {
+    padding-top: 10px;
+    text-align: left;
+    max-width: 300px;
+    margin: 0 auto; }
+    .get-the-latest-event-updates-section .checkbox-row input[type='checkbox'] {
+      vertical-align: middle;
+      margin: 0; }
+    .get-the-latest-event-updates-section .checkbox-row label {
+      font-size: 16px;
+      margin: 0;
+      vertical-align: middle;
+      padding-left: 10px; }
+      .get-the-latest-event-updates-section .checkbox-row label a {
+        text-decoration: underline; }
 
 .container-404 {
   padding-bottom: 100px;
