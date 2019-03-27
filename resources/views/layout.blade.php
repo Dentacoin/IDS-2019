@@ -7,17 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
     @if(config('app.locale') == 'en')
-        <title>Meet Dentacoin at IDS 2019: Look into the future of dentistry</title>
-        <meta name="description" content="Find us at Stand K060-L069, Hall 11.3 at the International Dental Show that will take place at Koelnmesse (Germany) on March 12-16, 2019" />
+        <title>Dentacoin at IDS 2019: Great excitement and new partners</title>
+        <meta name="description" content="IDS Cologne 2019: 15,000 Dentacoin stand visitors, 700+ prospects, 26 partners, 52 ongoing negotiations. See more highlights."/>
         <meta name="keywords" content="IDS, IDS 2019, international dental show, koelnmesse, dental fair, dental summit, dental business summit, dentacoin, dental industry" />
-        <meta property="og:title" content="Meet Dentacoin at IDS 2019, Koelnmesse!"/>
-        <meta property="og:description" content="Come visit us at Stand K060-L069, Hall 11.3 at the 38th International Dental Show that will take place at Koelnmesse (Germany) on March 12-16, 2019"/>
+        <meta property="og:title" content="Dentacoin at IDS 2019: Great excitement and new partners"/>
+        <meta property="og:description" content="IDS Cologne 2019: 15,000 Dentacoin stand visitors, 700+ prospects, 26 partners, 52 ongoing negotiations. See more highlights."/>
     @elseif(config('app.locale') == 'de')
-        <title>Treffen Sie Dentacoin auf der IDS 2019: Blicken Sie in die Zukunft der Zahnmedizin</title>
-        <meta name="description" content="Finden Sie uns am Stand K060-L069, Halle 11.3 auf der Internationalen Dental-Schau (IDS) organisiert von der Koelnmesse am 12-16.März 2019" />
-        <meta name="keywords" content="IDS, IDS 2019, internationale dental schau, dentalmesse, koelnmesse, dentalmedizin messe, zahnmedizin messe, weltleitmesse des dental business, dentacoin, dentalindustrie" />
-        <meta property="og:title" content="Treffen Sie Dentacoin auf der IDS 2019, Koelnmesse!"/>
-        <meta property="og:description" content="Besuchen Sie uns am Stand K060-L069, Halle 11.3 auf der 38. Internationalen Dental-Schau (IDS) veranstaltet von der Koelnmesse am 12-16.März 2019"/>
+        <title>Dentacoin at IDS 2019: Great excitement and new partners</title>
+        <meta name="description" content="IDS Cologne 2019: 15,000 Dentacoin stand visitors, 700+ prospects, 26 partners, 52 ongoing negotiations. See more highlights." />
+        <meta name="keywords" content="IDS, IDS 2019, international dental show, koelnmesse, dental fair, dental summit, dental business summit, dentacoin, dental industry" />
+        <meta property="og:title" content="Dentacoin at IDS 2019: Great excitement and new partners"/>
+        <meta property="og:description" content="IDS Cologne 2019: 15,000 Dentacoin stand visitors, 700+ prospects, 26 partners, 52 ongoing negotiations. See more highlights."/>
     @endif
     @if(!empty($meta_data))
         <meta property="og:url" content="{{Request::url()}}"/>
@@ -60,7 +60,8 @@
             <a href="javascript:void(0)" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
             <ul itemscope="" itemtype="http://schema.org/SiteNavigationElement">
                 @foreach($header_menu as $menu_el)
-                    <li><a itemprop="url" class="{{$menu_el->class_attribute}}" @if(!empty($menu_el->id_attribute)) id="{{$menu_el->id_attribute}}" @endif @if(!empty(Route::current()) && Route::current()->getName() != 'home' && strpos($menu_el->class_attribute, 'scrolling-to-section') !== false) href="{{route('home')}}#{{$menu_el->id_attribute}}" @else @if($menu_el->new_window) target="_blank" @endif href="{{$menu_el->url}}" @endif><span itemprop="name">{{$menu_el->name}}</span></a></li>
+                    <li><a itemprop="url" class="{{$menu_el->class_attribute}}" @if(!empty($menu_el->id_attribute)) id="{{$menu_el->id_attribute}}" @endif @if(!empty(Route::current()) && Route::current()->getName() != 'home' && strpos($menu_el->class_attribute, 'scrolling-to-section') !== false) href="{{route('home')}}#{{$menu_el->id_attribute}}" @else @if($menu_el->new_window) target="_blank" @endif href="{{$menu_el->url}}" @endif><span itemprop="name">@if(config('app.locale') == 'en') {{$menu_el->name}} @elseif(config('app.locale') == 'de') {{$menu_el->name_de}} @endif
+</span></a></li>
                 @endforeach
             </ul>
         </div>

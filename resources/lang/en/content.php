@@ -71,7 +71,7 @@ return array(
     'highlights' => 'HIGHLIGHTS',
     'gallery' => 'GALLERY',
     'have_you_missed' => 'Have you missed our key note at IDS? Catch up now by watching the entire presention held by Jeremias Grenzebach, Co-Founder &  Core Developer of Dentacoin.',
-    'corner_team' => 'IDS SPEAKERS CORNER',
+    'corner_team' => 'OUR TEAM AT IDS 2019',
     'if_you_have_visited' => 'If you have visited the International Dental Show in Cologne, you’ve surely met them already. If not, feel free to send a general inquiry or a personal message by including the name in the subject field.',
     'send_an_inquiry' => 'SEND AN INQUIRY',
     'free_and_simple' => 'Free and simple registration. No installation needed.',

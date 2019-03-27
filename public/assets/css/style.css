@@ -5220,8 +5220,13 @@ footer .bottom-text a {
   padding-left: 5px;
   padding-right: 5px; }
 
-.ids-speakers-corner-section video {
-  width: 100%; }
+.ids-speakers-corner-section iframe {
+  width: 100%;
+  border: 0;
+  height: 500px; }
+  @media screen and (max-width: 767px) {
+    .ids-speakers-corner-section iframe {
+      height: 350px; } }
 
 .team-members-section .single-team-member {
   padding-left: 15px;
@@ -5246,10 +5251,8 @@ footer .bottom-text a {
       padding-left: 30px;
       padding-right: 30px; } }
 
-.what-is-dcn-section iframe {
-  width: 100%;
-  border: 0;
-  height: 400px; }
+.what-is-dcn-section video {
+  width: 100%; }
 
 .testimonials-slider-section .slick-arrow.slick-disabled {
   display: none; }

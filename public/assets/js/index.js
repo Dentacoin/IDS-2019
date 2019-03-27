@@ -405,6 +405,10 @@ $('body').click(function(event) {
 //header menu events
 $('header .mobile-ham').click(function()    {
     $('nav.sidenav').addClass('active');
+
+    setTimeout(function() {
+        $('nav.sidenav').removeClass('active');
+    }, 5000);
 });
 
 $('nav.sidenav .close-btn, nav.sidenav ul li a').click(function()    {

@@ -167,15 +167,20 @@ body.home {
 }
 
 .gallery-section {
-    .single-photo {
+    .single-photo {  
         padding-left: 5px;
         padding-right: 5px;
     }
 }
 
 .ids-speakers-corner-section {
-    video {
+    iframe {
         width: 100%;
+        border: 0;
+        height: 500px;
+        @include breakpoint($xs) {
+            height: 350px;
+        }
     }
 }
 
@@ -207,10 +212,8 @@ body.home {
 }
 
 .what-is-dcn-section {
-    iframe {
+    video {
         width: 100%;
-        border: 0;
-        height: 400px;
     }
 }
 

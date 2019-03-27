@@ -120,16 +120,7 @@
                     <div class="fs-18 fs-xs-14 color-black padding-bottom-40">{{ __('content.have_you_missed') }}</div>
                 </div>
                 <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
-                    <div itemprop="video" itemscope="" itemtype="http://schema.org/VideoObject">
-                        <video controls>
-                            <source src="//dentacoin.com/assets/videos/dentacoin-explainer-video.mp4" type="video/mp4">
-                            Your browser does not support HTML5 video.
-                        </video>
-                        <meta itemprop="name" content="Dentacoin Introduction Video">
-                        <meta itemprop="description" content="Explainer video: Dentacoin, the Blockchain Solution for the Global Dentistry">
-                        <meta itemprop="uploadDate" content="2019-03-19T08:00:00+08:00">
-                        <link itemprop="contentURL" href="//dentacoin.com/assets/videos/dentacoin-explainer-video.mp4">
-                    </div>
+                    <iframe src="https://www.youtube.com/embed/AnCB5Edl_Ck"></iframe>
                 </div>
             </div>
         </div>
@@ -176,7 +167,16 @@
                     <div class="padding-bottom-40 fs-18 fs-xs-14">{!! __('content.dcn_is_the_first') !!}</div>
                 </div>
                 <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
-                    <iframe src="https://www.youtube.com/embed/AnCB5Edl_Ck"></iframe>
+                    <div itemprop="video" itemscope="" itemtype="http://schema.org/VideoObject">
+                        <video controls>
+                            <source src="//dentacoin.com/assets/videos/dentacoin-explainer-video.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                        <meta itemprop="name" content="Dentacoin Introduction Video">
+                        <meta itemprop="description" content="Explainer video: Dentacoin, the Blockchain Solution for the Global Dentistry">
+                        <meta itemprop="uploadDate" content="2019-03-19T08:00:00+08:00">
+                        <link itemprop="contentURL" href="//dentacoin.com/assets/videos/dentacoin-explainer-video.mp4">
+                    </div>
                 </div>
             </div>
         </div>
