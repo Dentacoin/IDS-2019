@@ -13,11 +13,11 @@
         <meta property="og:title" content="Dentacoin at IDS 2019: Great excitement and new partners"/>
         <meta property="og:description" content="IDS Cologne 2019: 15,000 Dentacoin stand visitors, 700+ prospects, 26 partners, 52 ongoing negotiations. See more highlights."/>
     @elseif(config('app.locale') == 'de')
-        <title>Dentacoin at IDS 2019: Great excitement and new partners</title>
-        <meta name="description" content="IDS Cologne 2019: 15,000 Dentacoin stand visitors, 700+ prospects, 26 partners, 52 ongoing negotiations. See more highlights." />
+        <title>IDS 2019: Große Begeisterung für Dentacoin in Köln</title>
+        <meta name="description" content="IDS 2019 Rückblick: 700+ Interessenten, 26 Partner gewonnen, 52 laufende Verhandlungen mit anderen Industrieteilnehmern. Sehen Sie mehr Highlights!" />
         <meta name="keywords" content="IDS, IDS 2019, international dental show, koelnmesse, dental fair, dental summit, dental business summit, dentacoin, dental industry" />
-        <meta property="og:title" content="Dentacoin at IDS 2019: Great excitement and new partners"/>
-        <meta property="og:description" content="IDS Cologne 2019: 15,000 Dentacoin stand visitors, 700+ prospects, 26 partners, 52 ongoing negotiations. See more highlights."/>
+        <meta property="og:title" content="IDS 2019: Große Begeisterung für Dentacoin in Köln"/>
+        <meta property="og:description" content="IDS 2019 Rückblick: 700+ Interessenten, 26 Partner gewonnen, 52 laufende Verhandlungen mit anderen Industrieteilnehmern. Sehen Sie mehr Highlights!"/>
     @endif
     @if(!empty($meta_data))
         <meta property="og:url" content="{{Request::url()}}"/>
