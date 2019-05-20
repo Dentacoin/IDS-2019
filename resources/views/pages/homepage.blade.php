@@ -254,7 +254,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>{{--
     <section class="applications-section padding-top-80 padding-top-xs-30 padding-bottom-80 padding-bottom-xs-30">
         <div class="container">
             <div class="row list">
@@ -274,6 +274,39 @@
                         @endforeach
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>--}}
+    <section class="container-fluid applications-section">
+        <div class="row">
+            <div class="apps-list fullpage-section two col-xs-12 col-md-6">
+                <div class="list">
+                    <div class="row">
+                        <div class="col-xs-12"><h3 class="rotated-text padding-bottom-50 text-center">DENTACOIN ECOSYSTEM</h3></div>
+                        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                            <div class="container-fluid">
+                                <div class="row fs-0">
+                                    @foreach($applications as $application)
+                                        @php($type = pathinfo($application->media_url, PATHINFO_EXTENSION))
+                                        @php($date = new DateTime($application->media_created_at))
+                                        <button class="col-xs-4 inline-block-top single-application">
+                                            <figure class="wrapper" @if($application->media_url) data-image="http://dentacoin.com/assets/uploads/{{$application->media_url}}" data-image-alt="" data-image-type="{{$type}}" @endif data-upload-date="{{$date->format('c')}}" @if($application->popup_logo_url) data-popup-logo="http://dentacoin.com/assets/uploads/{{$application->popup_logo_url}}" data-popup-logo-alt="" @endif data-title="{{$application->title}}" data-description="@if($application->dentists_text){{ json_encode($application->dentists_text) }}@endif" @if($application->slug == 'blog-intro') data-articles="{{json_encode($latest_blog_articles)}}" @endif itemscope="" data-title="{{$application->title}}" data-slug="{{$application->slug}}" itemtype="http://schema.org/ImageObject">
+                                                @if($application->logo_url)
+                                                    <img src="//dentacoin.com/assets/uploads/{{$application->logo_url}}" itemprop="contentUrl" alt=""/>
+                                                @endif
+                                                <figcaption>{{$application->title}}</figcaption>
+                                            </figure>
+                                        </button>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="info-section col-xs-12 col-md-6">
+                <a href="javascript:void(0)" class="close-application">×</a>
+                <div class="html-content"></div>
             </div>
         </div>
     </section>

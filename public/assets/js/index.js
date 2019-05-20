@@ -255,7 +255,78 @@ if($('body').hasClass('home')) {
         });
     }
 
+    var start_clicking_from_num = 1;
+    var init_apps_interval_slide;
     //logic for open application popup
+    $('.single-application').click(function()   {
+        $('.single-application').removeClass('show-shadow');
+        $(this).addClass('show-shadow');
+        var this_btn = $(this).find('.wrapper');
+        var extra_html = '';
+        var media_html = '';
+
+        if(this_btn.attr('data-articles') != undefined)    {
+            extra_html+='<div class="extra-html"><div class="extra-title">Latest Blog articles:</div><div class="slider-with-tool-data">';
+            var articles_arr = $.parseJSON(this_btn.attr('data-articles'));
+            for(var i = 0, len = articles_arr.length; i < len; i+=1)    {
+                extra_html+='<a target="_blank" href="'+articles_arr[i]['link']+'"><div class="single-slide text-left fs-0"><figure class="inline-block-top" itemscope="" itemtype="http://schema.org/ImageObject"><img src="'+articles_arr[i]['thumb']+'" alt="" itemprop="contentUrl"/></figure><div class="content inline-block-top"><div class="slide-title">'+articles_arr[i]['post_title']+'</div><time>'+dateObjToFormattedDate(new Date(parseInt(articles_arr[i]['date']) * 1000))+'</time></div></div></a>';
+            }
+            extra_html+='</div><div class="text-center padding-top-15"><a href="//blog.dentacoin.com/" class="white-dark-blue-btn" target="_blank">GO TO ALL</a></div></div>';
+        }
+
+        /*if(['mp4', 'avi'].indexOf(this_btn.attr('data-image-type')) > -1) {
+            media_html+='<div itemprop="video" itemscope="" itemtype="http://schema.org/VideoObject" class="col-sm-6 video"><video autoplay loop muted controls="false"><source src="'+this_btn.attr('data-image')+'" type="video/'+this_btn.attr('data-image-type')+'"></video><meta itemprop="name" content="'+this_btn.attr('data-title')+'"><meta itemprop="uploadDate" content="'+this_btn.attr('data-upload-date')+'"></div>';
+        }else {
+            media_html+='<figure class="col-sm-6 gif"><img src="'+this_btn.attr('data-image')+'?'+new Date().getTime()+'" alt="'+this_btn.attr('data-image-alt')+'"/></figure>';
+        }*/
+
+        var description = '';
+        if(this_btn.attr('data-description') != '') {
+            description = $.parseJSON(this_btn.attr('data-description'));
+        }
+
+        var html = '<div class="container-fluid"><div class="row">'+media_html+'<div class="col-sm-12 content"><figure class="logo"><img src="'+this_btn.attr('data-popup-logo')+'" alt="'+this_btn.attr('data-popup-logo-alt')+'"/></figure><div class="title">'+this_btn.find('figcaption').html()+'</div><div class="description">'+description+'</div>'+extra_html+'</div></div></div>';
+
+        $('.applications-section .info-section .html-content').html(html);
+
+        if(extra_html != '') {
+            initToolsPostsSlider();
+        }
+
+        $('.applications-section .info-section video').removeAttr('controls');
+
+        $('body').addClass('overflow-hidden');
+        if($(window).width() > 992) {
+            clearInterval(init_apps_interval_slide);
+
+            start_clicking_from_num = $(this).index() + 1;
+            if(start_clicking_from_num == 8) {
+                start_clicking_from_num = 0;
+            }
+
+            init_apps_interval_slide = setTimeout(function() {
+                $('.applications-section .single-application').eq(start_clicking_from_num).click();
+            }, 10000);
+        } else {
+            $('.applications-section .apps-list').hide();
+            $('.applications-section .info-section').fadeIn(500);
+        }
+
+        $('.applications-section .info-section .close-application').click(function() {
+            $('.applications-section .apps-list').fadeIn(500);
+            $('.applications-section .info-section').hide();
+        });
+
+        $('body').removeClass('overflow-hidden');
+    });
+
+    $('body').addClass('overflow-hidden');
+    if($(window).width() > 992) {
+        $('.applications-section .single-application').eq(0).click();
+    }
+    $('body').removeClass('overflow-hidden');
+
+    /*//logic for open application popup
     $('.single-application').click(function()   {
         var this_btn = $(this).find('.wrapper');
         var extra_html = '';
@@ -282,7 +353,7 @@ if($('body').hasClass('home')) {
         var html = '<div class="container-fluid"><div class="row">'+media_html+'<div class="col-sm-6 col-xs-12 content"><figure class="logo"><img src="'+this_btn.attr('data-popup-logo')+'" alt="'+this_btn.attr('data-popup-logo-alt')+'"/></figure><div class="title">'+this_btn.find('figcaption').html()+'</div><div class="description">'+description+'</div>'+extra_html+'</div></div></div>';
         basic.showDialog(html, 'application-popup', this_btn.attr('data-slug'));
         $('.application-popup video').removeAttr('controls');
-    });
+    });*/
 
     /*if($('.schedule-a-meeting-section').length > 0) {
         $('.schedule-a-meeting-section .single').click(function() {
@@ -349,16 +420,6 @@ function initScrollingToEvents() {
     }
 }
 initScrollingToEvents();
-
-//on page load if we have #parameter in the URL scroll down to section
-function scrollToSection(){
-    $('[data-scroll-here]').each(function(){
-        if(window.location.href.indexOf('/#' + $(this).attr('data-scroll-here')) != -1){
-            $("html, body").animate({scrollTop: $(this).offset().top - $('header').outerHeight()}, 300);
-            return false;
-        }
-    })
-}
 
 function initMobileMenuActions()    {
     if(basic.isMobile)    {
@@ -432,9 +493,39 @@ initScrollingToEvents();
 function scrollToSection(){
     $('[data-scroll-here]').each(function(){
         if(window.location.href.includes('#' + $(this).attr('data-scroll-here'))){
-            console.log($(this).attr('data-scroll-here'));
             $("html, body").animate({scrollTop: $(this).offset().top - $('header').outerHeight()}, 300);
             return false;
         }
     })
+}
+
+function initToolsPostsSlider()   {
+    //init slider for most popular posts
+    jQuery('.slider-with-tool-data').slick({
+        slidesToShow: 2,
+        infinite: false,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+}
+
+function dateObjToFormattedDate(object) {
+    if(object.getDate() < 10) {
+        var date = '0' + object.getDate();
+    } else {
+        var date = object.getDate();
+    }
+
+    if(object.getMonth() + 1 < 10) {
+        var month = '0' + (object.getMonth() + 1);
+    } else {
+        var month = object.getMonth() + 1;
+    }
+    return date + '/' + month + '/' + object.getFullYear();
 }
