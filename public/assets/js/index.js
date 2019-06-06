@@ -304,7 +304,7 @@ if($('body').hasClass('home')) {
                 }
 
                 init_apps_interval_slide = setTimeout(function () {
-                    $('.applications-section .single-application').eq(start_clicking_from_num).click();
+                    singleApplicationClick($('.applications-section .single-application').eq(start_clicking_from_num));
                 }, 10000);
             }
         } else {
