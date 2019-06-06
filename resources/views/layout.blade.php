@@ -214,8 +214,8 @@
  }
  </script>
 {{--<script src="/assets/js/basic.js"></script>--}}
-<script src="/dist/js/front-libs-script.js?v=1.0.21"></script>
-<script src="/dist/js/front-script.js?v=1.0.21"></script>
+<script src="/dist/js/front-libs-script.js?v=1.0.22"></script>
+<script src="/dist/js/front-script.js?v=1.0.22"></script>
 @yield("script_block")
 {{--<script src="/assets/js/index.js"></script>--}}
 </body>
