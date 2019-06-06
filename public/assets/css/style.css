@@ -5481,7 +5481,7 @@ footer .bottom-text a {
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
-          background: url(../images/right-arrow.svg);
+          background: url(/assets/images/right-arrow.svg);
           background-size: auto 100%;
           z-index: 3;
           background-position: center;
@@ -5503,7 +5503,7 @@ footer .bottom-text a {
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
-          background: url(../images/left-arrow.svg);
+          background: url(/assets/images/left-arrow.svg);
           background-size: auto 100%;
           z-index: 3;
           background-position: center;
