@@ -9,8 +9,8 @@ $(document).ready(function() {
     if($('.clock').length) {
         var clock;
         var endDate = new Date('2021-04-01').getTime();
-        var now_timestamp = Math.round((new Date()).getTime() / 1000);
-        var time_left = endDate - now_timestamp;
+        var now_timestamp = new Date().getTime();
+        var time_left = Math.round((endDate - now_timestamp) / 1000);
         if(time_left > 0) {
             clock = $('.clock').FlipClock(time_left, {
                 clockFace: 'DailyCounter',
