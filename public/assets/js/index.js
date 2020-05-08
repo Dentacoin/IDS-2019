@@ -8,7 +8,9 @@ if($('a[href="mailto:admin@dentacoin.com"]').length) {
 $(document).ready(function() {
     if($('.clock').length) {
         var clock;
-        var time_left = 61695868;
+        var endDate = new Date('2021-04-01').getTime();
+        var now_timestamp = Math.round((new Date()).getTime() / 1000);
+        var time_left = endDate - now_timestamp;
         if(time_left > 0) {
             clock = $('.clock').FlipClock(time_left, {
                 clockFace: 'DailyCounter',

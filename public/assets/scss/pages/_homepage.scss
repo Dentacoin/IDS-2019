@@ -370,6 +370,14 @@ body.home {
             @include breakpoint($sm-down) {
                 position: static;
                 @include clear_transform();
+                button {
+                    figure {
+                        img {
+                            @include rounded(10px);
+                            @include box-shadow(none);
+                        }
+                    }
+                }
             }
         }
         @include breakpoint($lg-up) {

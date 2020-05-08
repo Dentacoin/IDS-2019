@@ -5406,7 +5406,16 @@ footer .bottom-text a {
           -moz-transform: none;
           -ms-transform: none;
           -o-transform: none;
-          transform: none; } }
+          transform: none; }
+          .applications-section .apps-list .list button figure img {
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            border-radius: 10px;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            -ms-box-shadow: none;
+            box-shadow: none; } }
     @media screen and (min-width: 1399px) {
       .applications-section .apps-list .list {
         width: 100%;
