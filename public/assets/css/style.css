@@ -4350,6 +4350,15 @@ body {
   .hide-xs {
     display: none !important; } }
 
+.text-center {
+  text-align: center; }
+
+.text-left {
+  text-align: left !important; }
+
+.text-right {
+  text-align: right !important; }
+
 @media screen and (max-width: 767px) {
   .text-center-xs {
     text-align: center !important; } }
@@ -4357,12 +4366,6 @@ body {
 @media screen and (max-width: 767px) {
   .text-left-xs {
     text-align: left !important; } }
-
-.text-left {
-  text-align: left !important; }
-
-.text-right {
-  text-align: right !important; }
 
 @media screen and (max-width: 767px) {
   .text-right-xs {

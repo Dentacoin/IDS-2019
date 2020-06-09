@@ -14,7 +14,8 @@ mix.disableSuccessNotifications();
 /* ===== PUBLIC =====*/
 mix.styles([
     /*'public/assets/libs/emailoctopus/emailoctopus.css',*/
-    'node_modules/bootstrap/dist/css/bootstrap.min.css',
+    /*'node_modules/bootstrap/dist/css/bootstrap.min.css',*/
+    'public/assets/libs/bootstrap/css/bootstrap.min.css',
     'node_modules/bootstrap-select/dist/css/bootstrap-select.min.css',
     'public/assets/libs/font-awesome/css/font-awesome.min.css',
     'public/assets/libs/FlipClock-master/compiled/flipclock.css',
@@ -29,7 +30,8 @@ mix.styles([
 mix.scripts([
     'node_modules/jquery/dist/jquery.min.js',
     /*'public/assets/libs/emailoctopus/emailoctopus.js',*/
-    'node_modules/bootstrap/dist/js/bootstrap.min.js',
+    /*'node_modules/bootstrap/dist/js/bootstrap.min.js',*/
+    'public/assets/libs/bootstrap/js/bootstrap.min.js',
     'node_modules/bootstrap-select/dist/js/bootstrap-select.min.js',
     'node_modules/bootbox.js/bootbox.min.js',
     'node_modules/slick-carousel/slick/slick.min.js',

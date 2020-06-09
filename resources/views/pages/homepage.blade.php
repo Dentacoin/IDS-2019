@@ -278,8 +278,9 @@
             </div>
         </div>
     </section>--}}
-    <section class="container-fluid applications-section">
-        <div class="row">
+    <section class="applications-section">
+        <div id="append-big-hub-ids"></div>
+        {{--<div class="row">
             <div class="apps-list fullpage-section two col-xs-12 col-md-6">
                 <div class="list">
                     <div class="row">
@@ -311,7 +312,7 @@
                 <a href="javascript:void(0)" class="close-application">×</a>
                 <div class="html-content"></div>
             </div>
-        </div>
+        </div>--}}
     </section>
     <section class="padding-top-70 padding-bottom-50 padding-top-xs-30 padding-bottom-xs-30 get-the-latest-event-updates-section" data-scroll-here="subscribe-section">
         <div class="container">

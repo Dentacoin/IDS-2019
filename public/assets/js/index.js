@@ -257,7 +257,16 @@ if($('body').hasClass('home')) {
         });
     }
 
-    var start_clicking_from_num = 1;
+    if ($('#append-big-hub-ids').length) {
+        var bigHubParams = {
+            'element_id_to_append' : 'append-big-hub-ids',
+            'type_hub' : 'ids'
+        };
+
+        dcnHub.initBigHub(bigHubParams);
+    }
+
+    /*var start_clicking_from_num = 1;
     var init_apps_interval_slide;
     //logic for open application popup
     $('.single-application').click(function()   {
@@ -326,7 +335,7 @@ if($('body').hasClass('home')) {
     if($(window).width() > 992) {
         singleApplicationClick($('.applications-section .single-application').eq(0));
     }
-    $('body').removeClass('overflow-hidden');
+    $('body').removeClass('overflow-hidden');*/
 
     /*//logic for open application popup
     $('.single-application').click(function()   {
