@@ -95,7 +95,7 @@
         </ul>
     </div>
 </nav>
-<header>
+<header class="sticky-header">
     <div class="container">
         <div class="row fs-0">
             <figure itemscope="" itemtype="http://schema.org/Organization"
