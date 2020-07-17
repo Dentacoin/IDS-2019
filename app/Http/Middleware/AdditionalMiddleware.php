@@ -26,7 +26,13 @@ class AdditionalMiddleware
             }else {
                 App::setlocale($request->route()->parameters()['lang']);
             }
-            return (new App\Http\Controllers\Controller())->minifyHtml($next($request));
+            
+            $response = $next($request);
+            $response->headers->set('Referrer-Policy', 'no-referrer');
+            $response->headers->set('X-XSS-Protection', '1; mode=block');
+            $response->headers->set('X-Frame-Options', 'DENY');
+
+            return (new App\Http\Controllers\Controller())->minifyHtml($response);
         } else {
             $admin_controller = new MainController();
             if($admin_controller->checkLogin()) {
