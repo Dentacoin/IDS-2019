@@ -28,25 +28,25 @@
                     <div class="row">
                         <div class="col-sm-3 col-xs-12 inline-block padding-bottom-xs-40">
                             <figure itemscope="" itemtype="http://schema.org/ImageObject">
-                                <img src="/assets/uploads/visitors-to-dcn-stand.svg" alt=""/>
+                                <img data-defer-src="/assets/uploads/visitors-to-dcn-stand.svg" alt=""/>
                                 <figcaption class="fs-18 fs-xs-16 lato-bold padding-top-10"><span class="lato-light fs-38">15K</span>{{ __('content.visitors') }}</figcaption>
                             </figure>
                         </div>
                         <div class="col-sm-3 col-xs-12 inline-block padding-bottom-xs-40">
                             <figure itemscope="" itemtype="http://schema.org/ImageObject">
-                                <img src="/assets/uploads/concluded-partnerships.svg" alt=""/>
+                                <img data-defer-src="/assets/uploads/concluded-partnerships.svg" alt=""/>
                                 <figcaption class="fs-18 fs-xs-16 lato-bold"><span class="lato-light fs-38">26</span>{{ __('content.partnerships') }}</figcaption>
                             </figure>
                         </div>
                         <div class="col-sm-3 col-xs-12 inline-block padding-bottom-xs-40">
                             <figure itemscope="" itemtype="http://schema.org/ImageObject">
-                                <img src="/assets/uploads/prospective-partnerts.svg" alt=""/>
+                                <img data-defer-src="/assets/uploads/prospective-partnerts.svg" alt=""/>
                                 <figcaption class="fs-18 fs-xs-16 lato-bold"><span class="lato-light fs-38">700</span>{{ __('content.prospective_partners') }}</figcaption>
                             </figure>
                         </div>
                         <div class="col-sm-3 col-xs-12 inline-block padding-bottom-xs-40">
                             <figure itemscope="" itemtype="http://schema.org/ImageObject">
-                                <img src="/assets/uploads/ongoing-negotiations.svg" alt=""/>
+                                <img data-defer-src="/assets/uploads/ongoing-negotiations.svg" alt=""/>
                                 <figcaption class="fs-18 fs-xs-16 lato-bold padding-top-5"><span class="lato-light fs-38">52</span>{{ __('content.negotiations') }}</figcaption>
                             </figure>
                         </div>
@@ -68,7 +68,7 @@
                                 <div class="single-highlight fs-0">
                                     <a href="{{$highlight->url}}" target="_blank">
                                         <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block">
-                                            <img src="/assets/uploads/{{$highlight->media->name}}" alt="{{$highlight->media->alt}}"/>
+                                            <img data-defer-src="/assets/uploads/{{$highlight->media->name}}" alt="{{$highlight->media->alt}}"/>
                                         </figure>
                                         <div class="inline-block content">
                                             @if(config('app.locale') == 'en')
@@ -99,7 +99,7 @@
                             <div class="single-photo fs-0">
                                 <a href="/assets/uploads/{{$photo->media->name}}" data-lightbox="homepage-gallery">
                                     <figure itemscope="" itemtype="http://schema.org/ImageObject">
-                                        <img src="/assets/uploads/{{$photo->media->name}}" alt="{{$photo->media->alt}}"/>
+                                        <img data-defer-src="/assets/uploads/{{$photo->media->name}}" alt="{{$photo->media->alt}}"/>
                                     </figure>
                                 </a>
                             </div>
@@ -120,7 +120,7 @@
                     <div class="fs-18 fs-xs-14 color-black padding-bottom-40">{{ __('content.have_you_missed') }}</div>
                 </div>
                 <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
-                    <iframe src="https://www.youtube.com/embed/AnCB5Edl_Ck"></iframe>
+                    <iframe data-defer-src="https://www.youtube.com/embed/AnCB5Edl_Ck"></iframe>
                 </div>
             </div>
         </div>
@@ -137,7 +137,7 @@
                         @foreach($team_members as $team_member)
                             <div class="single-team-member">
                                 <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block-top">
-                                    <img src="{{URL::asset('assets/uploads/'.$team_member->media->name) }}" alt="@if(!empty($team_member->media->alt)){{$team_member->media->alt}}@endif" itemprop="contentUrl"/>
+                                    <img data-defer-src="{{URL::asset('assets/uploads/'.$team_member->media->name) }}" alt="@if(!empty($team_member->media->alt)){{$team_member->media->alt}}@endif" itemprop="contentUrl"/>
                                 </figure>
                                 <div class="name color-black">{{$team_member->name}}</div>
                                 @if(config('app.locale') == 'en')
@@ -154,7 +154,7 @@
                     </div>
                 </div>
                 <div class="col-xs-12 text-center padding-top-30">
-                    <a class="white-solid-blue-btn min-width-250 show-send-an-inquiry-button" href="javascript:void(0)" target="_blank">{{ __('content.send_an_inquiry') }}</a>
+                    <a class="white-solid-blue-btn min-width-250 show-send-an-inquiry-button" href="javascript:void(0)">{{ __('content.send_an_inquiry') }}</a>
                 </div>
             </div>
         </div>
@@ -169,7 +169,7 @@
                 <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
                     <div itemprop="video" itemscope="" itemtype="http://schema.org/VideoObject">
                         <video controls>
-                            <source src="//dentacoin.com/assets/videos/dentacoin-explainer-video.mp4" type="video/mp4">
+                            <source data-defer-src="//dentacoin.com/assets/videos/dentacoin-explainer-video.mp4" type="video/mp4">
                             Your browser does not support HTML5 video.
                         </video>
                         <meta itemprop="name" content="Dentacoin Introduction Video">
@@ -192,9 +192,9 @@
                                 <div class="img-title-job fs-0">
                                     <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block-top">
                                         @if(empty($testimonial->media_name))
-                                            <img src="/assets/images/avatar-icon.svg" alt="" itemprop="contentUrl"/>
+                                            <img data-defer-src="/assets/images/avatar-icon.svg" alt="" itemprop="contentUrl"/>
                                         @else
-                                            <img src="//dentacoin.com/assets/uploads/{{$testimonial->media_name}}" alt="{{$testimonial->media_alt}}" itemprop="contentUrl"/>
+                                            <img data-defer-src="//dentacoin.com/assets/uploads/{{$testimonial->media_name}}" alt="{{$testimonial->media_alt}}" itemprop="contentUrl"/>
                                         @endif
                                     </figure>
                                     <div class="title-job inline-block-top">
@@ -219,25 +219,25 @@
                     <div class="row">
                         <div class="col-sm-3 col-xs-12 inline-block-bottom padding-bottom-xs-40">
                             <figure itemscope="" itemtype="http://schema.org/ImageObject">
-                                <img src="/assets/uploads/locations-accepting-dcn.svg" alt="" class="max-width-40"/>
+                                <img data-defer-src="/assets/uploads/locations-accepting-dcn.svg" alt="" class="max-width-40"/>
                                 <figcaption class="fs-18 fs-xs-16 lato-bold padding-top-10"><span class="lato-light fs-38">80+</span>{{ __('content.locations_accepting_dcn') }}</figcaption>
                             </figure>
                         </div>
                         <div class="col-sm-3 col-xs-12 inline-block-bottom padding-bottom-xs-40">
                             <figure itemscope="" itemtype="http://schema.org/ImageObject">
-                                <img src="/assets/uploads/active-users.svg" alt="" class="max-width-80"/>
+                                <img data-defer-src="/assets/uploads/active-users.svg" alt="" class="max-width-80"/>
                                 <figcaption class="fs-18 fs-xs-16 lato-bold"><span class="lato-light fs-38">190K+</span>{{ __('content.active_users') }}</figcaption>
                             </figure>
                         </div>
                         <div class="col-sm-3 col-xs-12 inline-block-bottom padding-bottom-xs-40">
                             <figure itemscope="" itemtype="http://schema.org/ImageObject">
-                                <img src="/assets/uploads/transactions.svg" alt="" class="max-width-60"/>
+                                <img data-defer-src="/assets/uploads/transactions.svg" alt="" class="max-width-60"/>
                                 <figcaption class="fs-18 fs-xs-16 lato-bold"><span class="lato-light fs-38">190K+</span>{{ __('content.dcn_transactions') }}</figcaption>
                             </figure>
                         </div>
                         <div class="col-sm-3 col-xs-12 inline-block-bottom">
                             <figure itemscope="" itemtype="http://schema.org/ImageObject">
-                                <img src="/assets/uploads/token-holders.svg" alt="" class="max-width-60"/>
+                                <img data-defer-src="/assets/uploads/token-holders.svg" alt="" class="max-width-60"/>
                                 <figcaption class="fs-18 fs-xs-16 lato-bold padding-top-5"><span class="lato-light fs-38">42K+</span>{{ __('content.token_holders') }}</figcaption>
                             </figure>
                         </div>
@@ -267,7 +267,7 @@
                             <button class="col-md-3 col-xs-4 inline-block-top single-application">
                                 <figure class="wrapper" @if($application->media_url) data-image="//dentacoin.com/assets/uploads/{{$application->media_url}}" data-image-alt="" data-image-type="{{$type}}" data-upload-date="{{$date->format('c')}}" @endif @if($application->popup_logo_url) data-popup-logo="//dentacoin.com/assets/uploads/{{$application->popup_logo_url}}" data-popup-logo-alt="" @endif data-description="@if($application->dentists_text){{ json_encode($application->dentists_text) }}@endif" @if($application->slug == 'blog-intro') data-articles="{{json_encode($latest_blog_articles)}}" @endif data-title="{{$application->title}}" itemscope="" data-slug="{{$application->slug}}" itemtype="http://schema.org/ImageObject">
                                     @if($application->logo_url)
-                                        <img src="//dentacoin.com/assets/uploads/{{$application->logo_url}}" itemprop="contentUrl" alt=""/>
+                                        <img data-defer-src="//dentacoin.com/assets/uploads/{{$application->logo_url}}" itemprop="contentUrl" alt=""/>
                                     @endif
                                     <figcaption>{{$application->title}}</figcaption>
                                 </figure>
@@ -296,7 +296,7 @@
                                         <button class="col-xs-4 inline-block-top single-application">
                                             <figure class="wrapper" @if(!empty($application->media_url)) data-image="http://dentacoin.com/assets/uploads/{{$application->media_url}}" data-image-alt="" data-image-type="{{$type}}" data-upload-date="{{$date->format('c')}}" @endif @if($application->popup_logo_url) data-popup-logo="http://dentacoin.com/assets/uploads/{{$application->popup_logo_url}}" data-popup-logo-alt="" @endif data-title="{{$application->title}}" data-description="@if($application->dentists_text){{ json_encode($application->dentists_text) }}@endif" @if($application->slug == 'blog-intro') @if(!empty($latest_blog_articles)) data-articles="{{json_encode($latest_blog_articles)}}" @endif @endif itemscope="" data-title="{{$application->title}}" data-slug="{{$application->slug}}" itemtype="http://schema.org/ImageObject">
                                                 @if($application->logo_url)
-                                                    <img src="//dentacoin.com/assets/uploads/{{$application->logo_url}}" itemprop="contentUrl" alt=""/>
+                                                    <img data-defer-src="//dentacoin.com/assets/uploads/{{$application->logo_url}}" itemprop="contentUrl" alt=""/>
                                                 @endif
                                                 <figcaption>{{$application->title}}</figcaption>
                                             </figure>

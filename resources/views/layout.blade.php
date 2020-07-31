@@ -59,7 +59,10 @@
     </style>
     {{--<link rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">--}}
-    <link rel="stylesheet" type="text/css" href="//dentacoin.com/assets/libs/dentacoin-mini-hub/css/styles-big-hub.css?v=1.0.24">
+    <link rel="stylesheet" type="text/css" href="//dentacoin.com/assets/libs/dentacoin-mini-hub/css/styles-big-hub.css?v=1.0.26">
+    @if(empty($_COOKIE['performance_cookies']) && empty($_COOKIE['functionality_cookies']) && empty($_COOKIE['marketing_cookies']) && empty($_COOKIE['strictly_necessary_policy']))
+        <link rel="stylesheet" type="text/css" href="//dentacoin.com/assets/libs/dentacoin-package/css/style-cookie.css?v=1.0.26">
+    @endif
     <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/shell.js"></script>
     <script>
         var HOME_URL = '{{ route("home", ['lang' => config('app.locale')]) }}';
@@ -68,14 +71,16 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-97167262-4"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-
         function gtag() {
             dataLayer.push(arguments);
         }
-
         gtag('js', new Date());
-
-        gtag('config', 'UA-97167262-4');
+        
+        @if(empty($_COOKIE['performance_cookies']))
+            gtag('config', 'UA-97167262-4', {'anonymize_ip': true});
+        @else
+            gtag('config', 'UA-97167262-4');
+        @endif
     </script>
 </head>
 <body class="@if(!empty(Route::current())) {{Route::current()->getName()}} @else class-404 @endif @if(config('app.locale') == 'de') german @endif">
@@ -203,15 +208,15 @@
             <div class="text-center fs-26 padding-bottom-30 lato-black">Send Your Inquiry</div>
             <script>
                 @if(config('app.locale') == 'en')
-                hbspt.forms.create({
-                    portalId: "4097841",
-                    formId: "5bed7fbd-f7cc-4cb2-9fcd-e81820afe323"
-                });
+                    hbspt.forms.create({
+                        portalId: "4097841",
+                        formId: "5bed7fbd-f7cc-4cb2-9fcd-e81820afe323"
+                    });
                 @elseif(config('app.locale') == 'de')
-                hbspt.forms.create({
-                    portalId: "4097841",
-                    formId: "c42037dc-5d80-476d-a40d-34a1ea8b3d50"
-                });
+                    hbspt.forms.create({
+                        portalId: "4097841",
+                        formId: "c42037dc-5d80-476d-a40d-34a1ea8b3d50"
+                    });
                 @endif
             </script>
         </div>
@@ -243,9 +248,12 @@
 
 </script>
 {{--<script src="/assets/js/basic.js"></script>--}}
-<script src="/dist/js/front-libs-script.js?v=1.0.24"></script>
-<script src="//dentacoin.com/assets/libs/dentacoin-mini-hub/js/init.js?v=1.0.24"></script>
-<script src="/dist/js/front-script.js?v=1.0.24"></script>
+<script src="/dist/js/front-libs-script.js?v=1.0.26"></script>
+<script src="//dentacoin.com/assets/libs/dentacoin-mini-hub/js/init.js?v=1.0.26"></script>
+@if(empty($_COOKIE['performance_cookies']) && empty($_COOKIE['functionality_cookies']) && empty($_COOKIE['marketing_cookies']) && empty($_COOKIE['strictly_necessary_policy']))
+    <script src="//dentacoin.com/assets/libs/dentacoin-package/js/init.js?v=1.0.26"></script>
+@endif
+<script src="/dist/js/front-script.js?v=1.0.26"></script>
 @yield("script_block")
 {{--<script src="/assets/js/index.js"></script>--}}
 </body>

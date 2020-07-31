@@ -41,7 +41,7 @@ $(window).on('resize', function(){
 });
 
 $(window).on('scroll', function()  {
-
+    loadDeferImages();
 });
 
 //on button click next time when you hover the button the color is bugged until you click some other element (until you move out the focus from this button)
@@ -265,158 +265,6 @@ if($('body').hasClass('home')) {
 
         dcnHub.initBigHub(bigHubParams);
     }
-
-    /*var start_clicking_from_num = 1;
-    var init_apps_interval_slide;
-    //logic for open application popup
-    $('.single-application').click(function()   {
-        singleApplicationClick($(this), true);
-    });
-
-    function singleApplicationClick(element, stop_interval_sliding) {
-        $('.single-application').removeClass('show-shadow');
-        element.addClass('show-shadow');
-        var this_btn = element.find('.wrapper');
-        var extra_html = '';
-        var media_html = '';
-
-        if(this_btn.attr('data-articles') != undefined)    {
-            extra_html+='<div class="extra-html"><div class="extra-title">Latest Blog articles:</div><div class="slider-with-tool-data">';
-            var articles_arr = $.parseJSON(this_btn.attr('data-articles'));
-            for(var i = 0, len = articles_arr.length; i < len; i+=1)    {
-                extra_html+='<a target="_blank" href="'+articles_arr[i]['link']+'"><div class="single-slide text-left fs-0"><figure class="inline-block-top" itemscope="" itemtype="http://schema.org/ImageObject"><img src="'+articles_arr[i]['thumb']+'" alt="" itemprop="contentUrl"/></figure><div class="content inline-block-top"><div class="slide-title">'+articles_arr[i]['post_title']+'</div><time>'+dateObjToFormattedDate(new Date(parseInt(articles_arr[i]['date']) * 1000))+'</time></div></div></a>';
-            }
-            extra_html+='</div><div class="text-center padding-top-15"><a href="//blog.dentacoin.com/" class="white-dark-blue-btn" target="_blank">GO TO ALL</a></div></div>';
-        }
-
-        var description = '';
-        if(this_btn.attr('data-description') != '') {
-            description = $.parseJSON(this_btn.attr('data-description'));
-        }
-
-        var html = '<div class="container-fluid"><div class="row">'+media_html+'<div class="col-sm-12 content"><figure class="logo"><img src="'+this_btn.attr('data-popup-logo')+'" alt="'+this_btn.attr('data-popup-logo-alt')+'"/></figure><div class="title">'+this_btn.find('figcaption').html()+'</div><div class="description">'+description+'</div>'+extra_html+'</div></div></div>';
-
-        $('.applications-section .info-section .html-content').html(html);
-
-        if(extra_html != '') {
-            initToolsPostsSlider();
-        }
-
-        $('.applications-section .info-section video').removeAttr('controls');
-
-        $('body').addClass('overflow-hidden');
-        if($(window).width() > 992) {
-            clearInterval(init_apps_interval_slide);
-
-            if(stop_interval_sliding == undefined) {
-                start_clicking_from_num = element.index() + 1;
-                if (start_clicking_from_num == 8) {
-                    start_clicking_from_num = 0;
-                }
-
-                init_apps_interval_slide = setTimeout(function () {
-                    singleApplicationClick($('.applications-section .single-application').eq(start_clicking_from_num));
-                }, 10000);
-            }
-        } else {
-            $('.applications-section .apps-list').hide();
-            $('.applications-section .info-section').fadeIn(500);
-        }
-
-        $('.applications-section .info-section .close-application').click(function() {
-            $('.applications-section .apps-list').fadeIn(500);
-            $('.applications-section .info-section').hide();
-        });
-
-        $('body').removeClass('overflow-hidden');
-    }
-
-    $('body').addClass('overflow-hidden');
-    if($(window).width() > 992) {
-        singleApplicationClick($('.applications-section .single-application').eq(0));
-    }
-    $('body').removeClass('overflow-hidden');*/
-
-    /*//logic for open application popup
-    $('.single-application').click(function()   {
-        var this_btn = $(this).find('.wrapper');
-        var extra_html = '';
-        var media_html = '';
-        if(this_btn.attr('data-articles') != undefined)    {
-            extra_html+='<div class="extra-html"><div class="extra-title">Latest Blog articles:</div><ul>';
-            var articles_arr = $.parseJSON(this_btn.attr('data-articles'));
-            for(var i = 0, len = articles_arr.length; i < len; i+=1)    {
-                extra_html+='<li class="link"><a href="https://blog.dentacoin.com/'+articles_arr[i]['post_name']+'" target="_blank">'+articles_arr[i]['post_title']+'</a></li>';
-            }
-            extra_html+='</ul><div class="see-all"><a href="https://blog.dentacoin.com/" class="white-dark-blue-btn" target="_blank">GO TO ALL</a></div></div>';
-        }
-        var description = this_btn.attr('data-description');
-        if(description != '') {
-            description = $.parseJSON(description);
-        }
-
-        if(['mp4', 'avi'].indexOf(this_btn.attr('data-image-type')) > -1) {
-            media_html+='<div itemprop="video" itemscope="" itemtype="http://schema.org/VideoObject" class="col-sm-6 video"><video autoplay loop muted controls="false"><source src="'+this_btn.attr('data-image')+'" type="video/'+this_btn.attr('data-image-type')+'"></video><meta itemprop="name" content="'+this_btn.attr('data-title')+'"><meta itemprop="uploadDate" content="'+this_btn.attr('data-upload-date')+'"></div>';
-        }else {
-            media_html+='<figure class="col-sm-6 gif"><img src="'+this_btn.attr('data-image')+'?'+new Date().getTime()+'" alt="'+this_btn.attr('data-image-alt')+'"/></figure>';
-        }
-
-        var html = '<div class="container-fluid"><div class="row">'+media_html+'<div class="col-sm-6 col-xs-12 content"><figure class="logo"><img src="'+this_btn.attr('data-popup-logo')+'" alt="'+this_btn.attr('data-popup-logo-alt')+'"/></figure><div class="title">'+this_btn.find('figcaption').html()+'</div><div class="description">'+description+'</div>'+extra_html+'</div></div></div>';
-        basic.showDialog(html, 'application-popup', this_btn.attr('data-slug'));
-        $('.application-popup video').removeAttr('controls');
-    });*/
-
-    /*if($('.schedule-a-meeting-section').length > 0) {
-        $('.schedule-a-meeting-section .single').click(function() {
-            var this_btn = $(this);
-            $('.schedule-a-meeting-section .single').removeClass('active');
-            this_btn.addClass('active');
-            $('.schedule-a-meeting-section form input[name="date-slug"]').val(this_btn.attr('data-slug'));
-
-            $.ajax({
-                type: 'POST',
-                url: '/'+$('html').attr('lang')+'/get-meeting-day/' + this_btn.attr('data-slug'),
-                dataType: 'json',
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                success: function (response) {
-                    if(response.success) {
-                        $('.schedule-a-meeting-section .form').html(response.success);
-                        $('.selectpicker').selectpicker('refresh');
-                        bindHourButtonsEvents();
-                        bindCaptchaRefreshEvent();
-                        bindFormSubmission();
-                    }
-                }
-            });
-        });
-
-        function bindFormSubmission() {
-            $('form#submit-schedule-a-meeting').on('submit', function(event) {
-                var this_form = $(this);
-                if(this_form.find('input#website').val().trim() == '' || !basic.validateUrl(this_form.find('input#website').val().trim())) {
-                    event.preventDefault();
-                    basic.showAlert('Please enter your website URL starting with http:// or https://.', '', true);
-                }else if(!$('input#privacy-policy').is(':checked')) {
-                    event.preventDefault();
-                    basic.showAlert('Please agree with our Privacy policy.', '', true);
-                }
-            });
-        }
-        bindFormSubmission();
-
-        function bindHourButtonsEvents() {
-            $('.schedule-a-meeting-section .form .hours .solid-blue-white-btn').click(function() {
-                if(!$(this).hasClass('disabled')) {
-                    $('.schedule-a-meeting-section .form .hours .solid-blue-white-btn').removeClass('active');
-                    $(this).addClass('active');
-                    $('.schedule-a-meeting-section form input[name="hour"]').val($(this).attr('data-hour'));
-                }
-            });
-        }
-        bindHourButtonsEvents();
-    }*/
 }
 
 //scroll to sections events
@@ -510,33 +358,26 @@ function scrollToSection(){
     })
 }
 
-function initToolsPostsSlider()   {
-    //init slider for most popular posts
-    jQuery('.slider-with-tool-data').slick({
-        slidesToShow: 2,
-        infinite: false,
-        responsive: [
-            {
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 1
-                }
-            }
-        ]
+$('body').on('hsvalidatedsubmit', '.hs-form', function (e) {
+    ga('send', {
+        hitType: 'event',
+        eventCategory: 'Form',
+        eventAction: 'Submit',
+        eventAction: 'Inquiry',
     });
+});
+
+function loadDeferImages() {
+    for(var i = 0, len = jQuery('[data-defer-src]').length; i < len; i+=1) {
+        if(basic.isInViewport(jQuery('[data-defer-src]').eq(i)) && jQuery('[data-defer-src]').eq(i).attr('src') == undefined) {
+            jQuery('[data-defer-src]').eq(i).attr('src', jQuery('[data-defer-src]').eq(i).attr('data-defer-src'));
+        }
+    }
 }
+loadDeferImages();
 
-function dateObjToFormattedDate(object) {
-    if(object.getDate() < 10) {
-        var date = '0' + object.getDate();
-    } else {
-        var date = object.getDate();
-    }
-
-    if(object.getMonth() + 1 < 10) {
-        var month = '0' + (object.getMonth() + 1);
-    } else {
-        var month = object.getMonth() + 1;
-    }
-    return date + '/' + month + '/' + object.getFullYear();
+if (typeof(dcnCookie) != undefined) {
+    dcnCookie.init({
+        'google_app_id' : 'UA-97167262-4'
+    });
 }
