@@ -59,7 +59,7 @@
     </style>
     {{--<link rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">--}}
-    <link rel="stylesheet" type="text/css" href="//dentacoin.com/assets/libs/dentacoin-mini-hub/css/styles-big-hub.css?v=1.0.26">
+    <link rel="stylesheet" type="text/css" href="//dentacoin.com/assets/libs/dentacoin-package/css/styles-big-hub.css?v=1.0.26">
     @if(empty($_COOKIE['performance_cookies']) && empty($_COOKIE['functionality_cookies']) && empty($_COOKIE['marketing_cookies']) && empty($_COOKIE['strictly_necessary_policy']))
         <link rel="stylesheet" type="text/css" href="//dentacoin.com/assets/libs/dentacoin-package/css/style-cookie.css?v=1.0.26">
     @endif
@@ -249,10 +249,7 @@
 </script>
 {{--<script src="/assets/js/basic.js"></script>--}}
 <script src="/dist/js/front-libs-script.js?v=1.0.26"></script>
-<script src="//dentacoin.com/assets/libs/dentacoin-mini-hub/js/init.js?v=1.0.26"></script>
-@if(empty($_COOKIE['performance_cookies']) && empty($_COOKIE['functionality_cookies']) && empty($_COOKIE['marketing_cookies']) && empty($_COOKIE['strictly_necessary_policy']))
-    <script src="//dentacoin.com/assets/libs/dentacoin-package/js/init.js?v=1.0.26"></script>
-@endif
+<script src="//dentacoin.com/assets/libs/dentacoin-package/js/init.js?v=1.0.26"></script>
 <script src="/dist/js/front-script.js?v=1.0.26"></script>
 @yield("script_block")
 {{--<script src="/assets/js/index.js"></script>--}}
