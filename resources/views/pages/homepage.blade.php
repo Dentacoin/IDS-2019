@@ -13,10 +13,10 @@
                 <figcaption class="text-center lato-bold fs-20 line-height-14">12.-16.3.2019</figcaption>
             </figure>
         </div>
-        <div class="timer">
+        {{--<div class="timer">
             <h2 class="lato-bold fs-32 fs-xs-20 text-center padding-bottom-15">{{ __('content.ids_starts_in') }}</h2>
             <div class="clock"></div>
-        </div>
+        </div>--}}
     </section>
     <section class="achievements-section text-center padding-top-100 padding-bottom-70 padding-top-xs-50 padding-bottom-xs-0">
         <div class="container">
@@ -167,17 +167,7 @@
                     <div class="padding-bottom-40 fs-18 fs-xs-14">{!! __('content.dcn_is_the_first') !!}</div>
                 </div>
                 <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
-                    <div itemprop="video" itemscope="" itemtype="http://schema.org/VideoObject">
-                        <video controls>
-                            <source data-defer-src="//dentacoin.com/assets/videos/dentacoin-explainer-video.mp4" type="video/mp4">
-                            Your browser does not support HTML5 video.
-                        </video>
-                        <meta itemprop="name" content="Dentacoin Introduction Video">
-                        <meta itemprop="description" content="Explainer video: Dentacoin, the Blockchain Solution for the Global Dentistry">
-                        <meta itemprop="uploadDate" content="2019-03-19T08:00:00+08:00">
-                        <meta itemprop="thumbnailUrl" content="https://dentacoin.com/assets/uploads/video-poster.png">
-                        <link itemprop="contentURL" href="//dentacoin.com/assets/videos/dentacoin-explainer-video.mp4">
-                    </div>
+                    <iframe data-defer-src="https://www.youtube.com/embed/-zKLaRhVn3c"></iframe>
                 </div>
             </div>
         </div>
@@ -316,20 +306,27 @@
     </section>
     <section class="padding-top-70 padding-bottom-50 padding-top-xs-30 padding-bottom-xs-30 get-the-latest-event-updates-section" data-scroll-here="subscribe-section">
         <div class="container">
-            <div class="row">
-                <div class="col-xs-12 text-center">
+            <div class="row newsletter-register">
+                <div class="col-xs-12 text-center padding-bottom-30">
                     <h2 class="lato-bold fs-32 fs-xs-20 margin-bottom-0 padding-bottom-15 color-black">{{ __('content.get_latest_updates') }}</h2>
                     <div class="fs-18 fs-xs-14">{{ __('content.subscribe') }}</div>
                 </div>
-                <div class="col-xs-12 text-center padding-top-50">
-                    <div id="mc_embed_signup">
-                        <form action="https://dentacoin.us16.list-manage.com/subscribe/post?u=61ace7d2b009198ca373cb213&amp;id=cd60f60a48" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-                            <div id="mc_embed_signup_scroll">
-                                <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-                                <input type="hidden" name="b_61ace7d2b009198ca373cb213_cd60f60a48" tabindex="-1" value="">
-                                <div class="clear btn-container"><input type="submit" value="Sign Up" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                <div class="col-xs-12 text-center">
+                    <div id="mc_embed_signup" class="form-container">
+                        <form action="https://dentacoin.us16.list-manage.com/subscribe/post?u=61ace7d2b009198ca373cb213&amp;id=993df5967d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                            <div class="newsletter-field email-field" data-valid-message="Please enter valid email address.">
+                                <div id="mc_embed_signup_scroll">
+                                    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address">
+                                    <input type="hidden" name="b_61ace7d2b009198ca373cb213_993df5967d" tabindex="-1" value="">
+                                    <div class="clear btn-container"><input type="submit" value="Sign Up" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                                </div>
                             </div>
-                            <div class="checkbox-row"><input type="checkbox" required id="newsletter-privacy-policy"/><label for="newsletter-privacy-policy">I agree with <a href="//dentacoin.com/privacy-policy" target="_blank">Privacy Policy</a></label></div>
+                            <div class="newsletter-field checkbox-field" data-valid-message="Please agree with our Privacy Policy.">
+                                <div class="custom-checkbox-style module">
+                                    <input type="checkbox" class="custom-checkbox-input" id="newsletter-privacy-policy"/>
+                                    <label class="custom-checkbox-label" for="newsletter-privacy-policy">I agree with <a href="//dentacoin.com/privacy-policy" target="_blank">Privacy Policy</a></label>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
