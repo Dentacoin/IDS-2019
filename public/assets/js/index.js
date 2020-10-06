@@ -1,5 +1,3 @@
-basic.init();
-
 //overwrite dynamic social menu from dentacoin.com
 if($('a[href="mailto:admin@dentacoin.com"]').length) {
     $('a[href="mailto:admin@dentacoin.com"]').attr('href', 'mailto:business@dentacoin.com');
@@ -81,15 +79,6 @@ function generateUrl(str)  {
         }
     }
     return str_arr.join("").toLowerCase();
-}
-
-function checkIfCookie()    {
-    if($('.privacy-policy-cookie').length > 0)  {
-        $('.privacy-policy-cookie .accept').click(function()    {
-            basic.cookies.set('privacy_policy', 1);
-            $('.privacy-policy-cookie').hide();
-        });
-    }
 }
 
 function bindCaptchaRefreshEvent()  {
@@ -383,55 +372,7 @@ if (typeof(dcnCookie) != undefined) {
 }
 
 if ($('.newsletter-register').length) {
-    // remove this function, because its already part of basic.js
-    function initCustomCheckboxes(parent, type) {
-        if (typeof(parent) == undefined) {
-            parent = '';
-        } else {
-            parent = parent + ' ';
-        }
-
-        if (type == undefined) {
-            type = 'prepend';
-        }
-
-        for (var i = 0, len = jQuery(parent + '.custom-checkbox-style').length; i < len; i+=1) {
-            if (!jQuery(parent + '.custom-checkbox-style').eq(i).hasClass('already-custom-style')) {
-                if (jQuery(parent + '.custom-checkbox-style').eq(i).find('input[type="checkbox"]').is(':checked')) {
-                    if (type == 'prepend') {
-                        jQuery(parent + '.custom-checkbox-style').eq(i).prepend('<label for="'+jQuery(parent + '.custom-checkbox-style').eq(i).find('input[type="checkbox"]').attr('id')+'" class="custom-checkbox">✓</label>');
-                    } else if (type == 'append') {
-                        jQuery(parent + '.custom-checkbox-style').eq(i).append('<label for="'+jQuery(parent + '.custom-checkbox-style').eq(i).find('input[type="checkbox"]').attr('id')+'" class="custom-checkbox">✓</label>');
-                    }
-                } else {
-                    jQuery(parent + '.custom-checkbox-style').eq(i).prepend('<label for="'+jQuery(parent + '.custom-checkbox-style').eq(i).find('input[type="checkbox"]').attr('id')+'" class="custom-checkbox"></label>');
-                }
-                jQuery(parent + '.custom-checkbox-style').eq(i).addClass('already-custom-style');
-            }
-        }
-
-        jQuery(parent + '.custom-checkbox-style .custom-checkbox-input').unbind('change').on('change', function() {
-            if (!jQuery(this).closest('.custom-checkbox-style').hasClass('predefined')) {
-                if (jQuery(this).is(':checked')) {
-                    jQuery(this).closest(parent + '.custom-checkbox-style').find('.custom-checkbox').html('✓');
-                } else {
-                    jQuery(this).closest(parent + '.custom-checkbox-style').find('.custom-checkbox').html('');
-                }
-
-                if (jQuery(this).attr('data-radio-group') != undefined) {
-                    for (var i = 0, len = jQuery('[data-radio-group="'+jQuery(this).attr('data-radio-group')+'"]').length; i < len; i+=1) {
-                        if (!jQuery(this).is(jQuery('[data-radio-group="'+jQuery(this).attr('data-radio-group')+'"]').eq(i))) {
-                            jQuery('[data-radio-group="'+jQuery(this).attr('data-radio-group')+'"]').eq(i).prop('checked', false);
-                            jQuery('[data-radio-group="'+jQuery(this).attr('data-radio-group')+'"]').eq(i).closest(parent + '.custom-checkbox-style').find('.custom-checkbox').html('');
-                        }
-                    }
-                }
-            }
-        });
-    }
-
-    initCustomCheckboxes('.newsletter-register');
-    //basic.initCustomCheckboxes('.newsletter-register');
+    basic.initCustomCheckboxes('.newsletter-register');
 
     $('.newsletter-register form').on('submit', function (event) {
         event.preventDefault();
