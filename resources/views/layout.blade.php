@@ -101,7 +101,7 @@
         </ul>
     </div>
 </nav>
-<header class="sticky-header">
+<header class="sticky-header hide-on-hub-open">
     <div class="container">
         <div class="row fs-0">
             <figure itemscope="" itemtype="http://schema.org/Organization"
@@ -147,7 +147,7 @@
     </div>
 </header>
 <main class="main-container">@yield("content")</main>
-<footer>
+<footer class="hide-on-hub-open">
     <div class="container padding-top-30">
         @if(!empty($socials))
             <div class="row">
@@ -249,6 +249,7 @@
 
 </script>
 {{--<script src="/assets/js/basic.js"></script>--}}
+<script src="https://dentacoin.com/assets/js/basic.js?v=1.0.27"></script>
 <script src="/dist/js/front-libs-script.js?v=1.0.27"></script>
 <script src="//dentacoin.com/assets/libs/dentacoin-package/js/init.js?v={{time()}}"></script>
 <script src="/dist/js/front-script.js?v=1.0.27"></script>

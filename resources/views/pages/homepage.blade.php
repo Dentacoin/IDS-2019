@@ -1,6 +1,6 @@
 @extends("layout")
 @section("content")
-    <section class="top-homepage-slider-section">
+    <section class="top-homepage-slider-section hide-on-hub-open">
         @if(!empty($slider))
             <div class="slider">
                 @foreach($slider as $slide)
@@ -18,7 +18,7 @@
             <div class="clock"></div>
         </div>--}}
     </section>
-    <section class="achievements-section text-center padding-top-100 padding-bottom-70 padding-top-xs-50 padding-bottom-xs-0">
+    <section class="achievements-section text-center padding-top-100 padding-bottom-70 padding-top-xs-50 padding-bottom-xs-0 hide-on-hub-open">
         <div class="container">
             <div class="row fs-0">
                 <div class="col-xs-12">
@@ -55,7 +55,7 @@
             </div>
         </div>
     </section>
-    <section class="highlights-section padding-top-70 padding-bottom-70 padding-top-xs-30 padding-bottom-xs-30  padding-top-sm-30 padding-bottom-sm-30" data-scroll-here="highlights-section">
+    <section class="highlights-section padding-top-70 padding-bottom-70 padding-top-xs-30 padding-bottom-xs-30  padding-top-sm-30 padding-bottom-sm-30 hide-on-hub-open" data-scroll-here="highlights-section">
         <div class="container">
             @if(!empty($highlights))
                 <div class="row">
@@ -87,7 +87,7 @@
             @endif
         </div>
     </section>
-    <section class="gallery-section padding-top-70 padding-bottom-70 padding-top-xs-30 padding-bottom-xs-30  padding-top-sm-30 padding-bottom-sm-30" data-scroll-here="gallery-section">
+    <section class="gallery-section padding-top-70 padding-bottom-70 padding-top-xs-30 padding-bottom-xs-30  padding-top-sm-30 padding-bottom-sm-30 hide-on-hub-open" data-scroll-here="gallery-section">
         <div class="container">
             @if(!empty($gallery))
                 <div class="row">
@@ -109,7 +109,7 @@
             @endif
         </div>
     </section>
-    <section class="ids-speakers-corner-section padding-top-70 padding-bottom-70 padding-top-xs-30 padding-bottom-xs-30  padding-top-sm-30 padding-bottom-sm-30" data-scroll-here="speakers-corner-section">
+    <section class="ids-speakers-corner-section padding-top-70 padding-bottom-70 padding-top-xs-30 padding-bottom-xs-30  padding-top-sm-30 padding-bottom-sm-30 hide-on-hub-open" data-scroll-here="speakers-corner-section">
         <div class="container text-center">
             <div class="row">
                 <div class="col-xs-12">
@@ -125,7 +125,7 @@
             </div>
         </div>
     </section>
-    <section class="color-beige-bg team-members-section padding-top-70 padding-bottom-70 padding-top-xs-30 padding-bottom-xs-30  padding-top-sm-30 padding-bottom-sm-30" data-scroll-here="our-team-at-ids-2019">
+    <section class="color-beige-bg team-members-section padding-top-70 padding-bottom-70 padding-top-xs-30 padding-bottom-xs-30  padding-top-sm-30 padding-bottom-sm-30 hide-on-hub-open" data-scroll-here="our-team-at-ids-2019">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 text-center">
@@ -159,7 +159,7 @@
             </div>
         </div>
     </section>
-    <section class="what-is-dcn-section padding-top-70 padding-bottom-70 padding-top-xs-30 padding-bottom-xs-30  padding-top-sm-30 padding-bottom-sm-30 text-center" data-scroll-here="what-is-dentacoin-section">
+    <section class="what-is-dcn-section padding-top-70 padding-bottom-70 padding-top-xs-30 padding-bottom-xs-30  padding-top-sm-30 padding-bottom-sm-30 text-center hide-on-hub-open" data-scroll-here="what-is-dentacoin-section">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-6 col-lg-offset-3">
@@ -172,7 +172,7 @@
             </div>
         </div>
     </section>
-    <section class="padding-top-70 padding-bottom-70 padding-top-xs-30 padding-bottom-xs-30  padding-top-sm-30 padding-bottom-sm-30">
+    <section class="padding-top-70 padding-bottom-70 padding-top-xs-30 padding-bottom-xs-30 padding-top-sm-30 padding-bottom-sm-30 hide-on-hub-open">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
@@ -202,7 +202,7 @@
             </div>
         </div>
     </section>
-    <section class="statistics-section text-center padding-top-70 padding-bottom-70 padding-top-xs-30 padding-bottom-xs-30  padding-top-sm-30 padding-bottom-sm-30">
+    <section class="statistics-section text-center padding-top-70 padding-bottom-70 padding-top-xs-30 padding-bottom-xs-30 padding-top-sm-30 padding-bottom-sm-30 hide-on-hub-open">
         <div class="container">
             <div class="row fs-0">
                 <div class="col-xs-12 col-md-10 col-md-offset-1">
@@ -245,66 +245,11 @@
                 </div>
             </div>
         </div>
-    </section>{{--
-    <section class="applications-section padding-top-80 padding-top-xs-30 padding-bottom-80 padding-bottom-xs-30">
-        <div class="container">
-            <div class="row list">
-                <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-                    <div class="row fs-0">
-                        @foreach($applications as $application)
-                            @php($type = pathinfo($application->media_url, PATHINFO_EXTENSION))
-                            @php($date = new DateTime($application->media_created_at))
-                            <button class="col-md-3 col-xs-4 inline-block-top single-application">
-                                <figure class="wrapper" @if($application->media_url) data-image="//dentacoin.com/assets/uploads/{{$application->media_url}}" data-image-alt="" data-image-type="{{$type}}" data-upload-date="{{$date->format('c')}}" @endif @if($application->popup_logo_url) data-popup-logo="//dentacoin.com/assets/uploads/{{$application->popup_logo_url}}" data-popup-logo-alt="" @endif data-description="@if($application->dentists_text){{ json_encode($application->dentists_text) }}@endif" @if($application->slug == 'blog-intro') data-articles="{{json_encode($latest_blog_articles)}}" @endif data-title="{{$application->title}}" itemscope="" data-slug="{{$application->slug}}" itemtype="http://schema.org/ImageObject">
-                                    @if($application->logo_url)
-                                        <img data-defer-src="//dentacoin.com/assets/uploads/{{$application->logo_url}}" itemprop="contentUrl" alt=""/>
-                                    @endif
-                                    <figcaption>{{$application->title}}</figcaption>
-                                </figure>
-                            </button>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>--}}
+    </section>
     <section class="applications-section">
         <div id="append-big-hub-ids"></div>
-        {{--<div class="row">
-            <div class="apps-list fullpage-section two col-xs-12 col-md-6">
-                <div class="list">
-                    <div class="row">
-                        <div class="col-xs-12"><h3 class="rotated-text padding-bottom-50 text-center">DENTACOIN ECOSYSTEM</h3></div>
-                        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-                            <div class="container-fluid">
-                                <div class="row fs-0">
-                                    @foreach($applications as $application)
-                                        @if(!empty($application->media_url))
-                                            @php($type = pathinfo($application->media_url, PATHINFO_EXTENSION))
-                                            @php($date = new DateTime($application->media_created_at))
-                                        @endif
-                                        <button class="col-xs-4 inline-block-top single-application">
-                                            <figure class="wrapper" @if(!empty($application->media_url)) data-image="http://dentacoin.com/assets/uploads/{{$application->media_url}}" data-image-alt="" data-image-type="{{$type}}" data-upload-date="{{$date->format('c')}}" @endif @if($application->popup_logo_url) data-popup-logo="http://dentacoin.com/assets/uploads/{{$application->popup_logo_url}}" data-popup-logo-alt="" @endif data-title="{{$application->title}}" data-description="@if($application->dentists_text){{ json_encode($application->dentists_text) }}@endif" @if($application->slug == 'blog-intro') @if(!empty($latest_blog_articles)) data-articles="{{json_encode($latest_blog_articles)}}" @endif @endif itemscope="" data-title="{{$application->title}}" data-slug="{{$application->slug}}" itemtype="http://schema.org/ImageObject">
-                                                @if($application->logo_url)
-                                                    <img data-defer-src="//dentacoin.com/assets/uploads/{{$application->logo_url}}" itemprop="contentUrl" alt=""/>
-                                                @endif
-                                                <figcaption>{{$application->title}}</figcaption>
-                                            </figure>
-                                        </button>
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="info-section col-xs-12 col-md-6">
-                <a href="javascript:void(0)" class="close-application">×</a>
-                <div class="html-content"></div>
-            </div>
-        </div>--}}
     </section>
-    <section class="padding-top-70 padding-bottom-50 padding-top-xs-30 padding-bottom-xs-30 get-the-latest-event-updates-section" data-scroll-here="subscribe-section">
+    <section class="padding-top-70 padding-bottom-50 padding-top-xs-30 padding-bottom-xs-30 get-the-latest-event-updates-section hide-on-hub-open" data-scroll-here="subscribe-section">
         <div class="container">
             <div class="row newsletter-register">
                 <div class="col-xs-12 text-center padding-bottom-30">
@@ -331,44 +276,6 @@
                     </div>
                 </div>
             </div>
-                {{--<form action="https://emailoctopus.com/lists/6c1e17a2-f89a-11e8-a3c9-06b79b628af2/members/embedded/1.3s/add" class="email-octopus-form" data-sitekey="6LdYsmsUAAAAAPXVTt-ovRsPIJ_IVhvYBBhGvRV6" method="post">
-                    <div class="row">
-                        <div class="col-xs-12 text-center">
-                            <h2 class="lato-bold fs-32 fs-xs-20 margin-bottom-0 padding-bottom-15 color-black">{{ __('content.get_latest_updates') }}</h2>
-                            <div class="fs-18 fs-xs-14">{{ __('content.subscribe') }}</div>
-                        </div>
-                    </div>
-
-                    <div class="row fs-0">
-                        <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3 inline-block form fs-18">
-                            <p class="email-octopus-success-message text-center">&nbsp;</p>
-
-                            <p class="email-octopus-error-message text-center">&nbsp;</p>
-
-                            <div class="email-octopus-form-row fs-0 padding-top-15">
-                                <div class="inline-block title"><label class="fs-18" for="field_3">{{ __('content.title_field') }}:</label>
-                                    <select id="field_3" name="field_3">
-                                        <option value="{{ __('content.title_option_mr') }}">{{ __('content.title_option_mr') }}</option>
-                                        <option value="{{ __('content.title_option_mrs') }}">{{ __('content.title_option_mrs') }}</option>
-                                        <option value="{{ __('content.title_option_dr') }}">{{ __('content.title_option_dr') }}</option>
-                                        <option value="{{ __('content.title_option_prof') }}">{{ __('content.title_option_prof') }}</option>
-                                        <option value="{{ __('content.title_option_prof_dr') }}">{{ __('content.title_option_prof_dr') }}</option>
-                                    </select></div>
-
-                                <div class="inline-block name"><label class="fs-18" for="field_4">Name:</label> <input class="email-octopus-field" id="field_4" name="field_4" placeholder="" type="text" /></div>
-                            </div>
-
-                            <div class="email-octopus-form-row"><label class="fs-18" for="field_0">{{ __('content.newsletter_email') }}:</label> <input class="email-octopus-field" id="field_0" name="field_0" placeholder="" type="email" /></div>
-
-                            <div class="email-octopus-form-row-consent privacy-policy-row fs-0"><input class="email-octopus-checkbox" id="consent" name="consent" type="checkbox" /> <label class="fs-14" for="consent">{!! __('content.privacy_policy_text') !!}</label></div>
-
-                            <div aria-hidden="true" class="email-octopus-form-row-hp"><!-- Do not remove this field, otherwise you risk bot sign-ups --><input autocomplete="nope" name="hp6c1e17a2-f89a-11e8-a3c9-06b79b628af2" tabindex="-1" type="text" /></div>
-
-                            <div class="email-octopus-form-row-subscribe text-center padding-top-15"><input name="successRedirectUrl" type="hidden" value="" /> <input class="white-solid-blue-btn min-width-250" type="submit" value="{{ __('content.sign_up') }}" /></div>
-                        </div>
-                    </div>
-                </form>--}}
-            {{--</div>--}}
         </div>
     </section>
 @endsection
